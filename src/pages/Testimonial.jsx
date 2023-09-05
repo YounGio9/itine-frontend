@@ -8,113 +8,132 @@ function Testimonial() {
           <div class="row">
             <div class="col-md-12">
               <div class="full">
-                <h3>Testimonial</h3>
+                <h4>Faire une demande pour devenir livreur</h4>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="client_section layout_padding">
-        <div class="container">
-          <div class="heading_container heading_center">
-            <h2>Customer's Testimonial</h2>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="images/6501031.png" alt="Image" class="img-fluid" />
           </div>
-          <div
-            id="carouselExample3Controls"
-            class="carousel slide"
-            data-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="box col-lg-10 mx-auto">
-                  <div class="img_container">
-                    <div class="img-box">
-                      <div class="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
-                    <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
-                    </p>
-                  </div>
+          <div class="col-md-6">
+            <h2>Formulaire de demande</h2>
+            <form>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="nom">Nom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    name="nom"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="prénom">Prénom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    name="nom"
+                    required
+                  />
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="box col-lg-10 mx-auto">
-                  <div class="img_container">
-                    <div class="img-box">
-                      <div class="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
-                    <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
-                    </p>
-                  </div>
+
+              <div class="form-group">
+                <label for="dateNaissance">Date de naissance</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="dateNaissance"
+                  name="dateNaissance"
+                  required
+                />
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="pays">Pays</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    name="nom"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="ville">Ville</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    name="nom"
+                    required
+                  />
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="box col-lg-10 mx-auto">
-                  <div class="img_container">
-                    <div class="img-box">
-                      <div class="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
-                    <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
-                    </p>
-                  </div>
+              <div class="form-group">
+                <label for="email">Adresse mail</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="telephone">Numéro de téléphone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telephone"
+                    name="telephone"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="codePostal">Code postal</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codePostal"
+                    name="codePostal"
+                    required
+                  />
                 </div>
               </div>
-            </div>
-            <div class="carousel_btn_box">
-              <a
-                class="carousel-control-prev"
-                href="#carouselExample3Controls"
-                role="button"
-                data-slide="prev"
-              >
-                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselExample3Controls"
-                role="button"
-                data-slide="next"
-              >
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
+
+              <div class="form-group">
+                <label for="situationMatrimoniale">
+                  Situation matrimoniale
+                </label>
+                <select
+                  class="form-control"
+                  id="situationMatrimoniale"
+                  name="situationMatrimoniale"
+                  required
+                >
+                  <option value="celibataire">Célibataire</option>
+                  <option value="marie">Marié(e)</option>
+                  <option value="divorce">Divorcé(e)</option>
+                  <option value="veuf">Veuf/Veuve</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-danger">
+                Faire une demande
+              </button>
+            </form>
           </div>
         </div>
-      </section>
+      </div>{" "}
+      <br />
     </>
   );
 }
