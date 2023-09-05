@@ -3,134 +3,210 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div>
-      <div className="hero_area">
-        <section className="slider_section ">
-          <div className="slider_bg_box">
-            <img src="images/slider-bg.jpg" alt="" />
-          </div>
-          <div
-            id="customCarousel1"
-            className="carousel slide"
-            data-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>
-                          <span>Vos articles</span>
-                          <br />
-                          livrées en quelques minutes
-                        </h1>
-                        <p>
-                          Vous en avez marre d’attendre votre commande de
-                          vêtements 1 semaine ou plus… Itine est là pour vous !
-                          Découvrez une sélection de vêtements homme,femme et
-                          enfant, tendance a petit prix, et bien plus encore
-                          faite vous plaisir sans bougé du canapé faite vous
-                          livré en 1 heure maximum...
-                        </p>
-                        <div className="btn-box">
-                          <Link to="" className="btn1">
-                            Payer maintenant
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item ">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>
-                          <span>Sale 20% Off</span>
-                          <br />
-                          On Everything
-                        </h1>
-                        <p>
-                          Explicabo esse amet tempora quibusdam laudantium,
-                          laborum eaque magnam fugiat hic? Esse dicta aliquid
-                          error repudiandae earum suscipit fugiat molestias,
-                          veniam, vel architecto veritatis delectus repellat
-                          modi impedit sequi.
-                        </p>
-                        <div className="btn-box">
-                          <Link to="" className="btn1">
-                            Shop Now
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7 col-lg-6 ">
-                      <div className="detail-box">
-                        <h1>
-                          <span>Sale 20% Off</span>
-                          <br />
-                          On Everything
-                        </h1>
-                        <p>
-                          Explicabo esse amet tempora quibusdam laudantium,
-                          laborum eaque magnam fugiat hic? Esse dicta aliquid
-                          error repudiandae earum suscipit fugiat molestias,
-                          veniam, vel architecto veritatis delectus repellat
-                          modi impedit sequi.
-                        </p>
-                        <div className="btn-box">
-                          <Link to="" className="btn1">
-                            Shop Now
-                          </Link>
-                        </div>
+    <>
+      <section class="slider_section ">
+        <div class="slider_bg_box">
+          <img src="images/slider-bg.jpg" alt="" />
+        </div>
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 col-lg-7 ">
+                    <div class="detail-box">
+                      <h1>
+                        <span>Vos articles livrées</span>
+                        <br />
+                        en quelques minutes
+                      </h1>
+                      <p>
+                        Vous en avez marre d’attendre votre commande de
+                        vêtements 1 semaine ou plus… Itine est là pour vous !
+                        Découvrez une sélection de vêtements homme,femme et
+                        enfant, tendance a petit prix, et bien plus encore faite
+                        vous plaisir sans bougé du canapé faite vous livré en 1
+                        heure maximum...
+                      </p>
+                      <div class="btn-box">
+                        <Link to="#" class="btn1">
+                          Télécharger maintenant
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="container">
-              <ol className="carousel-indicators">
-                <li
-                  data-target="#customCarousel1"
-                  data-slide-to="0"
-                  className="active"
-                ></li>
-                <li data-target="#customCarousel1" data-slide-to="1"></li>
-                <li data-target="#customCarousel1" data-slide-to="2"></li>
-              </ol>
+          </div>
+          <div class="container">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#customCarousel1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#customCarousel1" data-slide-to="1"></li>
+              <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section class="product_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Nos <span>produits</span>
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="box">
+                <div class="option_container">
+                  <div class="options">
+                    <Link to="" class="option1">
+                      Détails
+                    </Link>
+                    <Link to="" class="option2">
+                      Acheter
+                    </Link>
+                  </div>
+                </div>
+                <div class="img-box">
+                  <img
+                    src="images/WhatsApp_Image_2023-08-10_at_00.08.50-removebg-preview.png"
+                    alt=""
+                  />
+                </div>
+                <div class="detail-box">
+                  <h5>Vêtement pour homme</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="box">
+                <div class="option_container">
+                  <div class="options">
+                    <Link to="" class="option1">
+                      Détails
+                    </Link>
+                    <Link to="" class="option2">
+                      Acheter
+                    </Link>
+                  </div>
+                </div>
+                <div class="img-box">
+                  <img src="images/5-removebg-preview.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Vêtement pour femme</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="box">
+                <div class="option_container">
+                  <div class="options">
+                    <Link to="" class="option1">
+                      Détails
+                    </Link>
+                    <Link to="" class="option2">
+                      Acheter
+                    </Link>
+                  </div>
+                </div>
+                <div class="img-box">
+                  <img
+                    src="images/vêtements-enfants__1_-removebg-preview.png"
+                    alt=""
+                  />
+                </div>
+                <div class="detail-box">
+                  <h5>Vêtement pour enfant</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="box">
+                <div class="option_container">
+                  <div class="options">
+                    <Link to="" class="option1">
+                      Détails
+                    </Link>
+                    <Link to="" class="option2">
+                      Acheter
+                    </Link>
+                  </div>
+                </div>
+                <div class="img-box">
+                  <img
+                    src="images/WhatsApp_Image_2023-08-11_at_00.02.34-removebg-preview.png"
+                    alt=""
+                  />
+                </div>
+                <div class="detail-box">
+                  <h5>Produits cosmétique</h5>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
-      <section className="why_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
-            <h2>Pourquoi magasiner avec nous</h2>
+          <div class="btn-box">
+            <Link to="">Voir tout les produits</Link>
           </div>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="box ">
-                <div className="img-box">
+        </div>
+      </section>
+      ƒ
+      <section class="arrival_section">
+        <div class="container">
+          <div class="box">
+            <div class="arrival_bg_box ">
+              <img class="bb" src="images/arrival-bg.png" alt="" />
+            </div>
+            <div class="row">
+              <div class="col-md-6 ml-auto">
+                <div class="heading_container remove_line_bt">
+                  <h2>Itine APK</h2>
+                </div>
+                <p style={{ marginTop: 20, marginBottom: 30 }}>
+                  Nous disposons d'une application mobile adaptée à tout type de
+                  téléphone mobile Android et IOS. Non seulement notre
+                  application mobile est simple à utiliser, elle vous permet
+                  d'aller plus vite pour la commande en ligne darticle de votre
+                  choix
+                </p>
+                <Link href="">Télécharger maintenat</Link> <br /> <br />
+                <img
+                  src="https://www.soxim.fr/images/site/app-store-badge.svg"
+                  alt="Disponible sur App Store"
+                />
+                <img
+                  src="https://www.soxim.fr/images/site/google-play-badge.svg"
+                  alt="Disponible sur Google Play"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="why_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>Pourquoi nous choisir</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="box ">
+                <div class="img-box">
                   <svg
                     version="1.1"
                     id="Layer_1"
-                    xmlns="https://www.w3.org/2000/svg"
-                    //   xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                    // xmlns:xlink="http://www.w3.org/1999/xlink"
                     x="0px"
                     y="0px"
                     viewBox="0 0 512 512"
                     // style="enable-background:new 0 0 512 512;"
-                    //   xml:space="preserve"
+                    // xml:space="preserve"
                   >
                     <g>
                       <g>
@@ -214,15 +290,15 @@ function Home() {
                     <g></g>
                   </svg>
                 </div>
-                <div className="detail-box">
+                <div class="detail-box">
                   <h5>Livraison rapide</h5>
                   <p>Recevez vos articles à domicile en quelques minutes</p>
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="box ">
-                <div className="img-box">
+            <div class="col-md-4">
+              <div class="box ">
+                <div class="img-box">
                   <svg
                     version="1.1"
                     id="Capa_1"
@@ -340,15 +416,15 @@ function Home() {
                     <g></g>
                   </svg>
                 </div>
-                <div className="detail-box">
+                <div class="detail-box">
                   <h5>Livraison gratuite</h5>
                   <p>Nous vous livrons partout mais aussi gratuitement</p>
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="box ">
-                <div className="img-box">
+            <div class="col-md-4">
+              <div class="box ">
+                <div class="img-box">
                   <svg
                     id="_30_Premium"
                     height="512"
@@ -364,413 +440,177 @@ function Home() {
                     </g>
                   </svg>
                 </div>
-                <div className="detail-box">
+                <div class="detail-box">
                   <h5>Meilleure qualité</h5>
-                  <p>Nous disposons d'articles de bonne qualité pour vous</p>
+                  <p>Nous disposons d'articles de qualité</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="arrival_section">
-        <div className="container">
-          <div className="box">
-            <div className="arrival_bg_box">
-              <img src="images/arrival-bg.png" alt="" />
+      <section class="arrival_section ok">
+        <div class="container">
+          <div class="box">
+            <div class="arrival_bg_box img">
+              <img
+                src="images/carte-regions-france-vierge-removebg-preview.png"
+                alt=""
+              />
             </div>
-            <div className="row">
-              <div className="col-md-6 ml-auto">
-                <div className="heading_container remove_line_bt">
-                  <h2>Itine APK</h2>
+            <div class="row">
+              <div class="col-md-6 ml-auto">
+                <div class="heading_container remove_line_bt">
+                  <h2>Cliqué, c'est livré</h2>
                 </div>
                 <p style={{ marginTop: 20, marginBottom: 30 }}>
-                  Nous disposons d'une application mobile adaptée à tout type de
-                  téléphone mobile Android et IOS. Non seulement notre
-                  application mobile est simple à utiliser, elle vous permet
-                  d'aller plus vite pour la commande en ligne darticle de votre
-                  choix
+                  Nous sommes déjà présent dans plusieurs villes de France tel
+                  que: <b>Paris,</b> <b>Marseille,</b> <b>Lille,</b>{" "}
+                  <b>Lyon,</b> <b>Bordeaux,</b>. Vérifiez si votre adresse est
+                  éligible et passez votre première commande
                 </p>
-                <Link to="">Télécharger maintenant</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Vérifier votre adresse
+                </button>
 
-      <section className="product_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
-            <h2>
-              Nos <span>produits</span>
-            </h2>
-          </div>
-          <div className="row">
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option1">
-                      Men's Shirt
-                    </Link>
-                    <Link to="" className="option2">
-                      Buy Now
-                    </Link>
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p1.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$75</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option1">
-                      Add To Cart
-                    </Link>
-                    <Link to="" className="option2">
-                      Buy Now
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p2.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$80</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option1">
-                      Add To Cart
-                    </Link>
-                    <Link to="" className="option2">
-                      Buy Now
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p3.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$68</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p4.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$70</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p5.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$75</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p6.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$58</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p7.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$80</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option1">
-                      Add To Cart
-                    </Link>
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p8.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$65</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p9.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$65</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p10.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$65</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p11.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Men's Shirt</h5>
-                  <h6>$65</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div className="option_container">
-                  <div className="options">
-                    <Link to="" className="option2">
-                      Acheter maintenant
-                    </Link>
-                  </div>
-                </div>
-                <div className="img-box">
-                  <img src="images/p12.png" alt="" />
-                </div>
-                <div className="detail-box">
-                  <h5>Women's Dress</h5>
-                  <h6>$65</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="btn-box">
-            <Link to="">Voir tout les produits</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="subscribe_section">
-        <div className="container-fuild">
-          <div className="box">
-            <div className="row">
-              <div className="col-md-6 offset-md-3">
-                <div className="subscribe_form ">
-                  <div className="heading_container heading_center">
-                    <h3>Nous sommes à votre disposition </h3>
-                  </div>
-                  <p>Abonnez-vous pour obtenir des offres de réduction</p>
-                  <form action="">
-                    <input type="email" placeholder="Entrer votre email" />
-                    <button>s'abonner</button>
-                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="client_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
+      <section class="client_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
             <h2>Ce que nos clients disent sur nous</h2>
           </div>
           <div
             id="carouselExample3Controls"
-            className="carousel slide"
+            class="carousel slide"
             data-ride="carousel"
           >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div className="box col-lg-10 mx-auto">
-                  <div className="img_container">
-                    <div className="img-box">
-                      <div className="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="box col-lg-10 mx-auto">
+                  <div class="img_container">
+                    <div class="img-box">
+                      <div class="img_box-inner">
+                        <img src="images/jj.avif" alt="" />
                       </div>
                     </div>
                   </div>
-                  <div className="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
+                  <div class="detail-box">
+                    <h5>Anna Michelle</h5>
+
                     <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
+                      Un service de livraison au top.J'ai reçu ma commande en
+                      moins d'une heure. J'y croyais vraiment pas. Franchement,
+                      je recommande.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="carousel-item">
-                <div className="box col-lg-10 mx-auto">
-                  <div className="img_container">
-                    <div className="img-box">
-                      <div className="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
+              <div class="carousel-item">
+                <div class="box col-lg-10 mx-auto">
+                  <div class="img_container">
+                    <div class="img-box">
+                      <div class="img_box-inner">
+                        <img src="images/jj.avif" alt="" />
                       </div>
                     </div>
                   </div>
-                  <div className="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
+                  <div class="detail-box">
+                    <h5>Christian Roger</h5>
+
                     <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
+                      Je remercie Itine pour le services de livraison ultra
+                      rapide. J'ai fait ma commande sur l'application mobile
+                      depuis mon domicile et j'ai reçu mon article en 30min
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="carousel-item">
-                <div className="box col-lg-10 mx-auto">
-                  <div className="img_container">
-                    <div className="img-box">
-                      <div className="img_box-inner">
-                        <img src="images/client.jpg" alt="" />
+              <div class="carousel-item">
+                <div class="box col-lg-10 mx-auto">
+                  <div class="img_container">
+                    <div class="img-box">
+                      <div class="img_box-inner">
+                        <img src="images/jj.avif" alt="" />
                       </div>
                     </div>
                   </div>
-                  <div className="detail-box">
-                    <h5>Anna Trevor</h5>
-                    <h6>Customer</h6>
-                    <p>
-                      Dignissimos reprehenderit repellendus nobis error
-                      quibusdam? Atque animi sint unde quis reprehenderit, et,
-                      perspiciatis, debitis totam est deserunt eius officiis
-                      ipsum ducimus ad labore modi voluptatibus accusantium
-                      sapiente nam! Quaerat.
-                    </p>
+                  <div class="detail-box">
+                    <h5>George Eric</h5>
+
+                    <p>J'ai reçu ma comande en 20min. Merci Itine</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="carousel_btn_box">
+            <div class="carousel_btn_box">
               <Link
-                className="carousel-control-prev"
+                class="carousel-control-prev"
                 to="#carouselExample3Controls"
                 role="button"
                 data-slide="prev"
               >
-                <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
-                <span className="sr-only">Previous</span>
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
               </Link>
-              <Link
-                className="carousel-control-next"
-                to="#carouselExample3Controls"
+              <a
+                class="carousel-control-next"
+                href="#carouselExample3Controls"
                 role="button"
                 data-slide="next"
               >
-                <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                <span className="sr-only">Next</span>
-              </Link>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
-
-      <div className="cpy_">
-        <p>
-          © 2021 All Rights Reserved By{" "}
-          <Link to="https://html.design/">Free Html Templates</Link>
-        </p>
-      </div>
-    </div>
+    </>
   );
 }
 
