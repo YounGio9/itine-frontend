@@ -43,7 +43,7 @@ function Header() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/About">About</Link>
                   </li>
                   <li>
                     <Link to="/testimonial">Testimonial</Link>
