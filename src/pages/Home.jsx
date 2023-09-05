@@ -34,7 +34,7 @@ function Home() {
                           livré en 1 heure maximum...
                         </p>
                         <div className="btn-box">
-                          <Link href="" className="btn1">
+                          <Link to="" className="btn1">
                             Payer maintenant
                           </Link>
                         </div>
@@ -61,7 +61,7 @@ function Home() {
                           modi impedit sequi.
                         </p>
                         <div className="btn-box">
-                          <Link href="" className="btn1">
+                          <Link to="" className="btn1">
                             Shop Now
                           </Link>
                         </div>
@@ -88,7 +88,7 @@ function Home() {
                           modi impedit sequi.
                         </p>
                         <div className="btn-box">
-                          <Link href="" className="btn1">
+                          <Link to="" className="btn1">
                             Shop Now
                           </Link>
                         </div>
@@ -392,7 +392,7 @@ function Home() {
                   d'aller plus vite pour la commande en ligne darticle de votre
                   choix
                 </p>
-                <Link href="">Télécharger maintenant</Link>
+                <Link to="">Télécharger maintenant</Link>
               </div>
             </div>
           </div>
@@ -411,10 +411,10 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option1">
+                    <Link to="" className="option1">
                       Men's Shirt
                     </Link>
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Buy Now
                     </Link>
                   </div>
@@ -432,10 +432,10 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option1">
+                    <Link to="" className="option1">
                       Add To Cart
                     </Link>
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Buy Now
                     </Link>
                   </div>
@@ -453,10 +453,10 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option1">
+                    <Link to="" className="option1">
                       Add To Cart
                     </Link>
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Buy Now
                     </Link>
                   </div>
@@ -474,7 +474,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -492,7 +492,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -510,7 +510,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -528,7 +528,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -546,10 +546,10 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option1">
+                    <Link to="" className="option1">
                       Add To Cart
                     </Link>
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -567,7 +567,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -585,7 +585,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -603,7 +603,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -621,7 +621,7 @@ function Home() {
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <Link href="" className="option2">
+                    <Link to="" className="option2">
                       Acheter maintenant
                     </Link>
                   </div>
@@ -637,7 +637,7 @@ function Home() {
             </div>
           </div>
           <div className="btn-box">
-            <Link href="">Voir tout les produits</Link>
+            <Link to="">Voir tout les produits</Link>
           </div>
         </div>
       </section>
@@ -767,7 +767,7 @@ function Home() {
       <div className="cpy_">
         <p>
           © 2021 All Rights Reserved By{" "}
-          <Link href="https://html.design/">Free Html Templates</Link>
+          <Link to="https://html.design/">Free Html Templates</Link>
         </p>
       </div>
     </div>

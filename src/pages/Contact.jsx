@@ -69,7 +69,7 @@ function Contact() {
                   Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem
                   similique ex unde!
                 </p>
-                <Link href="">Shop Now</Link>
+                <Link to="">Shop Now</Link>
               </div>
             </div>
           </div>
