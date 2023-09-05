@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Testimonial from "./pages/Testimonial";
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/testimonial" element={<Testimonial />} />
         </Routes>
         <Footer />
       </div>
