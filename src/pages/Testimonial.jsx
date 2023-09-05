@@ -17,7 +17,7 @@ function Testimonial() {
       <div class="container mt-5">
         <div class="row">
           <div class="col-md-6">
-            <img src="images/6501031.png" alt="Image" class="img-fluid" />
+            <img src="images/6501031.png" alt="" class="img-fluid" />
           </div>
           <div class="col-md-6">
             <h2>Formulaire de demande</h2>

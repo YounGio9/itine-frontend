@@ -13,98 +13,61 @@ function Footer() {
                   <img width="210" src="images/logo1.png" alt="#" />
                 </Link>
               </div>
-              <div className="information_f">
+              <div class="information_f">
                 <p>
-                  <strong>ADDRESS:</strong> 28 White tower, Street Name New York
-                  City, USA
-                </p>
-                <p>
-                  <strong>TELEPHONE:</strong> +91 987 654 3210
-                </p>
-                <p>
-                  <strong>EMAIL:</strong> yourmain@gmail.com
+                  <strong>EMAIL:</strong> contact@itine.com
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-md-8">
-            <div className="row">
-              <div className="col-md-7">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="widget_menu">
-                      <h3>Menu</h3>
-                      <ul>
-                        <li>
-                          <Link to={""}>Home</Link>
-                        </li>
-                        <li>
-                          <Link to="">About</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Services</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Testimonial</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Blog</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Contact</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="widget_menu">
-                      <h3>Account</h3>
-                      <ul>
-                        <li>
-                          <Link to={""}>Account</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Checkout</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Login</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Register</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Shopping</Link>
-                        </li>
-                        <li>
-                          <Link to={""}>Widget</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="widget_menu">
+                  <h3>Réseaux sociaux</h3>
+                  <ul>
+                    <p>
+                      Nous sommes également disponible sur les réseaux sociaux
+                      tel que
+                    </p>
+                    <ul class="social-icons">
+                      <li>
+                        <Link to="#">
+                          <i class="fab fa-facebook-square"></i>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="#">
+                          <i class="fab fa-twitter"></i>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="#">
+                          <i class="fab fa-instagram"></i>
+                        </Link>
+                      </li>
+                    </ul>
+                  </ul>
                 </div>
               </div>
-              <div className="col-md-5">
-                <div className="widget_menu">
-                  <h3>Newsletter</h3>
-                  <div className="information_f">
-                    <p>Subscribe by our newsletter and get update protidin.</p>
-                  </div>
-                  <div className="form_sub">
-                    <form>
-                      <fieldset>
-                        <div className="field">
-                          <input
-                            type="email"
-                            placeholder="Enter Your Mail"
-                            name="email"
-                          />
-                          <input type="submit" value="Subscribe" />
-                        </div>
-                      </fieldset>
-                    </form>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="widget_menu">
+              <h3>Nous sommes disponible</h3>
+              <div class="information_f">
+                <p>
+                  Avec notre application mobile, vous pouvez commander un cique
+                </p>
               </div>
+              <img
+                src="https://www.soxim.fr/images/site/app-store-badge.svg"
+                alt="Disponible sur App Store"
+              />
+              <img
+                src="https://www.soxim.fr/images/site/google-play-badge.svg"
+                alt="Disponible sur Google Play"
+              />
             </div>
           </div>
         </div>
