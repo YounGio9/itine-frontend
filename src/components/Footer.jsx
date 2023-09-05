@@ -10,7 +10,7 @@ function Footer() {
             <div className="full">
               <div className="logo_footer">
                 <Link to={""}>
-                  <img width="210" src="images/logo.png" alt="#" />
+                  <img width="210" src="images/logo1.png" alt="#" />
                 </Link>
               </div>
               <div className="information_f">
