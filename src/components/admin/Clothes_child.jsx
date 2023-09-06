@@ -1,14 +1,14 @@
 import React from 'react'
 import add from "../../assets/add.png"
-import { products_men, products_men2 } from "../../data/products_men"
-export default function Clothes_Man() {
+import { products_child, products_child2 } from "../../data/products_child"
+export default function Clothes_child() {
   return (
     <div>
       <div className=' max-w-screen-xl mx-auto'>
         <h3 className='text-start font-bold text-2xl my-10'>Vêtement à la une</h3>
-        {/* Liste_for_clothes-Men1 */}
+        {/* Liste_for_clothes-child1 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-          {products_men.map((produit) => (
+          {products_child.map((produit) => (
             <div
               className="bg-gray-100 p-4 rounded-lg shadow-md relative"
               key={produit.id}
@@ -26,17 +26,18 @@ export default function Clothes_Man() {
         </div>
         <div>
           <a href='# ' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
-            Voir tout 
+            Voir tout
             <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29" fill="none">
-            <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+              <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </a>
         </div>
-        {/* Liste_for_clothes-Men2 */}
+
+        {/* Liste_for_clothes-child2 */}
         <div>
           <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autre Vêtement</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {products_men2.map((produit) => (
+            {products_child2.map((produit) => (
               <div
                 className="bg-gray-100 p-4 rounded-lg shadow-md relative"
                 key={produit.id}
@@ -49,17 +50,17 @@ export default function Clothes_Man() {
               </div>
             ))}
             <div class="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex">
-            <a href="# "> <img src={add} alt="addClothe " /></a>
-          </div>
+              <a href="# "> <img src={add} alt="addClothe " /></a>
+            </div>
           </div>
           <div>
-          <a href='# ' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
-            Voir tout 
-            <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29" fill="none">
-            <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          </a>
-        </div>
+            <a href='# ' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
+              Voir tout
+              <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29" fill="none">
+                <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
