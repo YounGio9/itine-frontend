@@ -9,7 +9,7 @@ export default function Clothes_Women() {
   return (
     <div>
       <div className='max-w-screen-xl mx-auto'>
-        <h3 className=' text-start font-bold text-2xl my-10'>Vêtement à la une </h3>
+        <h3 className=' text-start font-bold text-2xl my-10'>Vêtements à la une </h3>
         {/* Liste_for_clothes-Women1 */}
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
@@ -84,7 +84,7 @@ export default function Clothes_Women() {
 
         {/* Liste_for_clothes-Women1 */}
         <div>
-          <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autre Vêtement</h3>
+          <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autres Vêtements</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {products_women2.map((produit) => (
               <div

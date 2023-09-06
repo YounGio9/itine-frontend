@@ -12,7 +12,7 @@ export default function Clothes_Man() {
       <div className=' max-w-screen-xl mx-auto'>
         {/* Liste_for_clothes-Men1 */}
         <div>
-          <h3 className='text-start font-bold text-2xl my-10'>Vêtement à la une</h3>
+          <h3 className='text-start font-bold text-2xl my-10'>Vêtements à la une</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {products_men.map((produit) => (
               <div
@@ -86,7 +86,7 @@ export default function Clothes_Man() {
 
         {/* Liste_for_clothes-Men2 */}
         <div>
-          <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autre Vêtement</h3>
+          <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autres Vêtements</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {products_men2.map((produit) => (
               <div
