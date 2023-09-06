@@ -8,6 +8,7 @@ import Products from "./pages/Products";
 import BlogList from "./pages/BlogList";
 import Admin from "./components/Admin";
 import Layout from "./components/Layout";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/testimonial" element={<Testimonial />} />
             <Route path="/product" element={<Products />} />
             <Route path="/blog_list" element={<BlogList />} />
+            <Route path="*" element={<Error />} />
             {/* route-admin */}
             <Route path="/admin/*" element={<Admin />} />
           </Routes>
