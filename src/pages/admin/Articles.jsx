@@ -2,11 +2,9 @@
 import React, { useState } from 'react'
 import search from "../../assets/search.png"
 import "../../styles/article.css"
-
-import arrow_right from "../../assets/arrow_right.png"
 import ClothesMan from '../../components/admin/Clothes_Man'
 import ClothesWomen from '../../components/admin/Clothes_Women'
-import Clothes_child from '../../components/admin/Clothes_child'
+import Clotheschild from '../../components/admin/Clothes_child'
 import Cosmetics from '../../components/admin/Cosmetics'
 
 export default function Articles() {
@@ -69,7 +67,7 @@ export default function Articles() {
               </div>
               {/* child */}
               <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? '' : 'hidden'}`}>
-                < Clothes_child />
+                < Clotheschild />
               </div>
               {/* cosmetics */}
               <div id="tab4" className={`tab-content ${activeTab === 'tab4' ? '' : 'hidden'}`}>
