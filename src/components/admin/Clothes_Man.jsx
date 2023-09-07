@@ -3,9 +3,13 @@ import add from "../../assets/add.png"
 import {products_men, products_men2} from "../../data/products_men"
 import {Link} from 'react-router-dom';
 import {useToggleDots} from "../../functions/dotproducts";
+import {useModal} from '../../functions/modalAddproducts';
+import ModalAddArticle from "./Modal_addArticle";
 
 export default function Clothes_Man() {
   const {dotOpen, toggleDots} = useToggleDots();
+
+  const {openModal, Modal} = useModal(false);
 
   return (
     <div>
@@ -79,21 +83,30 @@ export default function Clothes_Man() {
                 <h2>{product1.nom}</h2>
               </div>
             ))}
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex">
-              <Link to="#"> <img src={add} alt="addClothe"/></Link>
-            </div>
+            {/*button for add new products*/}
+            <button
+              type="button"
+              onClick={openModal}
+              className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex"
+            >
+              <img src={add} alt="addClothe"/>
+            </button>
+            {/*Modal form*/}
+            <Modal>
+              <ModalAddArticle/>
+            </Modal>
           </div>
-          <div>
-            <Link
-              to='#' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
-              Voir tout
-              <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
-                   fill="none">
-                <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" strokeWidth="5"
-                      strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </div>
+
+          <Link
+            to="#"
+            className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
+            Voir tout
+            <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
+                 fill="none">
+              <path d="M3 14.5H37M37 14.5L22.4286 3M37 14.5L22.4286 26" stroke="#DC3545" strokeWidth="5"
+                    strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
         </div>
 
         {/* Liste_for_clothes-Men2 */}
@@ -165,9 +178,18 @@ export default function Clothes_Man() {
                 <h2>{product2.nom}</h2>
               </div>
             ))}
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex">
-              <Link to="#"> <img src={add} alt="addClothe"/></Link>
-            </div>
+            {/*button for add new products*/}
+            <button
+              type="button"
+              onClick={openModal}
+              className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex"
+            >
+              <img src={add} alt="addClothe"/>
+            </button>
+            {/*Modal form*/}
+            <Modal>
+              <ModalAddArticle/>
+            </Modal>
           </div>
           <div>
             <Link to='# ' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>

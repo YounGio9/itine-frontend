@@ -3,10 +3,12 @@ import {Link} from 'react-router-dom'
 import add from "../../assets/add.png"
 import {products_child, products_child2} from "../../data/products_child"
 import {useToggleDots} from "../../functions/dotproducts";
+import ModalAddArticle from "./Modal_addArticle";
+import {useModal} from "../../functions/modalAddproducts";
 
 export default function Clothes_child() {
   const {dotOpen, toggleDots} = useToggleDots();
-
+  const {openModal, Modal} = useModal(false);
   return (
     <div>
       <div className=' max-w-screen-xl mx-auto'>
@@ -78,9 +80,18 @@ export default function Clothes_child() {
               <h2>{product1.nom}</h2>
             </div>
           ))}
-          <div className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex">
-            <Link to="#"> <img src={add} alt="addClothe"/></Link>
-          </div>
+          {/*button for add new products*/}
+          <button
+            type="button"
+            onClick={openModal}
+            className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex"
+          >
+            <img src={add} alt="addClothe"/>
+          </button>
+          {/*Modal form*/}
+          <Modal>
+            <ModalAddArticle/>
+          </Modal>
         </div>
         <div>
           <Link to='#' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
@@ -162,9 +173,18 @@ export default function Clothes_child() {
                  <h2>{product2.nom}</h2>
               </div>
             ))}
-            <div className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex">
-              <Link to="#"> <img src={add} alt="addClothe"/></Link>
-            </div>
+            {/*button for add new products*/}
+            <button
+              type="button"
+              onClick={openModal}
+              className="bg-gray-200 p-4 rounded-lg shadow-md border-2 justify-center flex"
+            >
+              <img src={add} alt="addClothe"/>
+            </button>
+            {/*Modal form*/}
+            <Modal>
+              <ModalAddArticle/>
+            </Modal>
           </div>
           <div>
             <Link to='#' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
