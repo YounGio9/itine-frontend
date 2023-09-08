@@ -18,9 +18,9 @@ export default function Articles() {
     <div className=' max-w-screen-xl mx-auto'>
       {/* input for search */}
       <div className='hidden md:block'>
-        <div class="relative flex mt-10">
-          <input type="search" placeholder="" class="p-3 border-2 w-1/2 ml-20 border-r-0" />
-          <a href="# "> <img src={search} alt="search" class="w-14 border p-3 mr-0" /></a>
+        <div className="relative flex mt-10">
+          <input type="search" placeholder="" className="p-3 border-2 w-1/2 ml-20 border-r-0" />
+          <a href="# "> <img src={search} alt="search" className="w-14 border p-3 mr-0" /></a>
         </div>
       </div>
       {/* Tabs for categorie */}

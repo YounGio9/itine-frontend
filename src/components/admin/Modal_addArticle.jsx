@@ -118,25 +118,25 @@ function ModalAddArticle() {
             />
           </div>
 
-          <div className=" flex space-x-3 items-center justify-center mt-5">
-            <div className=" space-y-5">
-              <div className=" inline-block ">
-                <input type="checkbox" className=" mr-2"/> <span> Enfants</span>
+          <div className="flex space-x-3 items-center justify-center mt-5">
+            <div className="space-y-5">
+              <div className="inline-block">
+                <input type="radio" name="category" id="enfants" className="mr-2" /> <label htmlFor="enfants">Enfants</label>
               </div>
               <div className="">
-                <input type="checkbox" className=""/> <span> Femmes</span>
+                <input type="radio" name="category" id="femmes" /> <label htmlFor="femmes">Femmes</label>
               </div>
             </div>
-            <div className="space-y-5 ">
+            <div className="space-y-5">
               <div>
-                <input type="checkbox" className="mr-5"/> <span> Hommes</span>
+                <input type="radio" name="category" id="hommes" className="mr-5" /> <label htmlFor="hommes">Hommes</label>
               </div>
               <div>
-                <input type="checkbox" className=""/> <span> Cosmétiques</span>
+                <input type="radio" name="category" id="cosmetiques" /> <label htmlFor="cosmetiques">Cosmétiques</label>
               </div>
             </div>
-
           </div>
+
         </div>
 
       </form>

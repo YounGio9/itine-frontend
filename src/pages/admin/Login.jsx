@@ -90,12 +90,12 @@ export default function Login() {
             </div>
 
             <div className=" mb-2 flex justify-end font-semibold text-sm">
-              <a
+              <Link
                 className="text-gray-600 hover:text-red-700 hover:underline hover:underline-offset-4"
-                href="# "
+                to="#"
               >
                 Mot de passe oublié?
-              </a>
+              </Link>
             </div>
 
             {/*Boutton conexion*/}
