@@ -6,6 +6,7 @@ import ClothesMan from '../../components/admin/Clothes_Man'
 import ClothesWomen from '../../components/admin/Clothes_Women'
 import Clotheschild from '../../components/admin/Clothes_child'
 import Cosmetics from '../../components/admin/Cosmetics'
+import {Link} from "react-router-dom";
 
 export default function Articles() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -20,7 +21,7 @@ export default function Articles() {
       <div className='hidden md:block'>
         <div className="relative flex mt-10">
           <input type="search" placeholder="" className="p-3 border-2 w-1/2 ml-20 border-r-0" />
-          <a href="# "> <img src={search} alt="search" className="w-14 border p-3 mr-0" /></a>
+          <Link to="#"> <img src={search} alt="search" className="w-14 border p-3 mr-0" /></Link>
         </div>
       </div>
       {/* Tabs for categorie */}
