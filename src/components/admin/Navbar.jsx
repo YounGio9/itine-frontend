@@ -73,7 +73,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/message"
+                  to="/admin/message"
                   className="text-gray-700 hover:bg-red-300 hover:text-white border-b border-gray-100 md:hover:bg-transparent md:border-0 block py-2 md:hover:text-red-700 md:p-0"
                 >
                   Message
@@ -81,7 +81,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/livreur"
+                  to="/admin/livreur"
                   className="text-gray-700 hover:bg-red-300 hover:text-white border-b border-gray-100 md:hover:bg-transparent md:border-0 block py-2 md:hover:text-red-700 md:p-0"
                 >
                   Livreur
@@ -118,7 +118,7 @@ export default function Navbar() {
                   <ul className="py-1" aria-labelledby="dropdownNavbarLink">
                     <li>
                       <Link
-                        to="/addcategory"
+                        to="/admin/article"
                         className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                       >
                         Ajouter une catégorie
@@ -126,29 +126,13 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="/deletecategory"
-                        className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                      >
-                        Supprimer tout
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/producte"
+                        to="/admin/article"
                         className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                       >
                         Voir tous les produits
                       </Link>
                     </li>
                   </ul>
-                  <div className="py-1">
-                    <Link
-                      to="/triercategory"
-                      className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                    >
-                      Trier par
-                    </Link>
-                  </div>
                 </div>
               </li>
               <li>
