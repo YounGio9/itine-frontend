@@ -96,9 +96,8 @@ export default function Clothes_Man() {
               <ModalAddArticle/>
             </Modal>
           </div>
-
           <Link
-            to="#"
+            to="/admin/allproducts"
             className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
             Voir tout
             <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
@@ -192,7 +191,7 @@ export default function Clothes_Man() {
             </Modal>
           </div>
           <div>
-            <Link to='# ' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
+            <Link to='/admin/allproducts' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
               Voir tout
               <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
                    fill="none">

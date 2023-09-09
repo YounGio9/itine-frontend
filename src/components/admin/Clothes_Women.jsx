@@ -95,7 +95,7 @@ export default function Clothes_Women() {
             </Modal>
           </div>
           <div>
-            <Link to='#' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
+            <Link to='/admin/allproducts' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
               Voir tout
               <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
                    fill="none">
@@ -106,7 +106,7 @@ export default function Clothes_Women() {
           </div>
         </div>
 
-        {/* List_for_clothes-Women1 */}
+        {/* List_for_clothes-Women2 */}
         <div>
           <h3 className=' text-start font-bold text-2xl my-10 mt-20'>Autres Vêtements</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
@@ -189,7 +189,7 @@ export default function Clothes_Women() {
             </Modal>
           </div>
           <div>
-            <Link to='#' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
+            <Link to='/admin/allproducts' className=' text-red-700 text-md font-bold right-0 absolute flex items-center'>
               Voir tout
               <svg className=' mx-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 29"
                    fill="none">
