@@ -64,7 +64,7 @@ export default function Navbar() {
             <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-xl md:font-semibold">
               <li>
                 <Link
-                  to="/accueil"
+                  to="/admin/home"
                   className="bg-gray-50 md:bg-transparent hover:bg-red-300 hover:text-white md:hover:bg-transparent text-gray-700 block py-2 md:hover:text-red-700 md:p-0"
                   aria-current="page"
                 >
