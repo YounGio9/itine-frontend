@@ -7,6 +7,7 @@ import Login from '../pages/admin/Login';
 import Message from "../pages/admin/Message";
 import Allproducts from "../pages/admin/Allproducts";
 import Home from "../pages/admin/Home";
+import Shop from "../pages/admin/Shop";
 
 const Admin = () => {
   return (
@@ -16,8 +17,9 @@ const Admin = () => {
         <Route path="/article" element={<Articles/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/message" element={<Message/>}/>
-       <Route path="/allproducts" element={<Allproducts/>}/>
-       <Route path="/home" element={<Home/>}/>
+        <Route path="/allproducts" element={<Allproducts/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/shop" element={<Shop/>}/>
       </Routes>
     </div>
   );
