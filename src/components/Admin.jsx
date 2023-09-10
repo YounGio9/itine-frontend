@@ -8,6 +8,7 @@ import Message from "../pages/admin/Message";
 import Allproducts from "../pages/admin/Allproducts";
 import Home from "../pages/admin/Home";
 import Shop from "../pages/admin/Shop";
+import Register from "../pages/admin/Register";
 
 const Admin = () => {
   return (
@@ -20,6 +21,7 @@ const Admin = () => {
         <Route path="/allproducts" element={<Allproducts/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/shop" element={<Shop/>}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </div>
   );
