@@ -34,7 +34,7 @@ export default function Home() {
             <h3 className=" text-xl font-bold text-red-500 my-5">Articles</h3>
           </Link>
           <Link
-            to="/admin/boutique"
+            to="/admin/shop"
             className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse">
             <img src={boutique} alt="livreur" className=" w-1/2 mx-auto"/>
             <h3 className=" text-xl font-bold text-red-500 my-5">Boutiques</h3>
