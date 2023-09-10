@@ -1,30 +1,39 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import logo from "../../assets/logo.png"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const { login, user, logout } = useAuthContext();
+
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await login({
+      email,
+      password,
+    });
   };
   return (
     <div>
       <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-4 sm:mx-auto max-w-screen-xl md:mt-20">
         <div className="md:w-1/2 p-16 hidden md:block">
-          <img
-            src={logo}
-            alt="imgLogin"
-            className="w-auto"
-          />
+          <img src={logo} alt="imgLogin" className="w-auto" />
         </div>
 
         <div className="md:w-1/2 w-full ">
-          <h1 className=" text-4xl font-bold text-center mb-5 text-red-600">Connectez vous</h1>
+          <h1 className=" text-4xl font-bold text-center mb-5 text-red-600">
+            Connectez vous
+          </h1>
           {/* Form of login */}
-          <form>
+          <form onSubmit={handleSubmit}>
             {/*Input E-mail*/}
             <input
               className="text-sm w-full px-4 py-4 border border-gray-300 rounded-lg"
@@ -119,9 +128,7 @@ export default function Login() {
             </Link>
           </div>
         </div>
-
-
       </div>
     </div>
-  )
+  );
 }
