@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d898058b.css",
+    "main.js": "/static/js/main.a6071206.js",
+    "static/js/787.086c7747.chunk.js": "/static/js/787.086c7747.chunk.js",
+    "static/media/vêtements_homme1.png": "/static/media/vêtements_homme1.c7621f1972346835be10.png",
+    "static/media/vêtements_homme.png": "/static/media/vêtements_homme.30affbd4e28c462c9674.png",
+    "static/media/vêtements_femme2.png": "/static/media/vêtements_femme2.8872d6d002002f025417.png",
+    "static/media/vêtements_child1.png": "/static/media/vêtements_child1.bfaa982cec17cce4315f.png",
+    "static/media/cosmetic2.png": "/static/media/cosmetic2.c1c3e62495c051fe1f05.png",
+    "static/media/cosmetic1.png": "/static/media/cosmetic1.40a9d4fa7fd51b8c0faf.png",
+    "static/media/vêtements_femme1.png": "/static/media/vêtements_femme1.d1e2b3cbba9d6097d2af.png",
+    "static/media/vêtements_child2.png": "/static/media/vêtements_child2.29773bcfd3dc438b997b.png",
+    "static/media/message.png": "/static/media/message.4b6178ac6221fb201636.png",
+    "static/media/livreur.png": "/static/media/livreur.9027cac20b77d9eb17b8.png",
+    "static/media/articles.png": "/static/media/articles.4e0fcc638a53049a0d40.png",
+    "static/media/boutique.png": "/static/media/boutique.64e6d825d46daab29ff7.png",
+    "static/media/logo.png": "/static/media/logo.b127e4d5fac5b984f8c9.png",
+    "index.html": "/index.html",
+    "main.d898058b.css.map": "/static/css/main.d898058b.css.map",
+    "main.a6071206.js.map": "/static/js/main.a6071206.js.map",
+    "787.086c7747.chunk.js.map": "/static/js/787.086c7747.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d898058b.css",
+    "static/js/main.a6071206.js"
+  ]
+}
