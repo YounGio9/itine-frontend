@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8000/";
+const baseUrl = "https://backend-dev-itine.onrender.com/";
 const client = axios.create({
   withCredentials: true,
   baseURL: `${baseUrl}`,
