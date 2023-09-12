@@ -1,6 +1,5 @@
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
 import Error from "./pages/Error";
 import React from "react";
 import Articles from "./pages/admin/Articles";
@@ -17,23 +16,20 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Layout>
-          <div>
-            <Navbar />
-            <AuthContextProvider>
-              <Routes>
-                <Route path="admin/article" element={<Articles />} />
-                <Route path="admin/login" element={<Login />} />
-                <Route path="admin/message" element={<Message />} />
-                <Route path="admin/allproducts" element={<Allproducts />} />
-                <Route exact path="/admin" element={<Home />} />
-                <Route path="admin/shop" element={<Shop />} />
-                {/* <Route path="admin/register" element={<Register />} /> */}
-                <Route path="*" element={<Error />} />
-              </Routes>
-            </AuthContextProvider>
-          </div>
-        </Layout>
+        <div>
+          <Navbar />
+          <AuthContextProvider>
+            <Routes>
+              <Route path="admin/article" element={<Articles />} />
+              <Route path="admin/login" element={<Login />} />
+              <Route path="admin/message" element={<Message />} />
+              <Route path="admin/allproducts" element={<Allproducts />} />
+              <Route exact path="/admin" element={<Home />} />
+              <Route path="admin/shop" element={<Shop />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </AuthContextProvider>
+        </div>
       </div>
     </Router>
   );

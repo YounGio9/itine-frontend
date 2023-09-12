@@ -43,8 +43,13 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!localStorage.getItem("userProfile")) {
-      navigate("/admin/login");
+    try {
+      const token = localStorage.getItem("userProfile");
+      if (!token) {
+        navigate("/admin/login");
+      }
+    } catch (error) {
+      return;
     }
   }, [navigate]);
 
