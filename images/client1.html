@@ -1,0 +1,2262 @@
+
+
+
+<!DOCTYPE html>
+
+
+<!--
+En visualisant le code source vous acceptez les CGU accessibles à l’adresse : https://www.hellowork.com/fr-fr/page/cgu.html
+Notamment l’article 8.2
+L’Utilisateur peut uniquement utiliser le Site aux fins d’accéder aux Services, ce exclusivement à des fins privées et non commerciales.
+Il est notamment expressément reconnu et accepté par l’Utilisateur que l’utilisation de systèmes automatisés ou de logiciels pour extraire des données du Site, en particulier le Contenu et la CVthèque (« capture de données d’écran » / « screen scraping / web scraping» notamment), à quelques fins que ce soit, commerciales ou non, est strictement interdite, à moins que HelloWork n’ait conclu une convention de licence écrite autorisant expressément l’Utilisateur à extraire une partie des données du Site.
+-->
+
+
+<html lang="fr-fr"
+    class="tw-scroll-smooth"
+    data-controller="fetch-account-data"
+    data-fetch-account-data-url-value="/fr-fr/candidat/accountdata"
+>
+    <head>
+        <meta charset="UTF-8" />
+
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.eu01.nr-data.net","errorBeacon":"bam.eu01.nr-data.net","licenseKey":"NRBR-c1c9fff8b701b423499","applicationID":"480419784","transactionName":"MhBSZQoZDxBTWkdbDgtafWc7Vy4BQXNcUE4hEERQERQrDFAWSEENEBJN","queueTime":0,"applicationTime":96,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["f.hellowork.com"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"535879788",accountID:"2724684",trustKey:"2724684",xpid:"VgEFVVBbDBAEXFFWBggAXlA=",licenseKey:"NRBR-c1c9fff8b701b423499",applicationID:"480419784"};;/*! For license information please see nr-loader-spa-1.236.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,r={5763:(e,t,r)=>{r.d(t,{P_:()=>l,Mt:()=>g,C5:()=>s,DL:()=>v,OP:()=>T,lF:()=>D,Yu:()=>y,Dg:()=>h,CX:()=>c,GE:()=>b,sU:()=>_});var n=r(8632),i=r(9567);const o={beacon:n.ce.beacon,errorBeacon:n.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,n.Qy)(e,a[e],"info")}var u=r(7056);const d=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:u.oD,inactiveMs:u.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},f={};function l(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!f[e])throw new Error("Configuration for ".concat(e," was never set"));return f[e]}function h(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");f[e]=(0,i.D)(t,d()),(0,n.Qy)(e,f[e],"config")}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var r=l(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}const p={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},m={};function v(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!m[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return m[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");m[e]=(0,i.D)(t,p),(0,n.Qy)(e,m[e],"loader_config")}const y=(0,n.mF)().o;var w=r(385),x=r(6818);const A={buildEnv:x.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:x.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:x.q4},E={};function T(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!E[e])throw new Error("Runtime for ".concat(e," was never set"));return E[e]}function _(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");E[e]=(0,i.D)(t,A),(0,n.Qy)(e,E[e],"runtime")}function D(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,r)=>{r.d(t,{D:()=>i});var n=r(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,n.Z)("Setting a Configurable requires a model to set its initial properties");const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.Z)("An error occurred while setting a property of a Configurable",e)}return r}catch(e){(0,n.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,r)=>{r.d(t,{Re:()=>i,gF:()=>o,q4:()=>n});const n="1.236.0",i="PROD",o="CDN"},385:(e,t,r)=>{r.d(t,{FN:()=>a,IF:()=>u,Nk:()=>f,Tt:()=>s,_A:()=>o,il:()=>n,pL:()=>c,v6:()=>i,w1:()=>d});const n="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=n?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=""+o?.location,s=/iPad|iPhone|iPod/.test(navigator.userAgent),c=s&&"undefined"==typeof SharedWorker,u=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(n&&window.document.documentMode),f=!!navigator.sendBeacon},1117:(e,t,r)=>{r.d(t,{w:()=>o});var n=r(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,n.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,r]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=r)}))}catch(e){(0,n.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,r)=>{r.d(t,{L:()=>d,R:()=>c});var n=r(2177),i=r(1284),o=r(4322),a=r(3325);const s={};function c(e,t){const r={staged:!1,priority:a.p[t]||0};u(e),s[e].get(t)||s[e].set(t,r)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(u(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const r=[...s[e]];function a(t){const r=e?n.ee.get(e):n.ee,a=o.X.handlers;if(r.backlog&&a){var s=r.backlog[t],c=a[t];if(c){for(var u=0;s&&u<s.length;++u)f(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,r){r[0].on(e,r[1])}))}))}delete a[t],r.backlog[t]=null,r.emit("drain-"+t,[])}}r.every((e=>{let[t,r]=e;return r.staged}))&&(r.sort(((e,t)=>e[1].priority-t[1].priority)),r.forEach((e=>{let[t]=e;a(t)})))}function f(e,t){var r=e[1];(0,i.D)(t[r],(function(t,r){var n=e[0];if(r[0]===n){var i=r[1],o=e[3],a=e[2];i.apply(o,a)}}))}},2177:(e,t,r)=>{r.d(t,{c:()=>f,ee:()=>u});var n=r(8632),i=r(2210),o=r(1284),a=r(5763),s="nr@context";let c=(0,n.fP)();var u;function d(){}function f(e){return(0,i.X)(e,s,l)}function l(){return new d}function h(){u.aborted=!0,u.backlog={}}c.ee?u=c.ee:(u=function e(t,r){var n={},c={},f={},g=!1;try{g=16===r.length&&(0,a.OP)(r).isolatedBacklog}catch(e){}var p={on:b,addEventListener:b,removeEventListener:y,emit:v,get:x,listeners:w,context:m,buffer:A,abort:h,aborted:!1,isBuffering:E,debugId:r,backlog:g?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return p;function m(e){return e&&e instanceof d?e:e?(0,i.X)(e,s,l):l()}function v(e,r,n,i,o){if(!1!==o&&(o=!0),!u.aborted||i){t&&o&&t.emit(e,r,n);for(var a=m(n),s=w(e),d=s.length,f=0;f<d;f++)s[f].apply(a,r);var l=T()[c[e]];return l&&l.push([p,e,r,a]),a}}function b(e,t){n[e]=w(e).concat(t)}function y(e,t){var r=n[e];if(r)for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)}function w(e){return n[e]||[]}function x(t){return f[t]=f[t]||e(p,t)}function A(e,t){var r=T();p.aborted||(0,o.D)(e,(function(e,n){t=t||"feature",c[n]=t,t in r||(r[t]=[])}))}function E(e){return!!T()[c[e]]}function T(){return p.backlog}}(void 0,"globalEE"),c.ee=u)},5546:(e,t,r)=>{r.d(t,{E:()=>n,p:()=>i});var n=r(2177).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},4322:(e,t,r)=>{r.d(t,{X:()=>o});var n=r(5546);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.E,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.E);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3239:(e,t,r)=>{r.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var n=r(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};n._A.addEventListener("test",null,e),n._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(r,n))}function c(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(r,n))}},4402:(e,t,r)=>{r.d(t,{Ht:()=>u,M:()=>c,Rl:()=>a,ky:()=>s});var n=r(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n._A?.crypto||n._A?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++r).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n._A?.crypto||n._A?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(r,++i).toString(16));return a.join("")}function c(){return s(16)}function u(){return s(32)}},7056:(e,t,r)=>{r.d(t,{Bq:()=>n,Hb:()=>o,oD:()=>i});const n="NRBA",i=144e5,o=18e5},7894:(e,t,r)=>{function n(){return Math.round(performance.now())}r.d(t,{z:()=>n})},7243:(e,t,r)=>{r.d(t,{e:()=>o});var n=r(385),i={};function o(e){if(e in i)return i[e];if(0===(e||"").indexOf("data:"))return{protocol:"data"};let t;var r=n._A?.location,o={};if(n.il)t=document.createElement("a"),t.href=e;else try{t=new URL(e,r.href)}catch(e){return o}o.port=t.port;var a=t.href.split("://");!o.port&&a[1]&&(o.port=a[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===a[0]?"443":"80"),o.hostname=t.hostname||r.hostname,o.pathname=t.pathname,o.protocol=a[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var s=!t.protocol||":"===t.protocol||t.protocol===r.protocol,c=t.hostname===r.hostname&&t.port===r.port;return o.sameOrigin=s&&(!t.hostname||c),"/"===o.pathname&&(i[e]=o),o}},50:(e,t,r)=>{function n(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}r.d(t,{Z:()=>n})},2587:(e,t,r)=>{r.d(t,{N:()=>c,T:()=>u});var n=r(2177),i=r(5546),o=r(8e3),a=r(3325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const r=n.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,n]=e;void 0===u[t]&&(s[t]?s[t].forEach((e=>{n?(0,i.p)("feat-"+t,[],void 0,e,r):(0,i.p)("block-"+t,[],void 0,e,r),(0,i.p)("rumresp-"+t,[Boolean(n)],void 0,e,r)})):n&&(0,i.p)("feat-"+t,[],void 0,void 0,r),u[t]=Boolean(n))})),Object.keys(s).forEach((e=>{void 0===u[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,r))),u[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const u={}},2210:(e,t,r)=>{r.d(t,{X:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,r)=>{r.d(t,{D:()=>n});const n=(e,t)=>Object.entries(e||{}).map((e=>{let[r,n]=e;return t(r,n)}))},4351:(e,t,r)=>{r.d(t,{P:()=>o});var n=r(2177);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,r)=>{r.d(t,{K:()=>a,b:()=>o});var n=r(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.bP)("load",e,t)}function a(e){if(i())return e();(0,n.iz)("DOMContentLoaded",e)}},8632:(e,t,r)=>{r.d(t,{EZ:()=>u,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>d,mF:()=>s});var n=r(7894),i=r(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,r){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,n.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[r]:t}},i}function u(e,t){a()[e]=t}function d(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,r)=>{r.d(t,{N:()=>i});var n=r(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,n.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),r,i)}},1214:(e,t,r)=>{r.d(t,{em:()=>v,u5:()=>N,QU:()=>S,_L:()=>I,Gm:()=>L,Lg:()=>M,gy:()=>U,BV:()=>Q,Kf:()=>ee});var n=r(2177);const i="nr@original";var o=Object.prototype.hasOwnProperty,a=!1;function s(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,o){n||(n="");var a,s,c,u="-"===n.charAt(0);for(c=0;c<t.length;c++)d(a=e[s=t[c]])||(e[s]=r(a,u?s+n:n,i,s,o))},r.flag=i,r;function r(t,r,n,a,s){return d(t)?t:(r||(r=""),nrWrapper[i]=t,u(t,nrWrapper,e),nrWrapper);function nrWrapper(){var i,u,d,f;try{u=this,i=[...arguments],d="function"==typeof n?n(i,u):n||{}}catch(t){c([t,"",[i,u,a],d],e)}o(r+"start",[i,u,a],d,s);try{return f=t.apply(u,i)}catch(e){throw o(r+"err",[i,u,e],d,s),e}finally{o(r+"end",[i,u,f],d,s)}}}function o(r,n,i,o){if(!a||t){var s=a;a=!0;try{e.emit(r,n,i,t,o)}catch(t){c([t,r,n,i],e)}a=s}}}function c(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function u(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach((function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})})),t}catch(e){c([e],r)}for(var n in e)o.call(e,n)&&(t[n]=e[n]);return t}function d(e){return!(e&&e instanceof Function&&e.apply&&!e[i])}var f=r(2210),l=r(385);const h={},g=XMLHttpRequest,p="addEventListener",m="removeEventListener";function v(e){var t=function(e){return(e||n.ee).get("events")}(e);if(h[t.debugId]++)return t;h[t.debugId]=1;var r=s(t,!0);function i(e){r.inPlace(e,[p,m],"-",o)}function o(e,t){return e[1]}return"getPrototypeOf"in Object&&(l.il&&b(document,i),b(l._A,i),b(g.prototype,i)),t.on(p+"-start",(function(e,t){var n=e[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var i=(0,f.X)(n,"nr@wrapped",(function(){var e={object:function(){if("function"!=typeof n.handleEvent)return;return n.handleEvent.apply(n,arguments)},function:n}[typeof n];return e?r(e,"fn-",null,e.name||"anonymous"):n}));this.wrapped=e[1]=i}})),t.on(m+"-start",(function(e){e[1]=this.wrapped||e[1]})),t}function b(e,t){let r=e;for(;"object"==typeof r&&!Object.prototype.hasOwnProperty.call(r,p);)r=Object.getPrototypeOf(r);for(var n=arguments.length,i=new Array(n>2?n-2:0),o=2;o<n;o++)i[o-2]=arguments[o];r&&t(r,...i)}var y="fetch-",w=y+"body-",x=["arrayBuffer","blob","json","text","formData"],A=l._A.Request,E=l._A.Response,T="prototype",_="nr@context";const D={};function N(e){const t=function(e){return(e||n.ee).get("fetch")}(e);if(!(A&&E&&l._A.fetch))return t;if(D[t.debugId]++)return t;function r(e,r,n){var i=e[r];"function"==typeof i&&(e[r]=function(){var e,r=[...arguments],o={};t.emit(n+"before-start",[r],o),o[_]&&o[_].dt&&(e=o[_].dt);var a=i.apply(this,r);return t.emit(n+"start",[r,e],a),a.then((function(e){return t.emit(n+"end",[null,e],a),e}),(function(e){throw t.emit(n+"end",[e],a),e}))})}return D[t.debugId]=1,x.forEach((e=>{r(A[T],e,w),r(E[T],e,w)})),r(l._A,"fetch",y),t.on(y+"end",(function(e,r){var n=this;if(r){var i=r.headers.get("content-length");null!==i&&(n.rxSize=i),t.emit(y+"done",[null,r],n)}else t.emit(y+"done",[e],n)})),t}const O={},j=["pushState","replaceState"];function S(e){const t=function(e){return(e||n.ee).get("history")}(e);return!l.il||O[t.debugId]++||(O[t.debugId]=1,s(t).inPlace(window.history,j,"-")),t}var P=r(3239);const C={},R=["appendChild","insertBefore","replaceChild"];function I(e){const t=function(e){return(e||n.ee).get("jsonp")}(e);if(!l.il||C[t.debugId])return t;C[t.debugId]=!0;var r=s(t),i=/[?&](?:callback|cb)=([^&#]+)/,o=/(.*)\.([^.]+)/,a=/^(\w+)(\.|$)(.*)$/;function c(e,t){var r=e.match(a),n=r[1],i=r[3];return i?c(i,t[n]):t[n]}return r.inPlace(Node.prototype,R,"dom-"),t.on("dom-start",(function(e){!function(e){if(!e||"string"!=typeof e.nodeName||"script"!==e.nodeName.toLowerCase())return;if("function"!=typeof e.addEventListener)return;var n=(a=e.src,s=a.match(i),s?s[1]:null);var a,s;if(!n)return;var u=function(e){var t=e.match(o);if(t&&t.length>=3)return{key:t[2],parent:c(t[1],window)};return{key:e,parent:window}}(n);if("function"!=typeof u.parent[u.key])return;var d={};function f(){t.emit("jsonp-end",[],d),e.removeEventListener("load",f,(0,P.m$)(!1)),e.removeEventListener("error",l,(0,P.m$)(!1))}function l(){t.emit("jsonp-error",[],d),t.emit("jsonp-end",[],d),e.removeEventListener("load",f,(0,P.m$)(!1)),e.removeEventListener("error",l,(0,P.m$)(!1))}r.inPlace(u.parent,[u.key],"cb-",d),e.addEventListener("load",f,(0,P.m$)(!1)),e.addEventListener("error",l,(0,P.m$)(!1)),t.emit("new-jsonp",[e.src],d)}(e[0])})),t}var k=r(5763);const H={};function L(e){const t=function(e){return(e||n.ee).get("mutation")}(e);if(!l.il||H[t.debugId])return t;H[t.debugId]=!0;var r=s(t),i=k.Yu.MO;return i&&(window.MutationObserver=function(e){return this instanceof i?new i(r(e,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype),t}const z={};function M(e){const t=function(e){return(e||n.ee).get("promise")}(e);if(z[t.debugId])return t;z[t.debugId]=!0;var r=n.c,o=s(t),a=k.Yu.PR;return a&&function(){function e(r){var n=t.context(),i=o(r,"executor-",n,null,!1);const s=Reflect.construct(a,[i],e);return t.context(s).getCtx=function(){return n},s}l._A.Promise=e,Object.defineProperty(e,"name",{value:"Promise"}),e.toString=function(){return a.toString()},Object.setPrototypeOf(e,a),["all","race"].forEach((function(r){const n=a[r];e[r]=function(e){let i=!1;[...e||[]].forEach((e=>{this.resolve(e).then(a("all"===r),a(!1))}));const o=n.apply(this,arguments);return o;function a(e){return function(){t.emit("propagate",[null,!i],o,!1,!1),i=i||!e}}}})),["resolve","reject"].forEach((function(r){const n=a[r];e[r]=function(e){const r=n.apply(this,arguments);return e!==r&&t.emit("propagate",[e,!0],r,!1,!1),r}})),e.prototype=a.prototype;const n=a.prototype.then;a.prototype.then=function(){var e=this,i=r(e);i.promise=e;for(var a=arguments.length,s=new Array(a),c=0;c<a;c++)s[c]=arguments[c];s[0]=o(s[0],"cb-",i,null,!1),s[1]=o(s[1],"cb-",i,null,!1);const u=n.apply(this,s);return i.nextPromise=u,t.emit("propagate",[e,!0],u,!1,!1),u},a.prototype.then[i]=n,t.on("executor-start",(function(e){e[0]=o(e[0],"resolve-",this,null,!1),e[1]=o(e[1],"resolve-",this,null,!1)})),t.on("executor-err",(function(e,t,r){e[1](r)})),t.on("cb-end",(function(e,r,n){t.emit("propagate",[n,!0],this.nextPromise,!1,!1)})),t.on("propagate",(function(e,r,n){this.getCtx&&!r||(this.getCtx=function(){if(e instanceof Promise)var r=t.context(e);return r&&r.getCtx?r.getCtx():this})}))}(),t}const B={},F="requestAnimationFrame";function U(e){const t=function(e){return(e||n.ee).get("raf")}(e);if(!l.il||B[t.debugId]++)return t;B[t.debugId]=1;var r=s(t);return r.inPlace(window,[F],"raf-"),t.on("raf-start",(function(e){e[0]=r(e[0],"fn-")})),t}const q={},G="setTimeout",V="setInterval",X="clearTimeout",W="-start",Z="-",$=[G,"setImmediate",V,X,"clearImmediate"];function Q(e){const t=function(e){return(e||n.ee).get("timer")}(e);if(q[t.debugId]++)return t;q[t.debugId]=1;var r=s(t);return r.inPlace(l._A,$.slice(0,2),G+Z),r.inPlace(l._A,$.slice(2,3),V+Z),r.inPlace(l._A,$.slice(3),X+Z),t.on(V+W,(function(e,t,n){e[0]=r(e[0],"fn-",null,n)})),t.on(G+W,(function(e,t,n){this.method=n,this.timerDuration=isNaN(e[1])?0:+e[1],e[0]=r(e[0],"fn-",this,n)})),t}var Y=r(50);const K={},J=["open","send"];function ee(e){var t=e||n.ee;const r=function(e){return(e||n.ee).get("xhr")}(t);if(K[r.debugId]++)return r;K[r.debugId]=1,v(t);var i=s(r),o=k.Yu.XHR,a=k.Yu.MO,c=k.Yu.PR,u=k.Yu.SI,d="readystatechange",f=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],h=[],g=l._A.XMLHttpRequest.listeners,p=l._A.XMLHttpRequest=function(e){var t=new o(e);function n(){try{r.emit("new-xhr",[t],t),t.addEventListener(d,b,(0,P.m$)(!1))}catch(e){(0,Y.Z)("An error occured while intercepting XHR",e);try{r.emit("internal-error",[e])}catch(e){}}}return this.listeners=g?[...g,n]:[n],this.listeners.forEach((e=>e())),t};function m(e,t){i.inPlace(t,["onreadystatechange"],"fn-",E)}function b(){var e=this,t=r.context(e);e.readyState>3&&!t.resolved&&(t.resolved=!0,r.emit("xhr-resolved",[],e)),i.inPlace(e,f,"fn-",E)}if(function(e,t){for(var r in e)t[r]=e[r]}(o,p),p.prototype=o.prototype,i.inPlace(p.prototype,J,"-xhr-",E),r.on("send-xhr-start",(function(e,t){m(e,t),function(e){h.push(e),a&&(y?y.then(A):u?u(A):(w=-w,x.data=w))}(t)})),r.on("open-xhr-start",m),a){var y=c&&c.resolve();if(!u&&!c){var w=1,x=document.createTextNode(w);new a(A).observe(x,{characterData:!0})}}else t.on("fn-end",(function(e){e[0]&&e[0].type===d||A()}));function A(){for(var e=0;e<h.length;e++)m(0,h[e]);h.length&&(h=[])}function E(e,t){return t}return r}},7825:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.ajax},6660:(e,t,r)=>{r.d(t,{A:()=>i,t:()=>n});const n=r(3325).D.jserrors,i="nr@seenError"},3081:(e,t,r)=>{r.d(t,{gF:()=>o,mY:()=>i,t9:()=>n,vz:()=>s,xS:()=>a});const n=r(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},4649:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.pageAction},7633:(e,t,r)=>{r.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>n});const n=r(3325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},9251:(e,t,r)=>{r.d(t,{t:()=>n});const n=r(3325).D.pageViewTiming},3614:(e,t,r)=>{r.d(t,{BST_RESOURCE:()=>i,END:()=>s,FEATURE_NAME:()=>n,FN_END:()=>u,FN_START:()=>c,PUSH_STATE:()=>d,RESOURCE:()=>o,START:()=>a});const n=r(3325).D.sessionTrace,i="bstResource",o="resource",a="-start",s="-end",c="fn"+a,u="fn"+s,d="pushState"},7836:(e,t,r)=>{r.d(t,{BODY:()=>A,CB_END:()=>E,CB_START:()=>u,END:()=>x,FEATURE_NAME:()=>i,FETCH:()=>_,FETCH_BODY:()=>v,FETCH_DONE:()=>m,FETCH_START:()=>p,FN_END:()=>c,FN_START:()=>s,INTERACTION:()=>l,INTERACTION_API:()=>d,INTERACTION_EVENTS:()=>o,JSONP_END:()=>b,JSONP_NODE:()=>g,JS_TIME:()=>T,MAX_TIMER_BUDGET:()=>a,REMAINING:()=>f,SPA_NODE:()=>h,START:()=>w,originalSetTimeout:()=>y});var n=r(5763);const i=r(3325).D.spa,o=["click","submit","keypress","keydown","keyup","change"],a=999,s="fn-start",c="fn-end",u="cb-start",d="api-ixn-",f="remaining",l="interaction",h="spaNode",g="jsonpNode",p="fetch-start",m="fetch-done",v="fetch-body-",b="jsonp-end",y=n.Yu.ST,w="-start",x="-end",A="-body",E="cb"+x,T="jsTime",_="fetch"},5938:(e,t,r)=>{r.d(t,{W:()=>o});var n=r(5763),i=r(2177);class o{constructor(e,t,r){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,n.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=r,this.blocked=!1}}},9144:(e,t,r)=>{r.d(t,{j:()=>m});var n=r(3325),i=r(5763),o=r(5546),a=r(2177),s=r(7894),c=r(8e3),u=r(3960),d=r(385),f=r(50),l=r(3081),h=r(8632);function g(){const e=(0,h.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId"].forEach((t=>{e[t]=function(){for(var r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return function(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...n))})),o.length>1?o:o[0]}(t,...n)}}))}var p=r(2587);function m(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},m=arguments.length>2?arguments[2]:void 0,v=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:x={loaderType:m},exposed:A=!0}=t;const E=(0,h.gG)();y||(b=E.init,y=E.info,w=E.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),(0,i.sU)(e,x),y.jsAttributes??={},d.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y),g();const T=function(e,t){t||(0,c.R)(e,"api");const h={};var g=a.ee.get(e),p=g.get("tracer"),m="api-",v=m+"ixn-";function b(t,r,n,o){const a=(0,i.C5)(e);return null===r?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),x(m,n,!0,o||null===r?"session":void 0)(t,r)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>h[e]=x(m,e,!0,"api"))),h.addPageAction=x(m,"addPageAction",!0,n.D.pageAction),h.setCurrentRouteName=x(m,"routeName",!0,n.D.spa),h.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(r||"http://custom.transaction")+t,x(m,"setPageViewName",!0)()},h.setCustomAttribute=function(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",r);(0,f.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,f.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},h.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,f.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},h.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var r={},i=this,a="function"==typeof t;return(0,o.p)(v+"tracer",[(0,s.z)(),e,r],i,n.D.spa,g),function(){if(p.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],r),a)try{return t.apply(this,arguments)}catch(e){throw p.emit("fn-err",[arguments,this,"string"==typeof e?new Error(e):e],r),e}finally{p.emit("fn-end",[(0,s.z)()],r)}}}};function x(e,t,r,i){return function(){return(0,o.p)(l.xS,["API/"+t+"/called"],void 0,n.D.metrics,g),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],r?null:this,i,g),r?void 0:this}}function A(){r.e(439).then(r.bind(r,7438)).then((t=>{let{setAPI:r}=t;r(e),(0,c.L)(e,"api")})).catch((()=>(0,f.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=x(v,e,void 0,n.D.spa)})),h.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(l.xS,["API/noticeError/called"],void 0,n.D.metrics,g),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,n.D.jserrors,g)},d.il?(0,u.b)((()=>A()),!0):A(),h}(e,v);return(0,h.Qy)(e,T,"api"),(0,h.Qy)(e,A,"exposed"),(0,h.EZ)("activatedFeatures",p.T),T}},3325:(e,t,r)=>{r.d(t,{D:()=>n,p:()=>i});const n={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[n.pageViewEvent]:1,[n.pageViewTiming]:2,[n.metrics]:3,[n.jserrors]:4,[n.ajax]:5,[n.sessionTrace]:6,[n.pageAction]:7,[n.spa]:8,[n.sessionReplay]:9}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>(({78:"page_action-aggregate",147:"metrics-aggregate",242:"session-manager",317:"jserrors-aggregate",348:"page_view_timing-aggregate",412:"lazy-feature-loader",439:"async-api",538:"recorder",590:"session_replay-aggregate",675:"compressor",733:"session_trace-aggregate",786:"page_view_event-aggregate",873:"spa-aggregate",898:"ajax-aggregate"}[e]||e)+"."+{78:"ac76d497",147:"3dc53903",148:"1a20d5fe",242:"2a64278a",317:"49e41428",348:"bd6de33a",412:"2f55ce66",439:"30bd804e",538:"1b18459f",590:"cf0efb30",675:"ae9f91a8",733:"83105561",786:"06482edd",860:"03a8b7a5",873:"e6b09d52",898:"998ef92b"}[e]+"-1.236.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var f=u[d];if(f.getAttribute("src")==r||f.getAttribute("data-webpack")==t+o){s=f;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r),e[r]=[n];var l=(t,n)=>{s.onerror=s.onload=null,clearTimeout(h);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},h=setTimeout(l.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=l.bind(null,s.onerror),s.onload=l.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.j=364,i.p="https://js-agent.newrelic.com/",(()=>{var e={364:0,953:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=window.webpackChunkNRBA=window.webpackChunkNRBA||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})();var o={};(()=>{i.r(o);var e=i(3325),t=i(5763);const r=Object.values(e.D);function n(e){const n={};return r.forEach((r=>{n[r]=function(e,r){return!1!==(0,t.Mt)(r,"".concat(e,".enabled"))}(r,e)})),n}var a=i(9144);var s=i(5546),c=i(385),u=i(8e3),d=i(5938),f=i(3960),l=i(50);class h extends d.W{constructor(e,t,r){let n=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,r),this.auto=n,this.abortHandler,this.featAggregate,this.onAggregateImported,n&&(0,u.R)(e,r)}importAggregator(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const r=c.il&&!0===(0,t.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let n;this.onAggregateImported=new Promise((e=>{n=e}));const o=async()=>{let t;try{if(r){const{setupAgentSession:e}=await Promise.all([i.e(860),i.e(242)]).then(i.bind(i,3228));t=e(this.agentIdentifier)}}catch(e){(0,l.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",e)}try{if(!this.shouldImportAgg(this.featureName,t))return void(0,u.L)(this.agentIdentifier,this.featureName);const{lazyFeatureLoader:r}=await i.e(412).then(i.bind(i,8582)),{Aggregate:o}=await r(this.featureName,"aggregate");this.featAggregate=new o(this.agentIdentifier,this.aggregator,e),n(!0)}catch(e){(0,l.Z)("Downloading and initializing ".concat(this.featureName," failed..."),e),this.abortHandler?.(),n(!1)}};c.il?(0,f.b)((()=>o()),!0):o()}shouldImportAgg(r,n){return r!==e.D.sessionReplay||!1!==(0,t.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!n?.isNew||!!n?.state.sessionReplay)}}var g=i(7633),p=i(7894);class m extends h{static featureName=g.t9;constructor(r,n){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(r,n,g.t9,i),("undefined"==typeof PerformanceNavigationTiming||c.Tt)&&"undefined"!=typeof PerformanceTiming){const n=(0,t.OP)(r);n[g.Dz]=Math.max(Date.now()-n.offset,0),(0,f.K)((()=>n[g.qw]=Math.max((0,p.z)()-n[g.Dz],0))),(0,f.b)((()=>{const t=(0,p.z)();n[g.OJ]=Math.max(t-n[g.Dz],0),(0,s.p)("timing",["load",t],void 0,e.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var v=i(1117),b=i(1284);class y extends v.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,r,n,i){var o=this.getBucket(e,t,r,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,r){t[e]=w(r,t[e])})),t}(n,o.metrics),o}merge(e,t,r,n,i){var o=this.getBucket(e,t,n,i);if(o.metrics){var a=o.metrics;a.count+=r.count,(0,b.D)(r,(function(e,t){if("count"!==e){var n=a[e],i=r[e];i&&!i.c?a[e]=w(i.t,n):a[e]=function(e,t){if(!t)return e;t.c||(t=x(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=r}storeMetric(e,t,r,n){var i=this.getBucket(e,t,r);return i.stats=w(n,i.stats),i}getBucket(e,t,r,n){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:r||{}},n&&(i.custom=n)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},r="",n=!1,i=0;i<e.length;i++)t[r=e[i]]=A(this.aggregatedData[r]),t[r].length&&(n=!0),delete this.aggregatedData[r];return n?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=x(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function x(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function A(e){return"object"!=typeof e?[]:(0,b.D)(e,E)}function E(e,t){return t}var T=i(8632),_=i(4402),D=i(4351);var N=i(7956),O=i(3239),j=i(9251);class S extends h{static featureName=j.t;constructor(e,r){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,r,j.t,n),c.il&&((0,t.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,N.N)((()=>(0,s.p)("docHidden",[(0,p.z)()],void 0,j.t,this.ee)),!0),(0,O.bP)("pagehide",(()=>(0,s.p)("winPagehide",[(0,p.z)()],void 0,j.t,this.ee))),this.importAggregator())}}var P=i(3081);class C extends h{static featureName=P.t9;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t9,r),this.importAggregator()}}var R,I=i(2210),k=i(1214),H=i(2177),L={};try{R=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(L.console=!0,-1!==R.indexOf("dev")&&(L.dev=!0),-1!==R.indexOf("nr_dev")&&(L.nrDev=!0))}catch(e){}function z(e){try{L.console&&z(e)}catch(e){}}L.nrDev&&H.ee.on("internal-error",(function(e){z(e.stack)})),L.dev&&H.ee.on("fn-err",(function(e,t,r){z(r.stack)})),L.dev&&(z("NR AGENT IN DEVELOPMENT MODE"),z("flags: "+(0,b.D)(L,(function(e,t){return e})).join(", ")));var M=i(6660);class B extends h{static featureName=M.t;constructor(r,n){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(r,n,M.t,i),this.skipNext=0;try{this.removeOnAbort=new AbortController}catch(e){}const o=this;o.ee.on("fn-start",(function(e,t,r){o.abortHandler&&(o.skipNext+=1)})),o.ee.on("fn-err",(function(t,r,n){o.abortHandler&&!n[M.A]&&((0,I.X)(n,M.A,(function(){return!0})),this.thrown=!0,(0,s.p)("err",[n,(0,p.z)()],void 0,e.D.jserrors,o.ee))})),o.ee.on("fn-end",(function(){o.abortHandler&&!this.thrown&&o.skipNext>0&&(o.skipNext-=1)})),o.ee.on("internal-error",(function(t){(0,s.p)("ierr",[t,(0,p.z)(),!0],void 0,e.D.jserrors,o.ee)})),this.origOnerror=c._A.onerror,c._A.onerror=this.onerrorHandler.bind(this),c._A.addEventListener("unhandledrejection",(t=>{const r=function(e){let t="Unhandled Promise Rejection: ";if(e instanceof Error)try{return e.message=t+e.message,e}catch(t){return e}if(void 0===e)return new Error(t);try{return new Error(t+(0,D.P)(e))}catch(e){return new Error(t)}}(t.reason);(0,s.p)("err",[r,(0,p.z)(),!1,{unhandledPromiseRejection:1}],void 0,e.D.jserrors,this.ee)}),(0,O.m$)(!1,this.removeOnAbort?.signal)),(0,k.gy)(this.ee),(0,k.BV)(this.ee),(0,k.em)(this.ee),(0,t.OP)(r).xhrWrappable&&(0,k.Kf)(this.ee),this.abortHandler=this.#e,this.importAggregator()}#e(){this.removeOnAbort?.abort(),this.abortHandler=void 0}onerrorHandler(t,r,n,i,o){"function"==typeof this.origOnerror&&this.origOnerror(...arguments);try{this.skipNext?this.skipNext-=1:(0,s.p)("err",[o||new F(t,r,n),(0,p.z)()],void 0,e.D.jserrors,this.ee)}catch(t){try{(0,s.p)("ierr",[t,(0,p.z)(),!0],void 0,e.D.jserrors,this.ee)}catch(e){}}return!1}}function F(e,t,r){this.message=e||"Uncaught error with no additional information",this.sourceURL=t,this.line=r}let U=1;const q="nr@id";function G(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===c._A?0:(0,I.X)(e,q,(function(){return U++}))}function V(e){if("string"==typeof e&&e.length)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,D.P)(e).length}catch(e){return}}}var X=i(7243);class W{constructor(e){this.agentIdentifier=e,this.generateTracePayload=this.generateTracePayload.bind(this),this.shouldGenerateTrace=this.shouldGenerateTrace.bind(this)}generateTracePayload(e){if(!this.shouldGenerateTrace(e))return null;var r=(0,t.DL)(this.agentIdentifier);if(!r)return null;var n=(r.accountID||"").toString()||null,i=(r.agentID||"").toString()||null,o=(r.trustKey||"").toString()||null;if(!n||!i)return null;var a=(0,_.M)(),s=(0,_.Ht)(),c=Date.now(),u={spanId:a,traceId:s,timestamp:c};return(e.sameOrigin||this.isAllowedOrigin(e)&&this.useTraceContextHeadersForCors())&&(u.traceContextParentHeader=this.generateTraceContextParentHeader(a,s),u.traceContextStateHeader=this.generateTraceContextStateHeader(a,c,n,i,o)),(e.sameOrigin&&!this.excludeNewrelicHeader()||!e.sameOrigin&&this.isAllowedOrigin(e)&&this.useNewrelicHeaderForCors())&&(u.newrelicHeader=this.generateTraceHeader(a,s,c,n,i,o)),u}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,o){if(!("function"==typeof c._A?.btoa))return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return o&&n!==o&&(a.d.tk=o),btoa((0,D.P)(a))}shouldGenerateTrace(e){return this.isDtEnabled()&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var r=!1,n={};if((0,t.Mt)(this.agentIdentifier,"distributed_tracing")&&(n=(0,t.P_)(this.agentIdentifier).distributed_tracing),e.sameOrigin)r=!0;else if(n.allowed_origins instanceof Array)for(var i=0;i<n.allowed_origins.length;i++){var o=(0,X.e)(n.allowed_origins[i]);if(e.hostname===o.hostname&&e.protocol===o.protocol&&e.port===o.port){r=!0;break}}return r}isDtEnabled(){var e=(0,t.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.enabled}excludeNewrelicHeader(){var e=(0,t.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=(0,t.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=(0,t.Mt)(this.agentIdentifier,"distributed_tracing");return!!e&&!!e.cors_use_tracecontext_headers}}var Z=i(7825),$=["load","error","abort","timeout"],Q=$.length,Y=t.Yu.REQ,K=c._A.XMLHttpRequest;class J extends h{static featureName=Z.t;constructor(r,n){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(r,n,Z.t,i),(0,t.OP)(r).xhrWrappable&&(this.dt=new W(r),this.handler=(e,t,r,n)=>(0,s.p)(e,t,r,n,this.ee),(0,k.u5)(this.ee),(0,k.Kf)(this.ee),function(r,n,i,o){function a(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=E,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},e.addEventListener("load",(function(r){_(t,e)}),(0,O.m$)(!1)),c.IF||e.addEventListener("progress",(function(e){t.lastSize=e.loaded}),(0,O.m$)(!1))}function s(e){this.params={method:e[0]},T(this,e[1]),this.metrics={}}function u(e,n){var i=(0,t.DL)(r);i.xpid&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",i.xpid);var a=o.generateTracePayload(this.parsedOrigin);if(a){var s=!1;a.newrelicHeader&&(n.setRequestHeader("newrelic",a.newrelicHeader),s=!0),a.traceContextParentHeader&&(n.setRequestHeader("traceparent",a.traceContextParentHeader),a.traceContextStateHeader&&n.setRequestHeader("tracestate",a.traceContextStateHeader),s=!0),s&&(this.dt=a)}}function d(e,t){var r=this.metrics,i=e[0],o=this;if(r&&i){var a=V(i);a&&(r.txSize=a)}this.startTime=(0,p.z)(),this.listener=function(e){try{"abort"!==e.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==e.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof t.onload)&&"function"==typeof o.end)&&o.end(t)}catch(e){try{n.emit("internal-error",[e])}catch(e){}}};for(var s=0;s<Q;s++)t.addEventListener($[s],this.listener,(0,O.m$)(!1))}function f(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function l(e,t){var r=""+G(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function h(e,t){var r=""+G(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function g(){this.endTime=(0,p.z)()}function m(e,t){t instanceof K&&"load"===e[0]&&n.emit("xhr-load-added",[e[1],e[2]],t)}function v(e,t){t instanceof K&&"load"===e[0]&&n.emit("xhr-load-removed",[e[1],e[2]],t)}function b(e,t,r){t instanceof K&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,p.z)()))}function y(e,t){this.xhrCbStart&&n.emit("xhr-cb-time",[(0,p.z)()-this.xhrCbStart,this.onload,t],t)}function w(e){var t,r=e[1]||{};"string"==typeof e[0]?t=e[0]:e[0]&&e[0].url?t=e[0].url:c._A?.URL&&e[0]&&e[0]instanceof URL&&(t=e[0].href),t&&(this.parsedOrigin=(0,X.e)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=o.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if("string"==typeof e[0]||c._A?.URL&&e[0]&&e[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),s(i.headers,n)&&(this.dt=n),e.length>1?e[1]=i:e.push(i)}else e[0]&&e[0].headers&&s(e[0].headers,n)&&(this.dt=n);function s(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function x(e,t){this.params={},this.metrics={},this.startTime=(0,p.z)(),this.dt=t,e.length>=1&&(this.target=e[0]),e.length>=2&&(this.opts=e[1]);var r,n=this.opts||{},i=this.target;"string"==typeof i?r=i:"object"==typeof i&&i instanceof Y?r=i.url:c._A?.URL&&"object"==typeof i&&i instanceof URL&&(r=i.href),T(this,r);var o=(""+(i&&i instanceof Y&&i.method||n.method||"GET")).toUpperCase();this.params.method=o,this.txSize=V(n.body)||0}function A(t,r){var n;this.endTime=(0,p.z)(),this.params||(this.params={}),this.params.status=r?r.status:0,"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var o={txSize:this.txSize,rxSize:n,duration:(0,p.z)()-this.startTime};i("xhr",[this.params,o,this.startTime,this.endTime,"fetch"],this,e.D.ajax)}function E(t){var r=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;o<Q;o++)t.removeEventListener($[o],this.listener,!1);r.aborted||(n.duration=(0,p.z)()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==r.status&&(r.status=0):_(this,t),n.cbTime=this.cbTime,i("xhr",[r,n,this.startTime,this.endTime,"xhr"],this,e.D.ajax))}}function T(e,t){var r=(0,X.e)(t),n=e.params;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}function _(e,t){e.params.status=t.status;var r=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?V(e.response):"text"===r||""===r||void 0===r?V(e.responseText):void 0}(t,e.lastSize);if(r&&(e.metrics.rxSize=r),e.sameOrigin){var n=t.getResponseHeader("X-NewRelic-App-Data");n&&(e.params.cat=n.split(", ").pop())}e.loadCaptureCalled=!0}n.on("new-xhr",a),n.on("open-xhr-start",s),n.on("open-xhr-end",u),n.on("send-xhr-start",d),n.on("xhr-cb-time",f),n.on("xhr-load-added",l),n.on("xhr-load-removed",h),n.on("xhr-resolved",g),n.on("addEventListener-end",m),n.on("removeEventListener-end",v),n.on("fn-end",y),n.on("fetch-before-start",w),n.on("fetch-start",x),n.on("fn-start",b),n.on("fetch-done",A)}(r,this.ee,this.handler,this.dt),this.importAggregator())}}var ee=i(3614);const{BST_RESOURCE:te,RESOURCE:re,START:ne,END:ie,FEATURE_NAME:oe,FN_END:ae,FN_START:se,PUSH_STATE:ce}=ee;var ue=i(7836);const{FEATURE_NAME:de,START:fe,END:le,BODY:he,CB_END:ge,JS_TIME:pe,FETCH:me,FN_START:ve,CB_START:be,FN_END:ye}=ue;var we=i(4649);class xe extends h{static featureName=we.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,we.t,r),this.importAggregator()}}new class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,_.ky)(16);c._A?(this.agentIdentifier=t,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(m),Object.assign(this,(0,a.j)(this.agentIdentifier,e,e.loaderType||"agent")),this.start()):(0,l.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,t.C5)(this.agentIdentifier),init:(0,t.P_)(this.agentIdentifier),loader_config:(0,t.DL)(this.agentIdentifier),runtime:(0,t.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=n(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((t,r)=>e.p[t.featureName]-e.p[r.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===e.D.pageViewEvent){const n=function(t){switch(t){case e.D.ajax:return[e.D.jserrors];case e.D.sessionTrace:return[e.D.ajax,e.D.pageViewEvent];case e.D.sessionReplay:return[e.D.sessionTrace];case e.D.pageViewTiming:return[e.D.pageViewEvent];default:return[]}}(t.featureName);n.every((e=>r[e]))||(0,l.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,D.P)(n),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,T.Qy)(this.agentIdentifier,this.features,t)}catch(e){(0,l.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",e);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,T.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}}({features:[J,m,S,class extends h{static featureName=oe;constructor(t,r){if(super(t,r,oe,!(arguments.length>2&&void 0!==arguments[2])||arguments[2]),!c.il)return;const n=this.ee;let i;(0,k.QU)(n),this.eventsEE=(0,k.em)(n),this.eventsEE.on(se,(function(e,t){this.bstStart=(0,p.z)()})),this.eventsEE.on(ae,(function(t,r){(0,s.p)("bst",[t[0],r,this.bstStart,(0,p.z)()],void 0,e.D.sessionTrace,n)})),n.on(ce+ne,(function(e){this.time=(0,p.z)(),this.startPath=location.pathname+location.hash})),n.on(ce+ie,(function(t){(0,s.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,e.D.sessionTrace,n)}));try{i=new PerformanceObserver((t=>{const r=t.getEntries();(0,s.p)(te,[r],void 0,e.D.sessionTrace,n)})),i.observe({type:re,buffered:!0})}catch(e){}this.importAggregator({resourceObserver:i})}},C,xe,B,class extends h{static featureName=de;constructor(e,r){if(super(e,r,de,!(arguments.length>2&&void 0!==arguments[2])||arguments[2]),!c.il)return;if(!(0,t.OP)(e).xhrWrappable)return;try{this.removeOnAbort=new AbortController}catch(e){}let n,i=0;const o=this.ee.get("tracer"),a=(0,k._L)(this.ee),s=(0,k.Lg)(this.ee),u=(0,k.BV)(this.ee),d=(0,k.Kf)(this.ee),f=this.ee.get("events"),l=(0,k.u5)(this.ee),h=(0,k.QU)(this.ee),g=(0,k.Gm)(this.ee);function m(e,t){h.emit("newURL",[""+window.location,t])}function v(){i++,n=window.location.hash,this[ve]=(0,p.z)()}function b(){i--,window.location.hash!==n&&m(0,!0);var e=(0,p.z)();this[pe]=~~this[pe]+e-this[ve],this[ye]=e}function y(e,t){e.on(t,(function(){this[t]=(0,p.z)()}))}this.ee.on(ve,v),s.on(be,v),a.on(be,v),this.ee.on(ye,b),s.on(ge,b),a.on(ge,b),this.ee.buffer([ve,ye,"xhr-resolved"],this.featureName),f.buffer([ve],this.featureName),u.buffer(["setTimeout"+le,"clearTimeout"+fe,ve],this.featureName),d.buffer([ve,"new-xhr","send-xhr"+fe],this.featureName),l.buffer([me+fe,me+"-done",me+he+fe,me+he+le],this.featureName),h.buffer(["newURL"],this.featureName),g.buffer([ve],this.featureName),s.buffer(["propagate",be,ge,"executor-err","resolve"+fe],this.featureName),o.buffer([ve,"no-"+ve],this.featureName),a.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"],this.featureName),y(l,me+fe),y(l,me+"-done"),y(a,"new-jsonp"),y(a,"jsonp-end"),y(a,"cb-start"),h.on("pushState-end",m),h.on("replaceState-end",m),window.addEventListener("hashchange",m,(0,O.m$)(!0,this.removeOnAbort?.signal)),window.addEventListener("load",m,(0,O.m$)(!0,this.removeOnAbort?.signal)),window.addEventListener("popstate",(function(){m(0,i>1)}),(0,O.m$)(!0,this.removeOnAbort?.signal)),this.abortHandler=this.#e,this.importAggregator()}#e(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}],loaderType:"spa"})})(),window.NRBA=o})();</script>
+
+        <title>▷ Fiche métier Cuisinier : salaire, étude, rôle et compétence | HelloWork</title>
+
+        <!-- #region Piano Analytics -->
+<script type="text/javascript">
+    /* Init du push de piano analytics */
+    var _paq = window._paq || [];
+</script>
+<!-- #endregion Piano Analytics -->
+
+        <!-- #region Google_Tag_Manager -->
+        <script> window.dataLayer = window.dataLayer || []; window.dataLayer.push({"categoryPage":"Hub","sujetPage":"Fiche-Metier","typePage":"DF-Classique"});</script>
+        
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PZLHDH');</script>
+<!-- End Google Tag Manager -->
+        <!-- #endregion Google_Tag_Manager -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        
+        <meta name="google-site-verification" content="b_h5Dmw6rHMyhuTzlkJkv2R0MhFhbL2wqV1cEoud_Bg" />
+        <meta property="og:title" content="▷ Fiche métier Cuisinier : salaire, étude, rôle et compétence | HelloWork">
+        <meta property="og:description" content="Retrouvez toutes les informations sur la fiche métier Cuisinier sur HelloWork. Découvrez dès maintenant le métier Cuisinier : Salaire, études, formation, compétences.">
+        <meta name="description" content="Retrouvez toutes les informations sur la fiche métier Cuisinier sur HelloWork. Découvrez dès maintenant le métier Cuisinier : Salaire, études, formation, compétences.">
+        <meta property="og:url" content="https://www.hellowork.com/fr-fr/metiers/cuisinier.html">
+        <meta property="og:site_name" content="www.hellowork.com">
+        <meta property="og:image" content="https://f.hellowork.com/hellowork/img/placeholders/og-image-hellowork.jpg" itemprop="image">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:type" content="website">
+
+
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="@hellowork">
+            <meta name="twitter:title" content="▷ Fiche métier Cuisinier : salaire, étude, rôle et compétence | HelloWork">
+            <meta name="twitter:description" content="Retrouvez toutes les informations sur la fiche métier Cuisinier sur HelloWork. Découvrez dès maintenant le métier Cuisinier : Salaire, études, formation, compétences.">
+            <meta name="twitter:domain" content="www.hellowork.com">
+            <meta name="twitter:app:id:googleplay" content="com.regionsjob.android" />
+            <meta name="twitter:app:id:ipad" content="408615037" />
+            <meta name="twitter:app:id:iphone" content="408615037" />
+            <meta name="twitter:app:name:iphone" content="HelloWork" />
+            <meta name="twitter:app:name:ipad" content="HelloWork" />
+            <meta name="twitter:app:name:googleplay" content="HelloWork" />
+
+        <meta property="al:ios:app_name" content="HelloWork" />
+        <meta property="al:ios:app_store_id" content="408615037" />
+        <meta property="al:android:app_name" content="HelloWork" />
+        <meta property="al:android:package" content="com.regionsjob.android" />
+
+        <meta name="robots" content="index, follow">
+<meta name="language" content="fr-FR" />
+<link rel="canonical" href="https://www.hellowork.com/fr-fr/metiers/cuisinier.html" />
+        
+        
+        
+	<script type="application/ld+json">
+		{"@context":"https://schema.org","@type":"WebPage","name":"Cuisinier","description":"Retrouvez toutes les informations sur la fiche métier Cuisinier sur HelloWork. Découvrez dès maintenant le métier Cuisinier : Salaire, études, formation, compétences.","subjectOf":"Occupation","url":"https://www.hellowork.com/fr-fr/metiers/cuisinier.html","about":{"@type":"Occupation","name":"Cuisinier","description":"Vous souhaitez transmettre l’amour des bonnes choses ? Partager votre appétence pour les produits de qualité et les plats savoureux ? Découvrez toutes les informations nécessaires pour devenir cuisinier !\r\n\r\n","image":"https://f.hellowork.com/obs-static-images/seo/ObsJob/cuisinier-480x320.jpg","mainEntityOfPage":{"@type":"WebPage","name":"Cuisinier","url":"https://www.hellowork.com/fr-fr/metiers/cuisinier.html","lastReviewed":"2023-08-07"},"url":"https://www.hellowork.com/fr-fr/metiers/cuisinier.html","educationRequirements":[{"@type":"EducationalOccupationalCredential","credentialCategory":"associate degree"},{"@type":"EducationalOccupationalCredential","credentialCategory":"high school"}],"estimatedSalary":{"@type":"MonetaryAmountDistribution","name":"Salaire Cuisinier","duration":"P1Y","median":23449,"percentile10":20983,"percentile25":21085,"percentile75":24877,"percentile90":27526,"currency":"EUR"},"occupationLocation":{"@type":"Country","name":"France","sameAs":"https://www.wikidata.org/wiki/Q142"},"occupationalCategory":"Restauration","skills":["Gastronomie","Préparation des repas","Recettes","Restauration","Gestion des stocks","HACCP","Cuisine"]},"mainEntity":{"@type":"Article","description":"Retrouvez toutes les informations sur la fiche métier Cuisinier sur HelloWork. Découvrez dès maintenant le métier Cuisinier : Salaire, études, formation, compétences.","image":{"@type":"ImageObject","url":"https://f.hellowork.com/obs-static-images/seo/ObsJob/cuisinier-480x320.jpg"},"subjectOf":"Occupation","author":{"@type":"Organization","name":"HelloWork","url":"https://f.hellowork.com/xjob/img/sprites/logos/hellowork.png"},"headline":"Cuisinier","publisher":{"@type":"Organization","name":"HelloWork","url":"https://www.hellowork.com/fr-fr/","logo":{"@type":"ImageObject","url":"https://f.hellowork.com/xjob/img/sprites/logos/hellowork.png"}},"articleBody":"Le cuisinier peut être recruté par différentes structures, tels que les restaurants traditionnels, mais aussi les brasseries, les entreprises alimentaires ou les restaurants de collectivité. Des opportunités d’embauche sont également à prévoir dans les établissements de restauration mobile (bateau de croisière, train...), les restaurants gastronomiques, les traiteurs ou même l’armée. Les hôtels-restaurants recherchent, eux aussi, des cuisiniers pour assurer le service de leur clientèle. Enfin, il est possible d'exercer le métier de cuisinier en travaillant à son compte, au domicile des particuliers (déplacements) ou en créant son propre établissement.\r\n\r\n Au cours de ses fonctions, le cuisinier évolue souvent au sein d’un même restaurant ou en changeant régulièrement d’établissement. Il pourra commencer comme simple plongeur, puis devenir commis de cuisine. Après avoir accumulé un peu d’expérience, il pourra prétendre au poste de Chef de partie et jouir de quelques responsabilités. Enfin, le cuisinier évoluera vers le métier de Chef de cuisine puis de Directeur d’établissement. L’évolution du métier est étroitement liée à l’expérience acquise au fil du temps. Au fur et à mesure de ses expériences, le cuisinier gagne en aisance. Ses compétences sont plus grandes et il est alors capable de diriger une équipe. Vous souhaitez transmettre l’amour des bonnes choses ? Partager votre appétence pour les produits de qualité et les plats savoureux ? Découvrez toutes les informations nécessaires pour devenir cuisinier !\r\n\r\n \r\n\r\nLe métier de cuisinier (code ROME G1602) consiste à préparer les repas d’un restaurant traditionnel, d’entreprise ou de collectivité. Il peut travailler seul, être secondé par des commis ou travailler en brigade (plusieurs cuisiniers spécialisés travaillent alors de concert tout en étant supervisés par un chef de cuisine).\r\n\r\nAussi appelé Chef Cuisinier, Saucier ou Cuistot, le cuisinier est chargé de la cuisine complète d’un restaurant. Son métier consiste à superviser et exécuter la préparation des repas selon les règles d’hygiène et de sécurité alimentaires. Il assure la sélection des aliments (réalisation des courses quotidiennes ou hebdomadaires), la mise en place des préparations (découpage et précuisson possibles) et la création des assiettes selon la demande des clients de l’établissement.\r\n\r\nIl peut être suppléé par son équipe ou travailler seul pour réaliser les tâches annexes, comme la préparation des légumes et condiments ainsi que la plonge (nettoyage de la vaisselle et des ustensiles) en fin de service.\r\n \r\n\r\n\r\nIl n’est pas nécessaire de posséder un diplôme pour exercer en tant que cuisinier. Certains profils accèdent au métier de cuisinier simplement grâce à l’accumulation d’expériences professionnelles en restauration. En revanche, depuis 2012, il est exigé que le restaurateur (chef d’établissement) possède au moins une personne dans son équipe qui soit formée aux règles d'hygiène. La plupart du temps, c’est le cuisinier qui remplit cette obligation. Très souvent, les cuisiniers embauchés sont titulaires d’un diplôme de type CAP Cuisine et/ou d’un Brevet Professionnel Arts de la Cuisine. \r\n\tLe métier de cuisinier est un métier de terrain qui exige une grande créativité.\r\n\tLa profession de cuisinier ou Chef de Partie offre des possibilités d’évolutions constantes, même pour les plus jeunes.\r\n\tIl s’agit d’un métier où les recrutements sont constants. Il y a donc de grandes opportunités d’emploi.\r\n\tExercer en tant que cuisinier permet de travailler en équipe, de partager une passion commune et de réaliser de beaux projets en réunissant les compétences de chacun.\r\n\r\n \r\n\tLes horaires de travail du cuisinier sont souvent irréguliers. Il devra être prêt à changer souvent de plage horaire pour s’adapter aux attentes de la clientèle.\r\n\tLe cuisinier travaille en horaires fractionnés, en soirée, les week-ends et les jours fériés.\r\n\tCe métier induit une pression morale et physique. Il faut être concentré durant chaque service. Être cuisinier demande une grande énergie physique.\r\n En France, le salaire d’un cuisinier serait compris entre 1800 et 2500 euros bruts par mois. Ces montants correspondent à un salaire mensuel net compris entre 1400 euros et 1950 euros. La rémunération d’un cuisinier dépend également du secteur dans lequel se trouve son établissement, ainsi que de son niveau d’expertise.\r\n\r\nLe salaire mensuel d’un cuisinier en début de carrière sera plutôt de l’ordre de 1600 euros ou 1700 euros bruts. Cela permet à un cuisinier débutant de percevoir un salaire net compris entre 1250 euros et 1350 euros par mois. En début de carrière, le taux horaire du cuisinier est souvent de l’ordre de 11 euros bruts, pour un revenu annuel brut de plus de 20 000 euros en moyenne. Lorsqu’il dispose de plusieurs années d’expérience, ou s’il travaille dans un établissement prestigieux, le cuisinier peut prétendre à plus de 2500 euros bruts par mois. Pour pouvoir atteindre ce seuil de 1950 euros de salaire net, il devra souvent justifier de plusieurs expériences réussies dans le domaine de la restauration. Les salaires supérieurs à celui-ci sont souvent réservés à de grands chefs. Leur notoriété permet d’augmenter leur rémunération en même temps que leurs tarifs et la fréquentation de leur établissement. Dans certaines entreprises, le poste de cuisinier pourra être valorisé grâce au versement de pourboires laissés par les clients. L’employeur peut également choisir de verser une prime au cuisinier en fin de mois, en fonction des résultats obtenus par l’entreprise. Le salaire pourra, en outre, être versé sur 13 ou 14 mois si le contrat de travail ou la convention collective le prévoient. Chef cuisinier, commis de cuisine, saucier, cuistot. \r\n\r\n\r\nLes missions récurrentes du cuisinier sont :\r\n\r\n\r\n\tMettre en marche ses équipements de cuisine avant le début du service.\r\n\tRéaliser un inventaire de ses stocks et s’occuper de commander les produits manquants.\r\n\tPréparer les ustensiles de cuisine.\r\n\tÉplucher, préparer et cuire des légumes et des fruits.\r\n\tPréparer et cuire des viandes et des poissons.\r\n\tDresser des plats pour les servir à la clientèle.\r\n\tConditionner des produits.\r\n\tAssurer la bonne conservation des produits selon les règles d’hygiène.\r\n\tEntretenir ses outils et ses équipements en fin de service.\r\n\tDiriger son équipe et conseiller ses commis afin que les recettes soient réalisées correctement.\r\n\r\n ©rh2010-stock.adobe.com Les qualités et compétences nécessaires à la profession de cuisinier sont nombreuses :\r\n\r\n\r\n\tEn plus d’être un créateur et parfois un artiste, le cuisinier se doit d’être méthodique et organisé.\r\n\tLa rapidité d’exécution est une nécessité pour faire face aux “coups de feu” durant le service.\r\n\tIl devra faire preuve de pédagogie pour manager son équipe de travail.\r\n\tLe respect des règles d’hygiène est une priorité absolue pour le cuisinier et ses collaborateurs.\r\n\tIl doit être capable de concevoir un menu et d’élaborer de nouvelles recettes.\r\n\tLe cuisinier doit connaître les méthodes de conservation des aliments, la réglementation autour du respect de la chaîne du froid ainsi que les techniques pour éviter le gaspillage alimentaire.\r\n\tIl devra maîtriser les outils mis à sa disposition dans la cuisine mais aussi être capable de gérer ses stocks ainsi que les coûts engendrés par ses préparations.\r\n\r\n\r\n Pour devenir cuisinier, un étudiant devra se former le plus souvent par le biais des parcours professionnels d’apprentissage. Il existe de nombreux parcours possibles pour devenir cuisinier mais la voie la plus connue reste celle du CAP Cuisine par contrat de professionnalisation. Ce diplôme débute après la classe de 3e et dure 2 ans. À la suite de son CAP Cuisine, l’étudiant pourra compléter sa formation par une spécialisation s’il le souhaite. Après 2 années d’expérience professionnelle en restaurant, il sera également possible de reprendre les études pour se perfectionner avec un Brevet Professionnel Arts de la Cuisine en 2 ans. Il faudra compter 3 ans pour préparer le Bac Professionnel Cuisine ou le Bac Technologique STHR (sciences et technologies de l'hôtellerie et de la restauration).\r\n\r\nD’autres parcours scolaires permettent de se former et se spécialiser dans le métier de cuisinier, comme le CS (certificat de spécialisation) Restauration collective, le TP (titre professionnel) chef de cuisine en restauration collective ou le BTS Management en hôtellerie-restauration - management d’unité de production culinaire.\r\n\r\n Le métier de cuisinier s’exerce au sein d’un restaurant, parfois seul ou accompagné d’une équipe selon les besoins de l’entreprise. Le cuisinier peut être son propre chef d’établissement, ou être sous la responsabilité directe de celui-ci. Ses relations professionnelles sont souvent liées à son équipe en cuisine (ses commis, ses plongeurs, ses chefs de partie&#8230;). Selon la volonté de l’établissement dans lequel il travaille, le cuisinier pourra être en contact direct avec la clientèle. Les conditions de travail varient toujours en fonction du type d’établissement dans lequel le cuisinier évolue. Le métier exige des horaires fractionnés en soirée et le week-end ainsi que les jours fériés. La profession de cuisinier implique de réaliser son métier dans un environnement à température élevée (utilisation de matériel de cuisson chauffant) avec la manipulation d’objets chauds et tranchants (casserole, poêle, couteau, hachoir&#8230;).\n\n"},"breadcrumb":{"@type":"BreadcrumbList","name":"Fil d'Ariane","itemListElement":[{"@type":"ListItem","name":"Accueil","item":"https://www.hellowork.com/fr-fr/","position":1},{"@type":"ListItem","name":"Métier","item":"https://www.hellowork.com/fr-fr/metier.html","position":2},{"@type":"ListItem","name":"Restauration","item":"https://www.hellowork.com/fr-fr/metier/domaine_restauration.html","position":3},{"@type":"ListItem","name":"Cuisinier","position":4}]},"lastReviewed":"2023-08-07","mainContentOfPage":{"@type":"WebPageElement","xpath":"//section[@class='content']"},"primaryImageOfPage":{"@type":"ImageObject","contentUrl":"https://f.hellowork.com/obs-static-images/seo/ObsJob/cuisinier-480x320.jpg"},"reviewedBy":{"@type":"Organization","name":"HelloWork","sameAs":["https://www.facebook.com/helloworkcom","https://www.youtube.com/channel/UCry7TiN8-dFKQUgyUMYANTQ","https://twitter.com/hellowork","https://www.tiktok.com/@helloworkcom","https://www.instagram.com/hellowork_/","https://www.linkedin.com/company/helloworkcom/"],"url":"https://www.hellowork.com/fr-fr/","logo":"https://f.hellowork.com/xjob/img/sprites/logos/hellowork.png"},"significantLink":"https://www.hellowork.com/fr-fr/emploi/metier_cuisinier.html"}
+	</script>
+ 
+     
+
+        <link rel="preload" href="https://f.hellowork.com/hellowork/tags/2.35.0/fonts/inter-roman-latin-sliced.woff2" as="font" type="font/woff2" crossorigin />
+        
+
+    <link rel="stylesheet" type="text/css" href="https://f.hellowork.com/hellowork/ressources/1.66.6/tailwind.dist.css">
+
+        
+<link rel="icon" type="image/x-icon" href="https://f.hellowork.com/hellowork/img/favicons/hellowork/favicon.ico" />
+        
+        <link rel="stylesheet" href="https://f.hellowork.com/hellowork/tags/2.35.0/css/lastack_minimum_css.css">
+    
+
+        
+
+
+<script type="application/ld+json">
+    {"@context": "http://schema.org","@type": "WebSite","name" : "HelloWork","url": "https://www.hellowork.com/fr-fr/"}
+</script>
+
+
+ 
+        
+<script type='application/ld+json'>{"@context" : "http://schema.org", "@type" : "Organization","name" : "HelloWork","url" : "https://www.hellowork.com","logo": "https://f.hellowork.com/xjob/img/sprites/logos/hellowork.png","sameAs" : ["https://www.facebook.com/helloworkcom","https://www.linkedin.com/company/helloworkcom/","https://www.youtube.com/channel/UCry7TiN8-dFKQUgyUMYANTQ","https://twitter.com/hellowork","https://www.tiktok.com/@helloworkcom","https://www.instagram.com/hellowork_/"]}</script>
+
+        
+        
+        
+
+        
+        <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var isCookedMarketing = function () {
+            var value = '; ' + document.cookie,
+                parts = value.split('; hw-cc-first-party=');
+            if (parts.length !== 2) return false;
+            return JSON.parse(decodeURIComponent(parts.pop().split(';').shift())).marketing;
+        }
+        if (isCookedMarketing()) {
+            var script = document.createElement("script");
+            script.setAttribute("async", "true");
+            script.setAttribute("src", "https://securepubads.g.doubleclick.net/tag/js/gpt.js");
+            
+            var ref = document.querySelector("script");
+
+            ref.parentNode.insertBefore(script, ref);
+        }
+    });
+
+    window.googletag = window.googletag || { cmd: [] };
+</script>
+    </head>
+
+    <body class="tw-typo-s" data-controller="toggle-on-body" data-toggle-on-body-toggled-class="tw-overflow-hidden">
+        <main>
+            
+
+
+    
+
+<!-- Cookie Consent -->
+<script>
+    window.HelloworkCookieConsentCustomConfig = {
+        privacyPolicyUrl: "/fr-fr/page/pdc.html",
+        termsOfServiceUrl: "/fr-fr/page/cgu.html",
+        noticeModal: true,
+        primaryBtnBackgroundColor: "#000000",
+        noticeModalLogo: "https://f.hellowork.com/hellowork/tags/2.35.0/img/svg/logos/black/logo-hellowork.svg",
+        btnDenyCookies: true,
+        btnDenyCookiesType: "continue-without-accepting"
+    };
+</script>
+<script src="https://f.hellowork.com/hw-cookie-consent/latest/embed.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        window.helloworkCookieConsent = new HelloworkCookieConsent();
+    })
+</script>
+<!-- End Cookie Consent -->
+<!-- Google Tag Manager & Rj tracker -->
+<noscript>
+    <iframe title="HelloWork" src="https://www.googletagmanager.com/ns.html?id=GTM-PZLHDH"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+(function(d,s,b,u){if(!b.__SV){window.tracker=b;b._c=[];
+    b.init=function(c){function f(b, h){b[h]=function(){
+            b.push([h].concat(Array.prototype.slice.call(arguments, 0)));}}c.trackerUrl=u;b._c=c;
+        var i="track extract_metas identify set_config whoami track_metas track_action loaded getWk".split(" ");
+        for(g=0;g<i.length;g++)f(b, i[g]);};b.__SV = 1.0;var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s);j.async=!0;j.src=u+"javascripts/tracker-2-latest.min.js";
+    f.parentNode.insertBefore(j, f);}})
+(document,"script",window.tracker||[],"//t.regionsjob.com/");
+
+(function(funcName,baseObj){funcName=funcName||"docReady";baseObj=baseObj||window;var readyList=[];var readyFired=!1;var readyEventHandlersInstalled=!1;function ready(){if(!readyFired){readyFired=!0;for(var i=0;i<readyList.length;i++){readyList[i].fn.call(window,readyList[i].ctx)}
+readyList=[]}}
+function readyStateChange(){if(document.readyState==="complete"){ready()}}
+baseObj[funcName]=function(callback,context){if(readyFired){setTimeout(function(){callback(context)},1);return}else{readyList.push({fn:callback,ctx:context})}
+if(document.readyState==="complete"){setTimeout(ready,1)}else if(!readyEventHandlersInstalled){if(document.addEventListener){document.addEventListener("DOMContentLoaded",ready,!1);window.addEventListener("load",ready,!1)}else{document.attachEvent("onreadystatechange",readyStateChange);window.attachEvent("onload",ready)}
+readyEventHandlersInstalled=!0}}})("docReady",window);
+
+tracker.init({
+    /* Debug mode pour logs */
+    isDebug:  false,
+    /* Identifiant du site de tracking */
+    trackerSiteId: 41,
+    /* Domaine de tracking */
+    trackerDomainId: 2,
+    /* Cookie consent */
+    cookieConsent: false
+});
+</script>
+
+<script>!function (d, e) { window.addEventListener('load', function () { if (!window.noBlocker && !window.google_tag_manager) { for (var t = new XMLHttpRequest, n = (new Date).getTime() + Math.floor(1e8 * Math.random()), o = 'ab_gc=', a = document.cookie.split(';'), i = 0; i < a.length; i++) { for (var c = a[i]; ' ' == c.charAt(0);)c = c.substring(1); 0 == c.indexOf(o) && (n = c.substring(o.length, c.length)) } t.open('POST', 'https://www.google-analytics.com/collect'); var r = 'tid=' + e + '&cd19=adblocker+GTM&t=pageview&dp=' + document.location.pathname + '&v=1&cid=' + n; t.send(r); var g = new Date; g.setTime(g.getTime() + 63072e6); var d = 'expires=' + g.toUTCString(); document.cookie = 'ab_gc=' + n + '; ' + d } }) }('1', 'UA-32617926-5');</script>
+<!-- Google Tag Manager & Rj tracker -->
+    <script>dataLayer.push({ 'Connexion' : 'Non-Connecte','UAIdXjob' : 'UA-32617926-5'})</script>
+
+
+
+    
+
+
+    
+
+<div id="g_id_onload"
+     data-client_id="983461533668-5f2b35au8h7fpiu443ich72bb8juf60l.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse"
+     data-skip_prompt_cookie="hw_onetap"
+     data-auto_select="false"
+     data-moment_callback="trackOneTapDisplay"
+     style="z-index: 9999999;">
+</div>
+
+
+<div id="one-tap-bridge" type="hidden" data-one-tap-bridge='{ "acct_url": "/fr-fr/candidat/onetap", "form_url": "/fr-fr/profilepopin/getprofilepopin" }'></div>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+    function trackOneTapDisplay(notification) {
+        if (notification.isDisplayed()) {
+            dataLayer.push({
+                'event': 'EventGenericNoHit',
+                'EventCat': 'Box',
+                'EventAction': 'Load',
+                'EventLibelle': 'Onetap'
+            });
+        }
+    }
+
+    const bridge = document.getElementById('one-tap-bridge');
+
+    function handleCredentialResponse(response) {
+        const event = new CustomEvent('onetap-login', { detail: { 'credential': response.credential } });
+        bridge.dispatchEvent(event);
+    }
+</script>
+
+    
+
+
+<div class="sm:tw-layout-grid">
+    <input type="checkbox" class="tw-peer tw-hidden" id="toggleBurgerMenu">
+    <header class="tw-overflow-y-auto sm:tw-overflow-y-visible tw-z-30 tw-py-3 tw-pl-4 sm:tw-pl-0 tw-bg-white tw-w-full tw-relative sm:tw-static sm:tw-flex sm:tw-flex-row sm:tw-justify-between sm:tw-items-center peer-checked:tw-fixed peer-checked:tw-inset-0 peer-checked:tw-z-50">
+        <div class="tw-relative tw-max-w-max tw-top-0 tw-left-0 tw-transition-all tw-ease-in-out tw-duration-300 peer-parent-checked:tw-left-[calc(50%-40px)]">
+            <a href="https://www.hellowork.com/fr-fr/" class="tw-inline-flex" aria-label="Accueil">
+                <svg class="tw-mt-0 tw-mb-0 tw-h-8 sm:tw-mt-0 sm:tw-h-10" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/commons/logo-hellowork.svg"></svg>
+            </a>
+        </div>
+        <label 
+            for="toggleBurgerMenu" 
+            class="tw-block tw-absolute tw-top-2 tw-right-4 md:tw-right-8 tw-py-4 tw-z-20 sm:tw-hidden"
+            data-action="click->toggle-on-body#toggle" 
+        >
+            <span class="tw-duration-300 tw-block tw-h-0.5 tw-w-4 tw-bg-black tw-mb-[3px] peer-parent-checked:tw-translate-y-[5px] peer-parent-checked:tw-rotate-45 tw-transition-all"></span>
+            <span class="tw-duration-300 tw-block tw-h-0.5 tw-w-4 tw-bg-black peer-parent-checked:tw-opacity-0 tw-transition-all"></span>
+            <span class="tw-duration-300 tw-block tw-h-0.5 tw-w-4 tw-bg-black tw-mt-[3px] peer-parent-checked:-tw-translate-y-[5px] peer-parent-checked:-tw-rotate-45 tw-transition-all"></span>
+        </label>
+        <nav class="[--tw-burger-item-start:250ms] [--tw-burger-item-delay:15ms] peer-parent-checked:tw-mt-10">
+            <ul class="tw-h-0 tw-py-0 tw-overflow-hidden tw-flex tw-flex-col-reverse tw-items-center tw-justify-end sm:tw-flex-row sm:tw-p-0 sm:tw-overflow-visible sm:tw-h-auto peer-parent-checked:tw-h-fit">
+                <li class="tw-block connected:tw-hidden">
+                    <details 
+                        data-controller="details"
+                        data-action="
+                            details:not:sm->details#expand
+                            details:not:sm->details#disableClickOutside
+
+                            details:is:sm->details#collapse
+                            details:is:sm->details#enableClickOutside
+                            
+                            details:click:outside->details#collapse
+                        "
+                    >
+                        <summary data-cy="headerRecruiterMenu" class="tw-menu-element-appears peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_6_*_var(--tw-burger-item-delay))] tw-mx-auto tw-w-max tw-mt-10 tw-mb-4 tw-uppercase tw-typo-xs-bold tw-pb-2 tw-border-b tw-border-greyLighter sm:tw-link-s sm:tw-my-0 sm:tw-flex sm:tw-normal-case sm:tw-border-0">
+                            Accès recruteur<svg class="tw-hidden tw-w-2 tw-h-[4.5px] sm:tw-h-4 sm:tw-block" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/commons/expand-more.svg"></svg>
+                        </summary>
+                        <div class="sm:tw-relative">
+                            <ul class="tw-flex tw-flex-col tw-items-center tw-bg-white tw-rounded-sm tw-border-greyLight tw-right-0 sm:tw-z-10 sm:tw-p-2 sm:tw-mt-2 sm:tw-items-start sm:tw-w-max sm:tw-absolute sm:tw-border">
+                                <li class="tw-menu-element-appears peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_7_*_var(--tw-burger-item-delay))] sm:tw-w-full">
+                                    <span 
+                                        data-cy="headerRecruiterLinkPublish" 
+                                        data-controller="atc"
+                                        data-atc-l-value="xuggcf://erpehgrhe=pt=uryybjbex=pt=pbz/enccryrm-zbv-zrahf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Diffuser ma première offre
+                                    </span>
+                                </li>
+                                <li class="tw-menu-element-appears peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_8_*_var(--tw-burger-item-delay))] tw-mt-4 sm:tw-mt-auto sm:tw-w-full">
+                                    <span 
+                                        data-cy="headerRecruiterLinkCustomers" 
+                                        data-controller="atc"
+                                        data-atc-l-value="xuggcf://erpehgrhe=pt=uryybjbex=pt=pbz/zrfnccyvpngvbaff" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Déjà client
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </li>
+                <li
+                    class="tw-flex tw-flex-col tw-items-center sm:tw-hidden"
+                    data-controller="mobile-app"
+                >
+                    <p class="tw-menu-element-appears peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_4_*_var(--tw-burger-item-delay))] tw-mt-10 tw-mb-4 tw-uppercase tw-typo-xs-bold tw-pb-2 tw-border-b tw-border-greyLighter" >
+                        Télécharger l’app
+                    </p>
+                    <div class="tw-flex tw-gap-2 tw-menu-element-appears peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_5_*_var(--tw-burger-item-delay))]">
+                        <img
+                            alt="Application Android (nouvelle fenêtre)"
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://cynl=pt=tbbtyr=pt=pbz/fgber/nccf/qrgnvyf?vq=pbz=pt=ertvbafwbo=pt=naqebvqf"
+                            data-atc-t-value="x_oynaxf"
+                            src="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/badgeAndroid.svg"
+                            class="tw-w-32"
+                        />
+                        <img
+                            alt="Application ios (nouvelle fenêtre)"
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://nccf=pt=nccyr=pt=pbz/se/ncc/ertvbafwbo-rzcybv/vq408615037?zg=8f"
+                            data-atc-t-value="x_oynaxf"
+                            src="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/badgeAppStore.svg"
+                            class="tw-w-32"
+                        />
+                    </div>
+                </li>
+                <input type="checkbox" class="tw-menu tw-hidden" id="moreJobs">
+                <li class="tw-block connected:tw-hidden sm:connected:tw-block">
+                    <details 
+                        data-controller="details"
+                        data-action="
+                            details:not:sm->details#expand
+                            details:not:sm->details#disableClickOutside
+
+                            details:is:sm->details#collapse
+                            details:is:sm->details#enableClickOutside
+                            
+                            details:click:outside->details#collapse
+                        "
+                    >
+                        <summary data-cy="headerJobMenu" 
+                            class="tw-hidden sm:tw-block">
+                            <span class="tw-link-m sm:tw-link-s sm:tw-rounded-sm sm:tw-flex">
+                                Emploi
+                                <svg class="tw-w-2 tw-h-2" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-down.svg"></svg>
+                            </span>
+                        </summary>
+                        
+                        <div class="tw-hidden 
+                                sm:tw-relative 
+                                sm:tw-block 
+                                menu-parent-checked:tw-bg-white 
+                                menu-parent-checked:tw-absolute
+                                menu-parent-checked:tw-inset-0
+                                menu-parent-checked:tw-z-50
+                                menu-parent-checked:tw-block">
+                            <ul class="tw-space-y-4
+                                    tw-flex tw-flex-col
+                                    tw-items-center
+                                    tw-bg-white
+                                    tw-rounded-sm
+                                    tw-border-greyLight
+                                    tw-right-0
+                                    sm:tw-space-y-0
+                                    sm:tw-z-10
+                                    sm:tw-p-2
+                                    sm:tw-mt-2
+                                    sm:tw-items-start
+                                    sm:tw-w-max
+                                    sm:tw-absolute
+                                    sm:tw-border
+                                    menu-parent-checked:tw-absolute
+                                    menu-parent-checked:tw-inset-x-0
+                                    menu-parent-checked:tw-top-1/4">
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <a data-cy="headerJobOffersLink" href="/fr-fr/emploi.html" class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Offres d’emploi</a>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <a data-cy="headerJobInterimLink" href="/fr-fr/interim.html" class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Missions d'intérim</a>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <a data-cy="headerJobInternshipLink" href="/fr-fr/stage.html" class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Offres de stage</a>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <a data-cy="headerJobAlternatelyLink" href="/fr-fr/alternance.html" class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Offres en alternance</a>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <a data-cy="headerJobCompanyLink" href="/fr-fr/entreprise.html" class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Entreprises qui recrutent</a>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <span 
+                                        data-cy="headerJobAlertAtc" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/perngvba-nyregr=pt=ugzyf" 
+                                        data-controller="atc" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Créer mon alerte
+                                    </span>
+                                </li>
+                                <li class="sm:tw-w-full tw-hidden sm:tw-block menu-parent-checked:tw-block">
+                                    <span 
+                                        data-cy="navJobCvAtc" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/qrcbg-pi-rgncr1=pt=ugzyf" 
+                                        data-controller="atc" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Déposer mon CV
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </li>
+                <li class="connected:tw-hidden sm:connected:tw-block">
+                    <a data-cy="headerEduLink" href="https://www.maformation.fr/" class="tw-link-m sm:tw-link-s 
+                        tw-menu-element-appears
+                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_3_*_var(--tw-burger-item-delay))]
+                        tw-mt-4
+                        sm:tw-mt-0">Formation</a>
+                </li>
+                <li class="tw-menu-element-appears
+                        menu-checked:tw-absolute
+                        menu-checked:tw-top-0
+                        menu-checked:tw-inset-x-0
+                        menu-checked:tw-z-50
+                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_2_*_var(--tw-burger-item-delay))]
+                        tw-mt-4
+                        menu-checked:tw-mt-0
+                        sm:tw-mt-0
+                        tw-block 
+                        sm:tw-hidden
+                        connected:tw-hidden
+                    ">
+                    <label class="tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2 sm:tw-flex 
+                        menu-parent-checked:tw-hidden" for="moreJobs">
+                        Emploi
+                        <svg class="tw-w-2 tw-block" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg"></svg>
+                    </label>
+                    <label class="tw-cursor-pointer tw-p-4 tw-hidden 
+                        menu-parent-checked:tw-block" for="moreJobs">
+                        <p class="tw-w-full tw-flex tw-items-center tw-justify-center">
+                            <svg class="tw-h-4 tw-w-4 tw-absolute tw-left-4" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-left.svg"></svg>
+                            Emploi
+                        </p>
+                    </label>
+                </li>
+                <li class="tw-max-w-[250px]">
+                    <details class="sm:tw-ml-4" 
+                        data-controller="details"
+                        data-action="
+                            details:not:sm->details#expand
+                            details:not:sm->details#disableClickOutside
+
+                            details:is:sm->details#collapse
+                            details:is:sm->details#enableClickOutside
+                            
+                            details:click:outside->details#collapse
+                        ">
+                        <summary data-cy="headerAccountMenu" class="tw-hidden tw-text-white sm:tw-btn-primary-l sm:connected:tw-btn-outline-l">
+                            <svg class="tw-h-4 tw-w-4" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/commons/person.svg"></svg>
+                            <span class="connected:tw-hidden">Mon compte</span>
+                            
+                            <span class="tw-hidden first-letter:tw-uppercase sm:connected:tw-block" 
+                                data-controller="from-cached-account-data from-account-data"
+                                data-from-account-data-copy-value="FirstName"
+                                data-from-account-data-into-value="innerText"          
+                            >
+                                
+                            </span>
+                        </summary>
+                        <div class="sm:tw-relative">
+                            <ul class="tw-flex tw-flex-col tw-items-center tw-bg-white tw-rounded-sm tw-border-greyLight tw-right-0 sm:tw-z-10 sm:tw-p-2 sm:tw-mt-2 sm:tw-w-max sm:tw-absolute sm:tw-border">
+                                <li class="
+                                        tw-menu-element-appears
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_1_*_var(--tw-burger-item-delay))]
+                                        sm:tw-w-full
+                                        connected:tw-hidden
+                                    "
+                                >
+                                    <span 
+                                        data-controller="atc"
+                                        data-atc-l-value="x/se-se/pnaqvqng/pbaarkvba-vafpevcgvba=pt=ugzy#pbaarkvbaf">
+                                        <span data-cy="headerAccountLogIn" class="tw-hidden sm:tw-block tw-link-m sm:tw-link-s sm:tw-rounded-xs sm:tw-p-2">Se connecter</span>
+                                        <span  class="sm:tw-hidden tw-text-white tw-btn-primary-l tw-mb-4 connected:tw-hidden">
+                                            <svg class="tw-h-4" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/commons/person.svg"></svg>
+                                            Mon compte
+                                        </span>
+                                    </span>
+                                </li>
+                                <li class="
+                                        tw-menu-element-appears
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_2_*_var(--tw-burger-item-delay))]
+                                        sm:tw-w-full
+                                        connected:tw-hidden
+                                    "
+                                >
+                                    <span 
+                                        data-cy="headerAccountRegister" 
+                                        data-controller="atc"
+                                        data-atc-l-value="x/se-se/pnaqvqng/pbaarkvba-vafpevcgvba=pt=ugzy#vafpevcgvbaf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        S'inscrire
+                                    </span>
+                                </li>
+                                <li class="
+                                        tw-menu-element-appears 
+                                        tw-hidden connected:tw-block 
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_2_*_var(--tw-burger-item-delay))] 
+                                        tw-mt-4 
+                                        sm:tw-mt-auto 
+                                        sm:tw-w-full
+                                    "
+                                >
+                                    <span 
+                                        data-controller="atc"
+                                        data-cy="headerAccountMyOfferLink" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/bsserf=pt=ugzyf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Mes offres
+                                    </span>
+                                </li>
+                                <li class="
+                                        tw-menu-element-appears
+                                        tw-hidden
+                                        connected:tw-block
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_3_*_var(--tw-burger-item-delay))]
+                                        tw-mt-4
+                                        sm:tw-mt-auto
+                                        sm:tw-w-full
+                                    "
+                                >
+                                    <span 
+                                        data-controller="atc"
+                                        data-cy="headerAccountMyAlertLink" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/nyregrf=pt=ugzyf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Mes alertes
+                                        </span>
+                                </li>
+                                <li class="
+                                        tw-menu-element-appears
+                                        tw-hidden connected:tw-block
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_4_*_var(--tw-burger-item-delay))]
+                                        tw-mt-4
+                                        sm:tw-mt-auto sm:tw-w-full">
+                                    <span 
+                                        data-cy="headerAccountMyMessageLink" 
+                                        data-controller="atc"
+                                        data-atc-l-value="x/se-se/pnaqvqng/zrffntrf=pt=ugzyf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Mes messages
+                                    </span>
+                                    </li>
+                                <li class="
+                                        tw-menu-element-appears
+                                        tw-hidden connected:tw-block
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_5_*_var(--tw-burger-item-delay))]
+                                        tw-mt-4
+                                        sm:tw-mt-auto sm:tw-w-full
+                                    "
+                                >
+                                    <span 
+                                        data-controller="atc"
+                                        data-cy="headerAccountMyAccountLink" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/cebsvy=pt=ugzyf" 
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Mon profil
+                                    </span>
+                                </li>
+                                <li class="
+                                        tw-menu-element-appears
+                                        tw-hidden connected:tw-block
+                                        peer-parent-checked:tw-delay-[calc(var(--tw-burger-item-start)_+_6_*_var(--tw-burger-item-delay))]
+                                        tw-mt-4
+                                        sm:tw-mt-auto sm:tw-w-full
+                                    "
+                                >
+                                    <span 
+                                        data-controller="atc"
+                                        data-cy="headerAccountLogOut" 
+                                        data-atc-l-value="x/se-se/pnaqvqng/ybtbss?ergheaHey=%2Sse-se%2Szrgvref%2Sphvfvavre=pt=ugzyf"
+                                        class="tw-atc-m sm:tw-atc-s sm:tw-rounded-xs sm:tw-p-2"
+                                    >
+                                        Me déconnecter
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+    <input type="checkbox" data-notification id="data-notification" hidden class="pending" />
+    <section class="notification">
+        <label for="data-notification"></label>
+        <div class="notification-content">
+            <svg></svg>
+            <div class="notification-content-text">
+                <label for="data-notification"></label>
+                <span></span>
+                <span></span>
+                <div data-notification-actions>
+                    <input type="button" value="KO" class="cancel-button">
+                    <input type="button" value="OK" class="submit-button">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <turbo-frame
+    id="smart-banner"
+    data-controller="smart-banner analytics"
+    src=""
+    data-smart-banner-url-value="/fr-fr/smartbanner/getpopinframeview"
+    data-analytics-event-value='{"EventCat":"SmartBanner","EventAction":"Load","EventLibelle":"Télécharger app"}'
+    data-action="turbo:frame-load->analytics#send"
+></turbo-frame>
+
+    
+
+
+
+
+<section class="tw-layout-grid">
+    <section class="tw-col-span-full xl:tw-col-start-2 tw-flex tw-gap-2 tw-mt-6">
+        <span 
+            data-controller="atc"
+			  data-atc-l-value="xuggcf://jjj=pt=uryybjbex=pt=pbz/se-se/zrgvre=pt=ugzyf"
+            class="tw-tag-contract tw-align-baseline tw-cursor-pointer"
+        >
+            <svg class="tw-h-3 tw-w-3"
+                data-controller="cross-origin-svg"
+                data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/icons/house-primary.svg">
+            </svg>
+            Panorama des métiers
+        </span>
+        <span
+            data-controller="atc"
+			  data-atc-l-value="xuggcf://jjj=pt=uryybjbex=pt=pbz/se-se/zrgvre/qbznvar_erfgnhengvba=pt=ugzyf"
+			  class="tw-tag-contract tw-cursor-pointer"
+        >
+                Restauration
+        </span>
+    </section>
+</section>
+    
+<section class="tw-layout-grid tw-mt-4 sm:tw-mt-6 lg:tw-mt-12">
+    <div class="
+            lg:tw-col-end-5
+            xl:tw-col-start-3
+            xl:tw-col-end-7
+            lg:tw-pr-12
+            lg:tw-pt-8
+            lg:tw-grid
+            lg:tw-content-center
+        "
+    >
+        <div class="
+                tw-bg-informalLightest
+                tw-rounded-sm
+                tw-ml-2
+                lg:tw-w-11/12
+                lg:tw-ml-[10%]
+                lg:tw-aspect-square
+                lg:tw-rotate-[-15deg]
+            "
+        >
+            <img
+                class="
+                    tw-object-cover
+                    tw-rounded-sm
+                    tw-w-full
+                    -tw-translate-x-2
+                    -tw-translate-y-2
+                    tw-h-[164px]
+                    sm:tw-ml-0
+                    sm:tw-h-[192px]
+                    lg:tw-h-auto
+                    lg:tw-aspect-[3/4]
+                    lg:tw-rotate-[15deg]
+                    lg:tw-w-3/4
+                    lg:tw-float-right
+                "
+                src="https://f.hellowork.com/obs-static-images/seo/ObsJob/cuisinier.jpg"
+				 alt="Cuisinier"
+                title="Devenir Cuisinier"
+            >
+        </div>
+    </div>
+    <div class="tw-mt-6 lg:tw-mt-auto sm:tw-mb-auto sm:tw-col-span-full lg:tw-col-span-8 xl:tw-col-start-7 xl:tw-col-end-13">
+        <span class="tw-block tw-typo-l sm:tw-typo-xl ">Fiche métier</span>
+        <h1 class="tw-typo-2xl-bold sm:tw-typo-3xl-bold">Cuisinier</h1>
+        <p class="tw-typo-long-m tw-mt-2">
+			Vous souhaitez transmettre l’amour des bonnes choses ? Partager votre appétence pour les produits de qualité et les plats savoureux ? Découvrez toutes les informations nécessaires pour devenir cuisinier !
+
+
+        </p>
+		<p class="tw-typo-long-m tw-mt-2">
+			Retrouvez sur la fiche métier cuisinier toutes les informations utiles sur ce travail : Salaire, études, formation, rôle,
+			description du poste cuisinier,
+			les qualités et compétences requises pour travailler en tant que cuisinier. Le métier cuisinier fait partie du domaine
+			<a href="/fr-fr/emploi/domaine_restauration.html">Restauration</a>.
+    </div>
+</section>
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Qu’est ce qu’un Cuisinier ?
+		</h2>
+		<div class="
+        tw-mt-4 sm:tw-mt-8
+        tw-typo-long-m
+        sm:tw-col-start-2 sm:tw-col-end-12
+        xl:tw-col-start-4 xl:tw-col-end-12
+    ">
+			<p>
+				
+
+Le métier de cuisinier (code ROME G1602) consiste à préparer les repas d’un restaurant traditionnel, d’entreprise ou de collectivité. Il peut travailler seul, être secondé par des commis ou travailler en brigade (plusieurs cuisiniers spécialisés travaillent alors de concert tout en étant supervisés par un chef de cuisine).
+
+Aussi appelé Chef Cuisinier, Saucier ou Cuistot, le cuisinier est chargé de la cuisine complète d’un restaurant. Son métier consiste à superviser et exécuter la préparation des repas selon les règles d’hygiène et de sécurité alimentaires. Il assure la sélection des aliments (réalisation des courses quotidiennes ou hebdomadaires), la mise en place des préparations (découpage et précuisson possibles) et la création des assiettes selon la demande des clients de l’établissement.
+
+Il peut être suppléé par son équipe ou travailler seul pour réaliser les tâches annexes, comme la préparation des légumes et condiments ainsi que la plonge (nettoyage de la vaisselle et des ustensiles) en fin de service.
+
+			</p>
+		</div>
+	</section>
+
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-10 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Les diplômes pour devenir Cuisinier.
+		</h2>
+		<div class="
+        tw-mt-4 sm:tw-mt-8
+        tw-typo-long-m
+        sm:tw-col-start-2 sm:tw-col-end-12
+        xl:tw-col-start-4 xl:tw-col-end-12
+    ">
+			<p>
+				
+
+
+Il n’est pas nécessaire de posséder un diplôme pour exercer en tant que cuisinier. Certains profils accèdent au métier de cuisinier simplement grâce à l’accumulation d’expériences professionnelles en restauration. En revanche, depuis 2012, il est exigé que le restaurateur (chef d’établissement) possède au moins une personne dans son équipe qui soit formée aux règles d'hygiène. La plupart du temps, c’est le cuisinier qui remplit cette obligation. Très souvent, les cuisiniers embauchés sont titulaires d’un diplôme de type CAP Cuisine et/ou d’un Brevet Professionnel Arts de la Cuisine.
+			</p>
+
+		</div>
+	</section>
+
+<section class="tw-layout-grid">
+	
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Les formations pour devenir Cuisinier.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				Pour devenir cuisinier, un étudiant devra se former le plus souvent par le biais des parcours professionnels d’apprentissage. Il existe de nombreux parcours possibles pour devenir cuisinier mais la voie la plus connue reste celle du CAP Cuisine par contrat de professionnalisation. Ce diplôme débute après la classe de 3e et dure 2 ans. À la suite de son CAP Cuisine, l’étudiant pourra compléter sa formation par une spécialisation s’il le souhaite. Après 2 années d’expérience professionnelle en restaurant, il sera également possible de reprendre les études pour se perfectionner avec un Brevet Professionnel Arts de la Cuisine en 2 ans. Il faudra compter 3 ans pour préparer le Bac Professionnel Cuisine ou le Bac Technologique STHR (sciences et technologies de l'hôtellerie et de la restauration).
+
+D’autres parcours scolaires permettent de se former et se spécialiser dans le métier de cuisinier, comme le CS (certificat de spécialisation) Restauration collective, le TP (titre professionnel) chef de cuisine en restauration collective ou le BTS Management en hôtellerie-restauration - management d’unité de production culinaire.
+
+
+			</p>
+		</div>
+	
+
+		<div class="
+            tw-mt-8 sm:tw-mt-12
+            sm:tw-col-start-2 sm:tw-col-end-12
+            xl:tw-col-start-4 xl:tw-col-end-12
+    ">
+			
+
+
+
+<div 
+	data-controller="action-forwarder" 
+	class="
+		tw-flex tw-flex-col sm:tw-flex-row
+		tw-gap-x-6 tw-gap-y-4 
+		tw-bg-informalLightest 
+		tw-rounded-sm 
+		tw-p-6 sm:tw-p-8
+		tw-cursor-pointer
+		tw-group
+	">
+	<svg 
+		class="tw-text-informalLight tw-h-10 tw-w-16 tw-min-w-[64px] tw-block tw-my-auto sm:tw-col-auto" 
+		data-controller="cross-origin-svg" 
+		data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/services/study.svg"
+	></svg>
+	<div class="tw-flex tw-w-full tw-justify-between tw-items-end tw-gap-2 sm:tw-gap-6">
+			<a data-action-forwarder-target="destination" title="Comment devenir Cuisinier"
+			   href="https://www.maformation.fr/actualites/comment-devenir-cuisinier-40384" class="tw-no-underline">
+				<span class="tw-block tw-uppercase tw-typo-xs">Comment devenir</span>
+				<span class="tw-block tw-typo-l-bold">Cuisinier</span>
+			</a>
+		<span
+			data-action-forwarder-target="destination"
+			data-controller="atc" 
+			data-atc-l-value="xuggcf://jjj=pt=znsbezngvba=pt=se/npghnyvgrf/pbzzrag-qrirave-phvfvavre-40384f"
+			class="tw-flex tw-btn-icon-primary-m sm:tw-btn-icon-primary-l group-hover:tw-opacity-70 tw-text-secondary tw-min-w-[32px] sm:tw-my-auto"
+		>
+			<svg class="tw-h-3 tw-w-3 sm:tw-h-4 sm:tw-w-4 tw-m-auto" 
+				data-controller="cross-origin-svg" 
+				data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-full-right.svg">
+			</svg>
+		</span>
+	</div>
+</div>
+
+		</div>
+</section>
+
+<section class="tw-layout-grid">
+	<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+		Les missions d'un Cuisinier.
+	</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				
+
+
+Les missions récurrentes du cuisinier sont :
+
+<ul class="tw-list-disc tw-ml-6">
+	<li>Mettre en marche ses équipements de cuisine avant le début du service.</li>
+	<li>Réaliser un inventaire de ses stocks et s’occuper de commander les produits manquants.</li>
+	<li>Préparer les ustensiles de cuisine.</li>
+	<li>Éplucher, préparer et cuire des légumes et des fruits.</li>
+	<li>Préparer et cuire des viandes et des poissons.</li>
+	<li>Dresser des plats pour les servir à la clientèle.</li>
+	<li>Conditionner des produits.</li>
+	<li>Assurer la bonne conservation des produits selon les règles d’hygiène.</li>
+	<li>Entretenir ses outils et ses équipements en fin de service.</li>
+	<li>Diriger son équipe et conseiller ses commis afin que les recettes soient réalisées correctement.</li></ul>
+
+
+			</p>
+		</div>
+		<div class="xl:tw-col-start-3 xl:tw-col-end-13">
+
+				<div class="tw-typo-m tw-mt-8 sm:tw-mt-12"> Les offres d'emploi Cuisinier. </div>
+				<div class="tw-layout-inner-grid tw-gap-y-4 sm:tw-gap-y-6 tw-mt-4">
+						<div class="tw-col-span-6 lg:tw-col-span-4 xl:tw-col-span-6 2xl:tw-col-span-4">
+							
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer tw-group hocus-within:tw-border-grey"
+    class="tw-bg-secondary tw-rounded-sm tw-border tw-border-greyLighter "
+>
+    
+
+
+<div class="tw-grid tw-grid-rows-[min-content_min-content_auto] tw-h-full tw-w-full tw-p-4 sm:tw-p-6 sm:small-group:tw-p-4">
+    <header class="tw-relative">
+		<span data-action-forwarder-target="destination"
+			  data-controller="atc"
+			  title="Emploi Grillardin - Cuisinier - Temps Partiel H/F"
+			  data-atc-l-value="x/se-se/rzcybvf/38753841=pt=ugzyf"
+              class="tw-no-underline tw-typo-l sm:tw-typo-xl sm:small-group:tw-typo-l">
+			Grillardin - Cuisinier - Temps Partiel H/F
+		</span>
+		
+			<div class="tw-flex tw-gap-2">
+				<p class="tw-typo-s"></p>
+			</div>
+	</header>
+    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 sm:tw-flex-row sm:small-group:tw-flex-col">
+        <div class="tw-flex tw-gap-2">
+            <div class="tw-readonly tw-tag-secondary-s tw-w-fit tw-whitespace-nowrap tw-border-0">&#xC9;tampes - 91</div>
+        </div>
+    </div>
+    <div class="tw-self-end tw-mt-4 tw-flex tw-items-end tw-justify-between sm:tw-mt-2 sm:tw-flex-row-reverse sm:small-group:tw-mt-4 sm:small-group:tw-flex-row">
+        <span class="tw-btn-outline-m group-hocus-within:tw-bg-primary group-hocus-within:tw-border-transparent group-hocus-within:tw-text-secondary group-hocus-within:tw-opacity-100">Voir l’offre</span>
+        <p class="tw-typo-s tw-text-grey">hier</p>
+    </div>
+</div>
+
+
+</div>
+
+
+
+						</div>
+						<div class="tw-col-span-6 lg:tw-col-span-4 xl:tw-col-span-6 2xl:tw-col-span-4">
+							
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer tw-group hocus-within:tw-border-grey"
+    class="tw-bg-secondary tw-rounded-sm tw-border tw-border-greyLighter "
+>
+    
+
+
+<div class="tw-grid tw-grid-rows-[min-content_min-content_auto] tw-h-full tw-w-full tw-p-4 sm:tw-p-6 sm:small-group:tw-p-4">
+    <header class="tw-relative">
+		<span data-action-forwarder-target="destination"
+			  data-controller="atc"
+			  title="Emploi Grillardin - Cuisinier H/F"
+			  data-atc-l-value="x/se-se/rzcybvf/38753840=pt=ugzyf"
+              class="tw-no-underline tw-typo-l sm:tw-typo-xl sm:small-group:tw-typo-l">
+			Grillardin - Cuisinier H/F
+		</span>
+		
+			<div class="tw-flex tw-gap-2">
+				<p class="tw-typo-s"></p>
+			</div>
+	</header>
+    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 sm:tw-flex-row sm:small-group:tw-flex-col">
+        <div class="tw-flex tw-gap-2">
+            <div class="tw-readonly tw-tag-secondary-s tw-w-fit tw-whitespace-nowrap tw-border-0">&#xC9;tampes - 91</div>
+        </div>
+    </div>
+    <div class="tw-self-end tw-mt-4 tw-flex tw-items-end tw-justify-between sm:tw-mt-2 sm:tw-flex-row-reverse sm:small-group:tw-mt-4 sm:small-group:tw-flex-row">
+        <span class="tw-btn-outline-m group-hocus-within:tw-bg-primary group-hocus-within:tw-border-transparent group-hocus-within:tw-text-secondary group-hocus-within:tw-opacity-100">Voir l’offre</span>
+        <p class="tw-typo-s tw-text-grey">hier</p>
+    </div>
+</div>
+
+
+</div>
+
+
+
+						</div>
+						<div class="tw-col-span-6 lg:tw-col-span-4 xl:tw-col-span-6 2xl:tw-col-span-4">
+							
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer tw-group hocus-within:tw-border-grey"
+    class="tw-bg-secondary tw-rounded-sm tw-border tw-border-greyLighter "
+>
+    
+
+
+<div class="tw-grid tw-grid-rows-[min-content_min-content_auto] tw-h-full tw-w-full tw-p-4 sm:tw-p-6 sm:small-group:tw-p-4">
+    <header class="tw-relative">
+		<span data-action-forwarder-target="destination"
+			  data-controller="atc"
+			  title="Emploi Cuisinier - Cuisini&#xE8;re de Collectivit&#xE9; H/F"
+			  data-atc-l-value="x/se-se/rzcybvf/38753569=pt=ugzyf"
+              class="tw-no-underline tw-typo-l sm:tw-typo-xl sm:small-group:tw-typo-l">
+			Cuisinier - Cuisini&#xE8;re de Collectivit&#xE9; H/F
+		</span>
+		
+			<div class="tw-flex tw-gap-2">
+				<p class="tw-typo-s"></p>
+			</div>
+	</header>
+    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 sm:tw-flex-row sm:small-group:tw-flex-col">
+        <div class="tw-flex tw-gap-2">
+            <div class="tw-readonly tw-tag-secondary-s tw-w-fit tw-whitespace-nowrap tw-border-0">Ollioules - 83</div>
+        </div>
+    </div>
+    <div class="tw-self-end tw-mt-4 tw-flex tw-items-end tw-justify-between sm:tw-mt-2 sm:tw-flex-row-reverse sm:small-group:tw-mt-4 sm:small-group:tw-flex-row">
+        <span class="tw-btn-outline-m group-hocus-within:tw-bg-primary group-hocus-within:tw-border-transparent group-hocus-within:tw-text-secondary group-hocus-within:tw-opacity-100">Voir l’offre</span>
+        <p class="tw-typo-s tw-text-grey">hier</p>
+    </div>
+</div>
+
+
+</div>
+
+
+
+						</div>
+				</div>
+			<a class="tw-mt-4 sm:tw-mt-6 tw-block tw-link-text" title="Offres d’emploi Cuisinier" href="/fr-fr/emploi/metier_cuisinier.html">
+				Voir toutes les offres d’emploi pour Cuisinier
+				<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+					 data-controller="cross-origin-svg"
+					 data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+</section>
+
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Le travail d'un Cuisinier.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<span class="tw-typo-long-m-bold">Les plus</span>
+
+			<ul class="tw-list-disc tw-ml-6">
+	<li>Le métier de cuisinier est un métier de terrain qui exige une grande créativité.</li>
+	<li>La profession de cuisinier ou Chef de Partie offre des possibilités d’évolutions constantes, même pour les plus jeunes.</li>
+	<li>Il s’agit d’un métier où les recrutements sont constants. Il y a donc de grandes opportunités d’emploi.</li>
+	<li>Exercer en tant que cuisinier permet de travailler en équipe, de partager une passion commune et de réaliser de beaux projets en réunissant les compétences de chacun.</li>
+
+</ul>
+			<br>
+			<span class="tw-typo-long-m-bold">Les moins</span>
+			<ul class="tw-list-disc tw-ml-6">
+	<li>Les horaires de travail du cuisinier sont souvent irréguliers. Il devra être prêt à changer souvent de plage horaire pour s’adapter aux attentes de la clientèle.</li>
+	<li>Le cuisinier travaille en horaires fractionnés, en soirée, les week-ends et les jours fériés.</li>
+	<li>Ce métier induit une pression morale et physique. Il faut être concentré durant chaque service. Être cuisinier demande une grande énergie physique.</li>
+</ul>
+
+		</div>
+	</section>
+
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Les qualités et compétences pour devenir Cuisinier.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				Les qualités et compétences nécessaires à la profession de cuisinier sont nombreuses :
+
+<ul class="tw-list-disc tw-ml-6">
+	<li>En plus d’être un créateur et parfois un artiste, le cuisinier se doit d’être méthodique et organisé.</li>
+	<li>La rapidité d’exécution est une nécessité pour faire face aux “coups de feu” durant le service.</li>
+	<li>Il devra faire preuve de pédagogie pour manager son équipe de travail.</li>
+	<li>Le respect des règles d’hygiène est une priorité absolue pour le cuisinier et ses collaborateurs.</li>
+	<li>Il doit être capable de concevoir un menu et d’élaborer de nouvelles recettes.</li>
+	<li>Le cuisinier doit connaître les méthodes de conservation des aliments, la réglementation autour du respect de la chaîne du froid ainsi que les techniques pour éviter le gaspillage alimentaire.</li>
+	<li>Il devra maîtriser les outils mis à sa disposition dans la cuisine mais aussi être capable de gérer ses stocks ainsi que les coûts engendrés par ses préparations.</li>
+</ul>
+
+
+			</p>
+		</div>
+	</section>
+
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Le salaire d’un Cuisinier.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				En France, le salaire d’un cuisinier serait compris entre 1800 et 2500 euros bruts par mois. Ces montants correspondent à un salaire mensuel net compris entre 1400 euros et 1950 euros. La rémunération d’un cuisinier dépend également du secteur dans lequel se trouve son établissement, ainsi que de son niveau d’expertise.
+
+Le salaire mensuel d’un cuisinier en début de carrière sera plutôt de l’ordre de 1600 euros ou 1700 euros bruts. Cela permet à un cuisinier débutant de percevoir un salaire net compris entre 1250 euros et 1350 euros par mois. En début de carrière, le taux horaire du cuisinier est souvent de l’ordre de 11 euros bruts, pour un revenu annuel brut de plus de 20 000 euros en moyenne. Lorsqu’il dispose de plusieurs années d’expérience, ou s’il travaille dans un établissement prestigieux, le cuisinier peut prétendre à plus de 2500 euros bruts par mois. Pour pouvoir atteindre ce seuil de 1950 euros de salaire net, il devra souvent justifier de plusieurs expériences réussies dans le domaine de la restauration. Les salaires supérieurs à celui-ci sont souvent réservés à de grands chefs. Leur notoriété permet d’augmenter leur rémunération en même temps que leurs tarifs et la fréquentation de leur établissement. Dans certaines entreprises, le poste de cuisinier pourra être valorisé grâce au versement de pourboires laissés par les clients. L’employeur peut également choisir de verser une prime au cuisinier en fin de mois, en fonction des résultats obtenus par l’entreprise. Le salaire pourra, en outre, être versé sur 13 ou 14 mois si le contrat de travail ou la convention collective le prévoient.
+			</p>
+
+			<a href="/fr-fr/outil/salaire-brut-net.html"
+			   title="Salaire Brut en Net"
+			   class="tw-btn-primary-l tw-w-fit tw-mt-6 sm:tw-mt-10">
+				Calculer salaire brut en net
+			</a>
+		</div>
+	</section>
+
+	<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			L’environnement de travail.
+		</h2>
+		<div class="
+        tw-mt-4 sm:tw-mt-8
+        tw-typo-long-m
+        sm:tw-col-start-2 sm:tw-col-end-12
+        xl:tw-col-start-4 xl:tw-col-end-12
+    ">
+			<p>
+				<p>Le métier de cuisinier s’exerce au sein d’un restaurant, parfois seul ou accompagné d’une équipe selon les besoins de l’entreprise. Le cuisinier peut être son propre chef d’établissement, ou être sous la responsabilité directe de celui-ci. Ses relations professionnelles sont souvent liées à son équipe en cuisine (ses commis, ses plongeurs, ses chefs de partie&#8230;). Selon la volonté de l’établissement dans lequel il travaille, le cuisinier pourra être en contact direct avec la clientèle. Les conditions de travail varient toujours en fonction du type d’établissement dans lequel le cuisinier évolue. Le métier exige des horaires fractionnés en soirée et le week-end ainsi que les jours fériés. La profession de cuisinier implique de réaliser son métier dans un environnement à température élevée (utilisation de matériel de cuisson chauffant) avec la manipulation d’objets chauds et tranchants (casserole, poêle, couteau, hachoir&#8230;).</p>
+
+
+			</p>
+		</div>
+	</section>
+
+<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Les évolutions possibles.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				Au cours de ses fonctions, le cuisinier évolue souvent au sein d’un même restaurant ou en changeant régulièrement d’établissement. Il pourra commencer comme simple plongeur, puis devenir commis de cuisine. Après avoir accumulé un peu d’expérience, il pourra prétendre au poste de Chef de partie et jouir de quelques responsabilités. Enfin, le cuisinier évoluera vers le métier de Chef de cuisine puis de Directeur d’établissement. L’évolution du métier est étroitement liée à l’expérience acquise au fil du temps. Au fur et à mesure de ses expériences, le cuisinier gagne en aisance. Ses compétences sont plus grandes et il est alors capable de diriger une équipe.
+			</p>
+		</div>
+</section>
+
+<section class="tw-layout-grid">
+		<h2 class="tw-mt-12 sm:tw-mt-24 tw-typo-xl sm:tw-typo-2xl xl:tw-col-start-3 xl:tw-col-end-13">
+			Les entreprises qui recrutent un Cuisinier.
+		</h2>
+		<div class="
+			tw-mt-4 sm:tw-mt-8
+			tw-typo-long-m
+			sm:tw-col-start-2 sm:tw-col-end-12
+			xl:tw-col-start-4 xl:tw-col-end-12
+		">
+			<p>
+				Le cuisinier peut être recruté par différentes structures, tels que les restaurants traditionnels, mais aussi les brasseries, les entreprises alimentaires ou les restaurants de collectivité. Des opportunités d’embauche sont également à prévoir dans les établissements de restauration mobile (bateau de croisière, train...), les restaurants gastronomiques, les traiteurs ou même l’armée. Les hôtels-restaurants recherchent, eux aussi, des cuisiniers pour assurer le service de leur clientèle. Enfin, il est possible d'exercer le métier de cuisinier en travaillant à son compte, au domicile des particuliers (déplacements) ou en créant son propre établissement.
+
+
+			</p>
+		</div>
+	
+		<div class="tw-mt-8 sm:tw-mt-12 xl:tw-col-start-3 xl:tw-col-end-13">
+			<div class="sm:tw-layout-inner-grid tw-gap-y-6 sm:tw-snap-none tw-snap-x tw-snap-mandatory tw-flex tw-overflow-x-auto sm:tw-overflow-visible scrollbar:tw-hidden">
+					<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-6 sm:tw-ml-0 xl:tw-col-span-4">
+						
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer hocus-within:tw-scale-105 tw-transition-all tw-duration-500 tw-group"
+    class="tw-flex tw-flex-col tw-relative tw-bg-white tw-rounded-sm tw-border tw-border-greyLighter tw-h-full tw-overflow-hidden"
+>
+    <div class="tw-relative">
+        <div class="tw-h-[8.75rem] tw-relative tw-rounded-t-sm tw-overflow-hidden tw-bg-informalLighter">
+
+            <img 
+                alt=""
+                loading="lazy"
+                class="tw-w-full tw-h-full tw-object-cover tw-object-top"
+                src="https://f.hellowork.com/media/61461/495_330/Sodexo_61461_63809488646426218344965099.jpeg"
+            />
+        </div>
+
+        <div 
+            class="tw-bg-white tw-absolute tw-left-6 tw-bottom-[-22px] tw-w-24 tw-h-11 tw-px-3 tw-py-2 tw-rounded-xs tw-overflow-hidden"
+        >
+            <img alt="" loading="lazy" src="https://f.hellowork.com/img/entreprises/61461.png" />
+        </div>
+    </div>
+    <div class="tw-flex tw-gap-2 tw-bg-secondary tw-grow tw-px-6 tw-pt-8 tw-pb-6 tw-justify-between tw-items-end">
+        <div class="tw-flex tw-flex-col tw-self-start">
+            <a
+                data-action-forwarder-target="destination"
+                href="/fr-fr/entreprises/sodexo-61461.html"
+                class="tw-no-underline tw-typo-l tw-line-clamp-2"
+                onclick="PromotionClick({'name': 'Sodexo', 'id': '61461', 'creative': 'Bloc Entreprise', 'position': ''});"
+            >
+                Sodexo
+            </a>
+            <div class="tw-mt-3">1168 jobs</div>
+        </div>
+        <div 
+            class="tw-flex tw-btn-icon-primary-l tw-text-secondary tw-shrink-0 group-hover-within:tw-opacity-70"
+        >
+            <svg class="tw-h-4 tw-w-4 tw-m-auto" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-full-right.svg"></svg>
+        </div>
+    </div>
+</div>
+					</div>
+					<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-6 sm:tw-ml-0 xl:tw-col-span-4">
+						
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer hocus-within:tw-scale-105 tw-transition-all tw-duration-500 tw-group"
+    class="tw-flex tw-flex-col tw-relative tw-bg-white tw-rounded-sm tw-border tw-border-greyLighter tw-h-full tw-overflow-hidden"
+>
+    <div class="tw-relative">
+        <div class="tw-h-[8.75rem] tw-relative tw-rounded-t-sm tw-overflow-hidden tw-bg-jobsCandidacyLighter">
+
+            <svg
+                data-controller="cross-origin-svg"
+                data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/illustrations/classical-content.svg"
+                class="tw-absolute tw-left-28 -tw-top-5 tw-w-80 tw-text-jobsCandidacyLight/60"/>
+        </div>
+
+        <div 
+            class="tw-bg-white tw-absolute tw-left-6 tw-bottom-[-22px] tw-w-24 tw-h-11 tw-px-3 tw-py-2 tw-rounded-xs tw-overflow-hidden"
+        >
+            <img alt="" loading="lazy" src="https://f.hellowork.com/img/entreprises/78920.png" />
+        </div>
+    </div>
+    <div class="tw-flex tw-gap-2 tw-bg-secondary tw-grow tw-px-6 tw-pt-8 tw-pb-6 tw-justify-between tw-items-end">
+        <div class="tw-flex tw-flex-col tw-self-start">
+            <a
+                data-action-forwarder-target="destination"
+                href="/fr-fr/entreprises/staffmatch-78920.html"
+                class="tw-no-underline tw-typo-l tw-line-clamp-2"
+                onclick="PromotionClick({'name': 'Staffmatch', 'id': '78920', 'creative': 'Bloc Entreprise', 'position': ''});"
+            >
+                Staffmatch
+            </a>
+            <div class="tw-mt-3">1084 jobs</div>
+        </div>
+        <div 
+            class="tw-flex tw-btn-icon-primary-l tw-text-secondary tw-shrink-0 group-hover-within:tw-opacity-70"
+        >
+            <svg class="tw-h-4 tw-w-4 tw-m-auto" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-full-right.svg"></svg>
+        </div>
+    </div>
+</div>
+					</div>
+					<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-6 sm:tw-ml-0 xl:tw-col-span-4">
+						
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="tw-cursor-pointer hocus-within:tw-scale-105 tw-transition-all tw-duration-500 tw-group"
+    class="tw-flex tw-flex-col tw-relative tw-bg-white tw-rounded-sm tw-border tw-border-greyLighter tw-h-full tw-overflow-hidden"
+>
+    <div class="tw-relative">
+        <div class="tw-h-[8.75rem] tw-relative tw-rounded-t-sm tw-overflow-hidden tw-bg-informalEditorialLighter">
+
+            <img 
+                alt=""
+                loading="lazy"
+                class="tw-w-full tw-h-full tw-object-cover tw-object-top"
+                src="https://f.hellowork.com/media/87232/495_330/BuffaloGrill_87232_63806011996346083261474376.jpeg"
+            />
+        </div>
+
+        <div 
+            class="tw-bg-white tw-absolute tw-left-6 tw-bottom-[-22px] tw-w-24 tw-h-11 tw-px-3 tw-py-2 tw-rounded-xs tw-overflow-hidden"
+        >
+            <img alt="" loading="lazy" src="https://f.hellowork.com/img/entreprises/87232.png" />
+        </div>
+    </div>
+    <div class="tw-flex tw-gap-2 tw-bg-secondary tw-grow tw-px-6 tw-pt-8 tw-pb-6 tw-justify-between tw-items-end">
+        <div class="tw-flex tw-flex-col tw-self-start">
+            <a
+                data-action-forwarder-target="destination"
+                href="/fr-fr/entreprises/buffalo-grill-87232.html"
+                class="tw-no-underline tw-typo-l tw-line-clamp-2"
+                onclick="PromotionClick({'name': 'Buffalo Grill', 'id': '87232', 'creative': 'Bloc Entreprise', 'position': ''});"
+            >
+                Buffalo Grill
+            </a>
+            <div class="tw-mt-3">553 jobs</div>
+        </div>
+        <div 
+            class="tw-flex tw-btn-icon-primary-l tw-text-secondary tw-shrink-0 group-hover-within:tw-opacity-70"
+        >
+            <svg class="tw-h-4 tw-w-4 tw-m-auto" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-full-right.svg"></svg>
+        </div>
+    </div>
+</div>
+					</div>
+			</div>
+
+			<a class="tw-block tw-link-text tw-mt-4 sm:tw-mt-6"
+			   title="Entreprises Cuisinier"
+			   href="/fr-fr/entreprise/metier_cuisinier.html">
+				Voir tous les employeurs qui recrutent le plus un Cuisinier
+				<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+					 data-controller="cross-origin-svg"
+					 data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+</section>
+
+	<section class="tw-layout-grid">
+		<div class="tw-mt-12 sm:tw-mt-24 xl:tw-col-start-3 xl:tw-col-end-13">
+			<h2 class="tw-typo-xl sm:tw-typo-2xl ">
+				Les métiers proches du métier Cuisinier.
+			</h2>
+			<div class="tw-mt-3 sm:tw-mt-8">
+				<div class="sm:tw-layout-inner-grid sm:tw-snap-none tw-gap-y-8 tw-snap-x tw-snap-mandatory tw-flex tw-overflow-x-auto sm:tw-overflow-visible scrollbar:tw-hidden">
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/pizzaiolo.jpg"
+        alt="Pizzaiolo"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Pizzaiolo"
+            href="/fr-fr/metiers/pizzaiolo.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Pizzaiolo
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/second-de-cuisine.jpg"
+        alt="Second de cuisine"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Second de cuisine"
+            href="/fr-fr/metiers/second-de-cuisine.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Second de cuisine
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/chef-de-partie.jpg"
+        alt="Chef de partie"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Chef de partie"
+            href="/fr-fr/metiers/chef-de-partie.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Chef de partie
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/directeur-de-restaurant.jpg"
+        alt="Directeur de restaurant"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Directeur de restaurant"
+            href="/fr-fr/metiers/directeur-de-restaurant.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Directeur de restaurant
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/economiste.jpg"
+        alt="Economiste"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Economiste"
+            href="/fr-fr/metiers/economiste.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Economiste
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/crepier.jpg"
+        alt="Cr&#xEA;pier"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Cr&#xEA;pier"
+            href="/fr-fr/metiers/crepier.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Cr&#xEA;pier
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/commis-de-salle.jpg"
+        alt="Commis de salle"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Commis de salle"
+            href="/fr-fr/metiers/commis-de-salle.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Commis de salle
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/manager-en-restauration.jpg"
+        alt="Manager en restauration"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Manager en restauration"
+            href="/fr-fr/metiers/manager-en-restauration.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Manager en restauration
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/gerant-de-cantine-scolaire.jpg"
+        alt="G&#xE9;rant de cantine scolaire"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier G&#xE9;rant de cantine scolaire"
+            href="/fr-fr/metiers/gerant-de-cantine-scolaire.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            G&#xE9;rant de cantine scolaire
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/equipier-polyvalent-de-restauration.jpg"
+        alt="Equipier polyvalent de restauration"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Equipier polyvalent de restauration"
+            href="/fr-fr/metiers/equipier-polyvalent-de-restauration.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Equipier polyvalent de restauration
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/chef-de-rang.jpg"
+        alt="Chef de rang"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Chef de rang"
+            href="/fr-fr/metiers/chef-de-rang.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Chef de rang
+        </a>
+</div>
+					</div>
+						<div class="tw-snap-start tw-min-w-[87%] tw-ml-6 sm:tw-col-span-4 sm:tw-ml-0">
+							
+
+
+
+<div 
+    data-controller="action-forwarder"
+    data-action-forwarder-connected-class="hocus-within:tw-scale-105 tw-transition-all tw-duration-500"
+    class="
+        tw-cursor-pointer
+        tw-relative
+        tw-h-[168px]
+        before:tw-rounded-sm
+        before:tw-absolute
+        before:tw-inset-0
+        before:tw-from-[rgba(0,0,0,0.6)]
+        before:tw-bg-gradient-to-b
+    "
+>
+
+    <img 
+        src="https://f.hellowork.com/obs-static-images/seo/ObsJob/chef-de-cuisine.jpg"
+        alt="Chef de cuisine"
+        class="tw-h-full tw-w-full tw-rounded-sm tw-object-cover"
+    >
+
+        <a
+            data-action-forwarder-target="destination"
+			title="Fiche métier Chef de cuisine"
+            href="/fr-fr/metiers/chef-de-cuisine.html"
+            class="tw-typo-l-bold tw-text-secondary tw-absolute tw-top-6 tw-left-6 tw-no-underline tw-pr-6"
+        >
+            Chef de cuisine
+        </a>
+</div>
+					</div>
+			</div>
+			</div>
+			<a class="tw-block tw-link-text tw-mt-4 sm:tw-mt-6 md:tw-mt-8"
+			   title="Index Métier Restauration"
+			   href="/fr-fr/metier/index-domaine_restauration.html">
+				Voir toutes les fiches métiers du domaine Restauration
+				<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+					 data-controller="cross-origin-svg"
+					 data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+	</section>
+
+<section class="tw-layout-grid sm:tw-mt-12">
+
+		<div class="tw-mt-12">
+			
+
+
+
+
+
+<div class="tw-bg-transparent tw-p-0">
+	<h2 class="tw-typo-xl tw-mb-6">L&#x27;emploi dans le domaine Restauration.</h2>
+	<div class="sm:tw-mx-14 xl:tw-mx-24">
+		<input type="checkbox" class="tw-hidden tw-peer" id="collapse_domainjobsearch" />
+		<ul class="tw-mt-6 sm:tw-gap-x-8 tw-gap-y-4 sm:tw-grid sm:tw-grid-cols-2">
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur.html" title="Offres d&#x27;emploi Serveur">Emploi Serveur</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine.html" title="Offres d&#x27;emploi Commis de cuisine">Emploi Commis de cuisine</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_employe-de-restaurant.html" title="Offres d&#x27;emploi Employ&#xE9; de restaurant">Emploi Employ&#xE9; de restaurant</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration.html" title="Offres d&#x27;emploi Plongeur">Emploi Plongeur</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_second-de-cuisine.html" title="Offres d&#x27;emploi Second de cuisine">Emploi Second de cuisine</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_chef-cuisinier.html" title="Offres d&#x27;emploi Chef de cuisine">Emploi Chef de cuisine</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_chef-de-partie.html" title="Offres d&#x27;emploi Chef de partie">Emploi Chef de partie</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_barman.html" title="Offres d&#x27;emploi Barman">Emploi Barman</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_chef-de-rang.html" title="Offres d&#x27;emploi Chef de rang">Emploi Chef de rang</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-traiteur.html" title="Offres d&#x27;emploi Traiteur">Emploi Traiteur</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_directeur-de-restaurant.html" title="Offres d&#x27;emploi Responsable restauration">Emploi Responsable restauration</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-salle.html" title="Offres d&#x27;emploi Commis de salle">Emploi Commis de salle</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_pizzaiolo.html" title="Offres d&#x27;emploi Pizzaiolo">Emploi Pizzaiolo</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_gerant-de-restaurant-de-collectivite.html" title="Offres d&#x27;emploi Chef g&#xE9;rant restauration collective">Emploi Chef g&#xE9;rant restauration collective</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_sommelier.html" title="Offres d&#x27;emploi Sommelier">Emploi Sommelier</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_aide-cuisinier.html" title="Offres d&#x27;emploi Aide cuisinier">Emploi Aide cuisinier</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_grillardin.html" title="Offres d&#x27;emploi Grillardin">Emploi Grillardin</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_employe-de-cantine.html" title="Offres d&#x27;emploi Employ&#xE9; de cantine">Emploi Employ&#xE9; de cantine</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_steward-de-train.html" title="Offres d&#x27;emploi Agent de service commercial de train contr&#xF4;leur">Emploi Agent de service commercial de train contr&#xF4;leur</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_chef-patissier.html" title="Offres d&#x27;emploi Chef p&#xE2;tissier">Emploi Chef p&#xE2;tissier</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_gerant-de-cafe.html" title="Offres d&#x27;emploi Responsable bar">Emploi Responsable bar</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_oenologue.html" title="Offres d&#x27;emploi Oenologue">Emploi Oenologue</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_crepier.html" title="Offres d&#x27;emploi Cr&#xEA;pier">Emploi Cr&#xEA;pier</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_employe-de-banquet.html" title="Offres d&#x27;emploi Employ&#xE9; de banquet">Emploi Employ&#xE9; de banquet</a></li>
+		</ul>
+		<label class="tw-typo-s tw-block tw-mt-4 tw-w-fit  sm:tw-hidden" for="collapse_domainjobsearch">
+			<span class="tw-block peer-parent-checked:tw-hidden">
+				Voir plus
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-down.svg"></svg>
+			</span>
+			<span class="tw-hidden peer-parent-checked:tw-block">
+				Voir moins
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-up.svg"></svg>
+			</span>
+		</label>
+	</div>
+</div>
+
+
+			<a class="tw-block tw-link-text tw-mt-4 sm:tw-mx-14 xl:tw-mx-24"
+				title="Index Emploi Restauration"
+				href="/fr-fr/emploi/index-domaine_restauration.html">
+					Parcourir toutes les offres d’emploi du domaine Restauration
+					<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+						data-controller="cross-origin-svg"
+						data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+	
+		<div class="tw-mt-12">
+			
+
+
+
+
+
+<div class="tw-bg-transparent tw-p-0">
+	<h2 class="tw-typo-xl tw-mb-6">L&#x2018;emploi par ville pour le m&#xE9;tier Cuisinier.</h2>
+	<div class="sm:tw-mx-14 xl:tw-mx-24">
+			<p class="tw-mt-2 tw-typo-long-m">
+				Les d&#xE9;bouch&#xE9;s sont nombreux dans ce secteur d&#x2019;activit&#xE9;, et il est possible de trouver un emploi Cuisinier aux quatre coins de l&#x2019;hexagone, que cela soit &#xE0;  Paris, Lyon ou encore dans la ville de Bordeaux.
+			</p>
+		<input type="checkbox" class="tw-hidden tw-peer" id="collapse_cityjobsearch" />
+		<ul class="tw-mt-6 sm:tw-gap-x-8 tw-gap-y-4 sm:tw-grid sm:tw-grid-cols-2">
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_paris-75000.html" title="Offres d&#x27;emploi Cuisinier Paris">Emploi Cuisinier Paris</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_lyon-69000.html" title="Offres d&#x27;emploi Cuisinier Lyon">Emploi Cuisinier Lyon</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_bordeaux-33000.html" title="Offres d&#x27;emploi Cuisinier Bordeaux">Emploi Cuisinier Bordeaux</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_marseille-13000.html" title="Offres d&#x27;emploi Cuisinier Marseille">Emploi Cuisinier Marseille</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_nice-06000.html" title="Offres d&#x27;emploi Cuisinier Nice">Emploi Cuisinier Nice</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_toulouse-31000.html" title="Offres d&#x27;emploi Cuisinier Toulouse">Emploi Cuisinier Toulouse</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_strasbourg-67000.html" title="Offres d&#x27;emploi Cuisinier Strasbourg">Emploi Cuisinier Strasbourg</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_nantes-44000.html" title="Offres d&#x27;emploi Cuisinier Nantes">Emploi Cuisinier Nantes</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_grenoble-38000.html" title="Offres d&#x27;emploi Cuisinier Grenoble">Emploi Cuisinier Grenoble</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_clermont-ferrand-63000.html" title="Offres d&#x27;emploi Cuisinier Clermont-Ferrand">Emploi Cuisinier Clermont-Ferrand</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_la-rochelle-17000.html" title="Offres d&#x27;emploi Cuisinier La Rochelle">Emploi Cuisinier La Rochelle</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_dijon-21000.html" title="Offres d&#x27;emploi Cuisinier Dijon">Emploi Cuisinier Dijon</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_caen-14000.html" title="Offres d&#x27;emploi Cuisinier Caen">Emploi Cuisinier Caen</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_brest-29200.html" title="Offres d&#x27;emploi Cuisinier Brest">Emploi Cuisinier Brest</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_montpellier-34000.html" title="Offres d&#x27;emploi Cuisinier Montpellier">Emploi Cuisinier Montpellier</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.hellowork.com/fr-fr/emploi/metier_cuisinier-ville_reims-51100.html" title="Offres d&#x27;emploi Cuisinier Reims">Emploi Cuisinier Reims</a></li>
+		</ul>
+		<label class="tw-typo-s tw-block tw-mt-4 tw-w-fit  sm:tw-hidden" for="collapse_cityjobsearch">
+			<span class="tw-block peer-parent-checked:tw-hidden">
+				Voir plus
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-down.svg"></svg>
+			</span>
+			<span class="tw-hidden peer-parent-checked:tw-block">
+				Voir moins
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-up.svg"></svg>
+			</span>
+		</label>
+	</div>
+</div>
+
+
+			<a class="tw-block tw-link-text tw-mt-4 sm:tw-mx-14 xl:tw-mx-24"
+			   title="Index Emploi Cuisinier"
+			   href="/fr-fr/emploi/index-metier_cuisinier.html">
+					Parcourir toutes les offres d’emploi du métier Cuisinier
+					<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+						data-controller="cross-origin-svg"
+						data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+
+		<div class="tw-mt-12">
+			
+
+
+
+
+
+<div class="tw-bg-transparent tw-p-0">
+	<h2 class="tw-typo-xl tw-mb-6">Apprendre avec des formations en Restauration.</h2>
+	<div class="sm:tw-mx-14 xl:tw-mx-24">
+		<input type="checkbox" class="tw-hidden tw-peer" id="collapse_domainformationsearch" />
+		<ul class="tw-mt-6 sm:tw-gap-x-8 tw-gap-y-4 sm:tw-grid sm:tw-grid-cols-2">
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_micro-brasserie.html" title="Formation Micro brasserie">Formation Micro brasserie</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_oenologie.html" title="Formation &#x152;nologie">Formation &#x152;nologie</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_boulanger.html" title="Formation Boulanger">Formation Boulanger</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_brasseur.html" title="Formation Brasseur">Formation Brasseur</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_chef-cuisinier.html" title="Formation Chef cuisinier">Formation Chef cuisinier</a></li>
+				<li class=""><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_commis-de-cuisine.html" title="Formation Commis de cuisine">Formation Commis de cuisine</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_snacking.html" title="Formation Snacking">Formation Snacking</a></li>
+				<li class="tw-hidden peer-parent-checked:tw-block sm:tw-block"><a class="tw-typo-m tw-link-text tw-my-1 tw-block" href="https://www.maformation.fr/formations/metier_permis-d-exploitation.html" title="Formation Permis d&#x27;exploitation">Formation Permis d&#x27;exploitation</a></li>
+		</ul>
+		<label class="tw-typo-s tw-block tw-mt-4 tw-w-fit  sm:tw-hidden" for="collapse_domainformationsearch">
+			<span class="tw-block peer-parent-checked:tw-hidden">
+				Voir plus
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-down.svg"></svg>
+			</span>
+			<span class="tw-hidden peer-parent-checked:tw-block">
+				Voir moins
+				<svg class="tw-w-2 tw-h-4 tw-inline" data-controller="cross-origin-svg" data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-up.svg"></svg>
+			</span>
+		</label>
+	</div>
+</div>
+
+
+			<a class="tw-block tw-link-text tw-mt-4 sm:tw-mx-14 xl:tw-mx-24"
+				title="Index Formation Restauration"
+			   href="https://www.maformation.fr/formations/index-domaine_restauration.html">
+					Parcourir toutes les formations du domaine Restauration
+					<svg class="tw-inline tw-h-2 tw-ml-1 tw-mb-1"
+						data-controller="cross-origin-svg"
+						data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/nav/arrow-right.svg">
+			</a>
+		</div>
+
+
+	<span class="tw-typo-xs tw-mt-8 sm:tw-mt-12 xl:tw-col-start-3 xl:tw-col-end-13">Crédit photo : &#xA9;rh2010-stock.adobe.com</span>
+</section>
+	
+
+
+
+
+    <turbo-frame id="service-adaptation" src=""
+                data-controller="service-adaptation"
+                data-service-adaptation-url-value="/fr-fr/country/getpopinframeview"
+                data-service-adaptation-hide-message-class="tw-hidden">
+    </turbo-frame>
+
+
+    <div class="tw-layout-grid">
+
+	<div class="tw-mt-2 sm:tw-mt-10">
+		<!-- delete asSection when serp is done and use tw-layout-grid-->
+
+	<nav class="asSection tw-py-10">
+		<ol class="sm:tw-flex tw-text-grey tw-text-sm">
+					<li class="tw-pr-2 tw-pb-1 sm:tw-pb-0 first:before:tw-content-[''] before:tw-content-['>']">
+						<a href="https://www.hellowork.com/fr-fr/" title="Accueil" class="tw-link-text">
+							Accueil
+						</a>
+					</li>
+					<li class="tw-pr-2 tw-pb-1 sm:tw-pb-0 first:before:tw-content-[''] before:tw-content-['>']">
+						<a href="https://www.hellowork.com/fr-fr/metier.html" title="M&#xE9;tier" class="tw-link-text">
+							M&#xE9;tier
+						</a>
+					</li>
+					<li class="tw-pr-2 tw-pb-1 sm:tw-pb-0 first:before:tw-content-[''] before:tw-content-['>']">
+						<a href="https://www.hellowork.com/fr-fr/metier/domaine_restauration.html" title="Restauration" class="tw-link-text">
+							Restauration
+						</a>
+					</li>
+					<li class="before:tw-content-['>']">
+						<span class="tw-font-semibold">
+                        	Cuisinier
+                    	</span>
+					</li>
+		</ol>
+	</nav>
+
+	</div>
+    </div>
+
+    <div class="tw-mt-12 sm:tw-mt-20">
+        
+
+
+<footer class="tw-bg-greyLightest">
+    <div class="tw-layout-grid tw-py-6 sm:tw-py-14 xl:tw-py-12 tw-typo-s">
+        <div class="tw-layout-inner-grid">
+            <div class="tw-col-span-full sm:tw-col-span-3">        
+                <span class="tw-typo-l">
+                    Les sites
+                </span>
+                <ul
+                    class="tw-flex tw-flex-col tw-gap-4 tw-mt-4 tw-mb-6 sm:tw-mt-6 sm:tw-mb-10"
+                >
+                    <li><a class="tw-link-text" href="https://hellocv.com/" target="_blank" rel="noopener">HelloCV</a></li>
+                    <li><a class="tw-link-text" href="https://www.helloworkplace.fr/" target="_blank" rel="noopener">HelloWorkplace</a></li>
+                    <li><a class="tw-link-text" href="https://www.blogdumoderateur.com/" target="_blank" rel="noopener">BDM</a></li>
+                    <li><a class="tw-link-text" href="https://www.jobijoba.com/fr/" target="_blank" rel="noopener">JobiJoba</a></li>
+                    <li>
+                        <span 
+                            class="tw-atc-text" 
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://jjj=pt=znsbezngvba=pt=se/f" 
+                            data-atc-t-value="x_oynaxf"
+                        >
+                            MaFormation
+                        </span>
+                    </li>
+                    <li><a class="tw-link-text" href="https://diplomeo.com/" target="_blank" rel="noopener">Diplomeo</a></li>
+                </ul>
+            </div>
+            <div class="tw-col-span-full sm:tw-col-span-3">
+                <span class="tw-typo-l">L&#x27;emploi</span>
+                <ul
+                    class="tw-flex tw-flex-col tw-gap-4 tw-mt-4 tw-mb-6 sm:tw-mt-6 sm:tw-mb-10"
+                >
+                        <li>
+                            <span 
+                                class="tw-atc-text" 
+                                data-controller="atc"
+                                data-atc-l-value="x/se-se/rzcybv/vaqrk-pngrtbevr=pt=ugzyf"
+                            >
+                                Offres d&#x27;emploi par m&#xE9;tier
+                            </span>
+                        </li>
+                        <li>
+                            <span 
+                                class="tw-atc-text" 
+                                data-controller="atc"
+                                data-atc-l-value="x/se-se/rzcybv/vaqrk-ybpnyvgr=pt=ugzyf"
+                            >
+                                Offres d&#x27;emploi par ville
+                            </span>
+                        </li>
+                        <li>
+                            <span 
+                                class="tw-atc-text" 
+                                data-controller="atc"
+                                data-atc-l-value="x/se-se/ragercevfr=pt=ugzyf"
+                            >
+                                Offres d&#x27;emploi par entreprise
+                            </span>
+                        </li>
+                        <li>
+                            <span 
+                                class="tw-atc-text" 
+                                data-controller="atc"
+                                data-atc-l-value="x/se-se/rzcybv/vaqrk-zbg-pyr=pt=ugzyf"
+                            >
+                                Offres d&#x27;emploi par mots cl&#xE9;s
+                            </span>
+                        </li>
+                </ul>
+            </div>
+            <div class="tw-col-span-full sm:tw-col-span-3">
+                <span class="tw-typo-l">
+                    L’entreprise
+                </span>
+                <ul
+                    class="tw-flex tw-flex-col tw-gap-4 tw-mt-4 tw-mb-6 sm:tw-mt-6 sm:tw-mb-10"
+                >
+                    <li>
+                        <span 
+                            class="tw-atc-text" 
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://jjj=pt=uryybjbex-tebhc=pt=pbzf" 
+                            data-atc-t-value="x_oynaxf"
+                        >
+                            Qui sommes-nous&nbsp;?
+                        </span>
+                    </li>
+                    <li>
+                        <span 
+                            class="tw-atc-text" 
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://pneevrerf=pt=uryybjbex-tebhc=pt=pbzf" 
+                            data-atc-t-value="x_oynaxf"
+                        >
+                            On recrute
+                        </span>
+                    </li>
+                    <li>
+                        <span 
+                            class="tw-atc-text" 
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://erpehgrhe=pt=uryybjbex=pt=pbz/zrfnccyvpngvbaff"
+                        >
+                            Accès client
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="tw-col-span-full sm:tw-col-span-3">
+                <span class="tw-typo-l">
+                    Les apps
+                </span>
+                <div 
+                    class="tw-flex tw-flex-wrap tw-items-center tw-flex-row sm:tw-flex-col tw-mt-4 sm:tw-mt-6 tw-mb-6 tw-gap-6 sm:tw-gap-4 sm:tw-w-36 tw-text-white"
+                >
+                        <img
+                            alt="Application Android (nouvelle fenêtre)"
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://cynl=pt=tbbtyr=pt=pbz/fgber/nccf/qrgnvyf?vq=pbz=pt=ertvbafwbo=pt=naqebvqf"
+                            data-atc-t-value="x_oynaxf"
+                            class="tw-w-32 tw-cursor-pointer"
+                            src="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/badgeAndroid.svg"
+                        />
+                        <img
+                            alt="Application ios (nouvelle fenêtre)"
+                            data-controller="atc"
+                            data-atc-l-value="xuggcf://nccf=pt=nccyr=pt=pbz/se/ncc/ertvbafwbo-rzcybv/vq408615037?zg=8f"
+                            data-atc-t-value="x_oynaxf"
+                            class="tw-w-32 tw-cursor-pointer"
+                            src="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/badgeAppStore.svg"
+                        />
+                </div>
+            </div>
+            <div class="tw-col-span-full tw-flex tw-flex-col xl:tw-flex-row tw-gap-4 tw-flex-wrap tw-justify-between">
+                <div
+                    class="tw-flex tw-flex-wrap tw-gap-4"
+                >
+                        <span 
+                            class="tw-atc-text" 
+                            data-controller="atc"
+                            data-atc-l-value="x/se-se/cntr/vasbf-yrtnyrf=pt=ugzyf"
+                        >
+                            Informations légales
+                        </span>
+                    <span 
+                        class="tw-atc-text" 
+                        data-controller="atc"
+                        data-atc-l-value="x/se-se/cntr/pth=pt=ugzyf"
+                    >
+                        CGU
+                    </span>
+                    <span 
+                        class="tw-atc-text"
+                        data-controller="atc"
+                        data-atc-l-value="x/se-se/cntr/cqp=pt=ugzyf"
+                    >
+                        Politique de confidentialité
+                    </span>
+                    <span 
+                        class="tw-link-text" 
+                        data-hw-cc-btn-toggle-modal
+                    >
+                        Gérer mes cookies
+                    </span>
+                    <span 
+                        class="tw-atc-text" 
+                        data-controller="atc"
+                        data-atc-l-value="x/se-se/cntr/pbagnpg=pt=ugzyf"
+                    >
+                        Aide et contact
+                    </span>
+                </div>
+                <div
+                    class="tw-flex tw-gap-x-4"
+                >
+                    <div>Nous suivre sur :</div>
+                    <ul class="tw-flex tw-gap-4">
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://jjj=pt=snprobbx=pt=pbz/uryybjbexpbzf" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/facebook.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://jjj=pt=lbhghor=pt=pbz/punaary/HPel7GvA8-qSXDHtlHZLNAGDf" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/youtube.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://gjvggre=pt=pbz/uryybjbexf" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/twitter.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://jjj=pt=gvxgbx=pt=pbz/@uryybjbexpbzf" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/tiktok.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://jjj=pt=vafgntenz=pt=pbz/uryybjbex_/f" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/instagram.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                        <li class="tw-flex">
+                            <span
+                                class="tw-m-auto hocus:tw-text-grey tw-cursor-pointer"
+                                data-controller="atc" 
+                                data-atc-l-value="xuggcf://jjj=pt=yvaxrqva=pt=pbz/pbzcnal/uryybjbexpbz/f" 
+                                data-atc-t-value="x_oynaxf"
+                            >
+                                <svg class="tw-h-4 tw-w-4" 
+                                    data-controller="cross-origin-svg" 
+                                    data-cross-origin-svg-url-value="https://f.hellowork.com/hellowork/tags/2.35.0//img/svg/social-networks/linkedin.svg"
+                                ></svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    
+    
+<script>
+
+
+</script>
+
+    
+
+<script>
+
+
+</script>
+
+    <!-- New Relic : Envoi du page type -->
+    <script type="text/javascript">
+        if (
+            typeof window.newrelic !== 'undefined' &&
+            typeof window.dataLayer !== 'undefined' &&
+            typeof window.dataLayer[0] !== 'undefined' &&
+            typeof window.dataLayer[0].typePage !== 'undefined'
+        ) {
+            window.newrelic.setCustomAttribute('pageType', window.dataLayer[0].typePage)
+        }
+    </script>
+
+        </main>
+        <script src="https://f.hellowork.com/hellowork/tags/2.35.0/js/lastack_minimum_js.js" defer></script>
+        <script data-turbo-suppress-warning src="https://f.hellowork.com/hellowork/tags/2.35.0/js/stimulus.js" defer></script>
+        <script src="https://f.hellowork.com/hellowork/tags/2.35.0/js/general.js" defer></script>
+
+        
+    </body>
+</html>
