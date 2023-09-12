@@ -10,6 +10,7 @@ import Home from "../pages/admin/Home";
 import Shop from "../pages/admin/Shop";
 import Register from "../pages/admin/Register";
 import { AuthContextProvider } from "../contexts/AuthContext";
+import Error from "../pages/Error";
 
 const Admin = () => {
   return (
@@ -21,9 +22,10 @@ const Admin = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/message" element={<Message />} />
           <Route path="/allproducts" element={<Allproducts />} />
-          <Route path="/home" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </AuthContextProvider>
     </div>

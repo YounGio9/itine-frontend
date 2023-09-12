@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import logo from "../../assets/logo.png"
-import icon_notification from "../../assets/notification.png"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import icon_notification from "../../assets/notification.png";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,11 +60,16 @@ export default function Navbar() {
             )}
           </button>
           {/* menu for nav */}
-          <div className={` md:block w-full md:w-auto ${mobileMenuOpen ? "block" : "hidden"}`} id="mobile-menu">
+          <div
+            className={` md:block w-full md:w-auto ${
+              mobileMenuOpen ? "block" : "hidden"
+            }`}
+            id="mobile-menu"
+          >
             <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-xl md:font-semibold">
               <li>
                 <Link
-                  to="/admin/home"
+                  to="/admin/"
                   className="bg-gray-50 md:bg-transparent hover:bg-red-300 hover:text-white md:hover:bg-transparent text-gray-700 block py-2 md:hover:text-red-700 md:p-0"
                   aria-current="page"
                 >
@@ -90,8 +95,9 @@ export default function Navbar() {
               <li>
                 <button
                   id="dropdownNavbarLink"
-                  className={`text-gray-700 border-b hover:bg-red-300 hover:text-white border-gray-100 md:hover:bg-transparent  ${isDropdownOpen ? 'md:hover:bg-transparent md:border-0' : ''
-                    } pl-3 pr-4 py-2 md:hover:text-red-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto`}
+                  className={`text-gray-700 border-b hover:bg-red-300 hover:text-white border-gray-100 md:hover:bg-transparent  ${
+                    isDropdownOpen ? "md:hover:bg-transparent md:border-0" : ""
+                  } pl-3 pr-4 py-2 md:hover:text-red-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto`}
                   onClick={toggleDropdown}
                 >
                   Articles
@@ -100,7 +106,11 @@ export default function Navbar() {
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    style={{
+                      transform: isDropdownOpen
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
+                    }}
                   >
                     <path
                       fillRule="evenodd"
@@ -112,8 +122,9 @@ export default function Navbar() {
                 {/* Dropdown menu */}
                 <div
                   id="dropdownNavbar"
-                  className={`${isDropdownOpen ? 'block' : 'hidden'
-                    } bg-white text-base list-none absolute divide-y divide-gray-100 rounded shadow my-4 md:w-44 w-[90%]`}
+                  className={`${
+                    isDropdownOpen ? "block" : "hidden"
+                  } bg-white text-base list-none absolute divide-y divide-gray-100 rounded shadow my-4 md:w-44 w-[90%]`}
                 >
                   <ul className="py-1" aria-labelledby="dropdownNavbarLink">
                     <li>
@@ -136,8 +147,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <Link
-                  to="/notification" className=" hidden md:block">
+                <Link to="/notification" className=" hidden md:block">
                   <img
                     src={icon_notification}
                     alt="notification"
@@ -150,5 +160,5 @@ export default function Navbar() {
         </div>
       </nav>
     </div>
-  )
+  );
 }

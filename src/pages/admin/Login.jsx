@@ -8,7 +8,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const { login, user, logout } = useAuthContext();
+  const { login } = useAuthContext();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
