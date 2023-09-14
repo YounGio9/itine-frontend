@@ -117,7 +117,7 @@ function Home() {
                 </div>
                 <div class="img-box">
                   <img
-                    src="images/vêtements-enfants__1_-removebg-preview.png"
+                    src="images/vetements-enfants-1-removebg-preview.png"
                     alt=""
                   />
                 </div>
