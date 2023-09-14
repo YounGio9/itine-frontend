@@ -798,13 +798,13 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #002c3e;
-  color: #ffffff;
+  background-color: #d5d5d5;
+  color: #000000;
   padding-top: 70px;
 }
 
 .footer_section {
-  color: #ffffff;
+  color: #000000;
   text-align: left;
 }
 
@@ -836,7 +836,7 @@ a:focus {
 
 .footer_section .footer_contact .contact_link_box a {
   margin: 10px 0;
-  color: #ffffff;
+  color: #000000;
 }
 
 .footer_section .footer_contact .contact_link_box a i {
@@ -851,7 +851,7 @@ a:focus {
   display: block;
   font-weight: bold;
   font-size: 32px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .footer_section .footer_social {
@@ -918,7 +918,7 @@ a:focus {
 }
 
 .footer_section .footer-info p {
-  color: #ffffff;
+  color: #000000;
   margin: 0;
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
