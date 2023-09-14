@@ -791,8 +791,10 @@ a:focus {
 .client_section .carousel-control-next {
   right: 25%;
 }
-
-
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
 
 /* footer section*/
 .footer_section {
