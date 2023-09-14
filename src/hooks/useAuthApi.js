@@ -5,7 +5,7 @@ export const useLogin = (options) => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (payload) => await login("/login", payload),
+    mutationFn: async (payload) => await login(payload),
 
     onSuccess: (data) => {
       options?.onSuccess?.(data);

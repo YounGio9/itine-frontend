@@ -8,7 +8,7 @@ export const get = async (url, params) => {
   })
     .then((response) => {
       const res = response.data;
-      if (res.status === 401 && localStorage.getStorageJson("userProfile")) {
+      if (res.status !== 200) {
         return;
       }
       return res;

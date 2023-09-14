@@ -2,11 +2,7 @@ import client from "../jwtInterceptor";
 
 export const post = async (url, data) => {
   try {
-    const response = await client({
-      url,
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    const response = await client.post(url, data);
     const res = response.json();
     if (res.status === 401 && !localStorage.getItem("userProfile")) {
       return;
