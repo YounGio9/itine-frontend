@@ -12,8 +12,40 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto">
+      <div className=" p-4 lg:ml-64 mx-auto z-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20">
+          <Link
+            to="/admin/delivery"
+            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
+          >
+            <img src={livreur} alt="livreur" className=" w-1/2 mx-auto" />
+            <h3 className=" text-xl font-bold text-red-500 my-5">
+               Livreur
+            </h3>
+          </Link>
+          <Link
+            to="/admin/message"
+            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
+          >
+            <img src={message} alt="livreur" className=" w-1/2 mx-auto" />
+            <h3 className=" text-xl font-bold text-red-500 my-5">Messages</h3>
+          </Link>
+          <Link
+            to="/admin/article"
+            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
+          >
+            <img src={articles} alt="livreur" className=" w-1/2 mx-auto" />
+            <h3 className=" text-xl font-bold text-red-500 my-5">Articles</h3>
+          </Link>
+          <Link
+            to="/admin/shop"
+            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
+          >
+            <img src={boutique} alt="livreur" className=" w-1/2 mx-auto" />
+            <h3 className=" text-xl font-bold text-red-500 my-5">Boutiques</h3>
+          </Link>
+        </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20">
           <Link
             to="/admin/delivery"
             className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"

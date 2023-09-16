@@ -11,7 +11,7 @@ export default function Shop() {
 
   return (
     <>
-      <div className=" max-w-screen-xl mx-auto">
+      <div className=" p-4 lg:ml-64 mx-auto z-0">
         {/* input for search */}
         <div className='hidden md:block'>
           <div className="relative flex mt-10">

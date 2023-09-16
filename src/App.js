@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Error from "./pages/Error";
 import React from "react";
 import Articles from "./pages/admin/Articles";
-import Navbar from "./components/admin/Navbar";
+ 
 import "./tailwind.css";
 import Login from "./pages/admin/Login";
 import Message from "./pages/admin/Message";
@@ -12,13 +12,14 @@ import Shop from "./pages/admin/Shop";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import Home from "./pages/admin/Home";
 import Delivery from "./pages/admin/Delivery";
+import Sidebar from "./components/admin/Sidebar";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <div>
-          <Navbar />
+          <Sidebar />
           <AuthContextProvider>
             <Routes>
               <Route path="admin/article" element={<Articles />} />

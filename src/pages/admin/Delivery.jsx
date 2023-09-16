@@ -12,7 +12,7 @@ export default function Delivery() {
     setData(updatedData);
   };
   return (
-    <div className='max-w-screen-xl mx-auto'>
+    <div className='p-4 lg:ml-64 mx-auto z-0'>
       <div className=' flex justify-between items-center'>
         {/* input for search */}
         <div className='hidden md:block w-full'>

@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 export default function Message() {
   return (<>
       <div>
-        <div className="container mx-auto">
+        <div className="p-4 lg:ml-64 mx-auto z-0">
           <div className="min-w-full border rounded lg:grid lg:grid-cols-3">
 
             <div className="border-r border-gray-300 lg:col-span-1">
