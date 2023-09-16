@@ -86,7 +86,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/admin/livreur"
+                  to="/admin/delivery"
                   className="text-gray-700 hover:bg-red-300 hover:text-white border-b border-gray-100 md:hover:bg-transparent md:border-0 block py-2 md:hover:text-red-700 md:p-0"
                 >
                   Livreur

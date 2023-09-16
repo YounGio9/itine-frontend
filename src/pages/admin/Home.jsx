@@ -15,13 +15,12 @@ export default function Home() {
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20">
           <Link
-            to="/admin/livreur"
+            to="/admin/delivery"
             className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
           >
             <img src={livreur} alt="livreur" className=" w-1/2 mx-auto" />
             <h3 className=" text-xl font-bold text-red-500 my-5">
-              {" "}
-              Voir les demandes
+               Livreur
             </h3>
           </Link>
           <Link

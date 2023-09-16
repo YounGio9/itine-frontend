@@ -11,6 +11,7 @@ import Allproducts from "./pages/admin/Allproducts";
 import Shop from "./pages/admin/Shop";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import Home from "./pages/admin/Home";
+import Delivery from "./pages/admin/Delivery";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="admin/login" element={<Login />} />
               <Route path="admin/message" element={<Message />} />
               <Route path="admin/allproducts" element={<Allproducts />} />
+              <Route path="admin/delivery" element={<Delivery />} />
               <Route exact path="/admin" element={<Home />} />
               <Route path="admin/shop" element={<Shop />} />
               <Route path="*" element={<Error />} />
