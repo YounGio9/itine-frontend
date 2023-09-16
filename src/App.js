@@ -3,7 +3,6 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Error from "./pages/Error";
 import React from "react";
 import Articles from "./pages/admin/Articles";
- 
 import "./tailwind.css";
 import Login from "./pages/admin/Login";
 import Message from "./pages/admin/Message";
