@@ -64,7 +64,7 @@ export default function Sidebar() {
 					</button>
 					{/* logo */}
 					<div className=" p-10">
-						<Link to="/dashboard">
+						<Link to="/admin">
 							<img src={logo} alt="Logo" className=" h-20" />
 						</Link>
 					</div>
@@ -143,7 +143,7 @@ export default function Sidebar() {
 									/>
 								</svg>
 								<Link to="/settings" className="block px-3 text-sm ">
-									Settings
+									paramètre
 								</Link>
 							</Link>
 							{/*    Help */}
@@ -164,7 +164,7 @@ export default function Sidebar() {
 									/>
 								</svg>
 								<Link to="/help" className="block px-3 text-sm " href=" #">
-									Help
+									Aide
 								</Link>
 							</Link>
 							{/* Déconnexion */}
