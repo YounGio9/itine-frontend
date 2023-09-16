@@ -1,7 +1,7 @@
 import client from "../utils/jwtInterceptor";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../hooks/useAuthApi";
+import { useLogin, useProfileInfos } from "../hooks/useAuthApi";
 import { Get } from "../utils/axios";
 import { getInStorageJson, saveInStorageJson } from "../utils/functions";
 
@@ -25,22 +25,20 @@ export const AuthContextProvider = ({ children }) => {
       console.error("[on error]", error);
     },
   });
+
+  const { data } = useProfileInfos({
+    onSuccess: (data) => {
+      saveInStorageJson("userProfile", data);
+      console.log(data);
+      setUser(data);
+    },
+  });
+
   const login = async (payload) => {
     try {
-      signIn(payload, {
-        onSuccess: () => {
-          navigate("/admin/");
-        },
-        onError(error) {
-          // TODO: Add a loading and show it when request is pending
-        },
-      });
-      let apiResponse = await Get("auth/profile");
-      navigate("/admin/");
-      console.log("apiResponse", apiResponse);
-      if (apiResponse) saveInStorageJson("userProfile", apiResponse.data);
+      signIn(payload);
 
-      setUser(apiResponse.data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

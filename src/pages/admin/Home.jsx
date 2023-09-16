@@ -8,12 +8,13 @@ import shop from "../../assets/shop.png";
 import delivery2 from "../../assets/delivery2.png";
 
 import { Link } from "react-router-dom";
-
+import Dashboard from "../../components/admin/Dashboard";
 
 export default function Home() {
   return (
     <>
       <div className=" p-4 lg:ml-64 mx-auto z-0">
+        <Dashboard />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
           <div className="bg-white p-4 py-8 rounded-lg shadow-md">
             <h3 className=" text-2xl font-bold">Capital</h3>
@@ -44,7 +45,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=" my-8">
+        {/* <div className=" my-8">
           <h3 className=" text-start text-4xl font-bold">Récemment ajoutés</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
             <Link
@@ -79,7 +80,7 @@ export default function Home() {
               <h3 className=" text-xl font-bold text-black my-5">Pull homme</h3>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

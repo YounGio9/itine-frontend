@@ -117,16 +117,6 @@ export default function Login() {
               </button>
             </div>
           </form>
-
-          <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-center">
-            Vous n'avez pas de compte ?
-            <Link
-              to="/register"
-              className=" mx-2 text-[#b86165] hover:underline hover:underline-offset-4 hover:text-red-700"
-            >
-              Inscrivez-vous
-            </Link>
-          </div>
         </div>
       </div>
     </div>
