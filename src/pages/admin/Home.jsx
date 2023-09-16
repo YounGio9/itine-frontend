@@ -1,6 +1,4 @@
 import React from "react";
-import boutique from "../../assets/boutique.png";
-import articles from "../../assets/articles.png";
 import vetements_child1 from "../../assets/vetement-child1.png";
 import cosmetic1 from "../../assets/cosmetic1.png";
 import vetements_homme from "../../assets/vetement-homme.png";
@@ -46,26 +44,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20">
-          <Link
-            to="/admin/shop"
-            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
-          >
-            <img src={boutique} alt="livreur" className=" w-1/2 mx-auto" />
-            <h3 className=" text-xl font-bold text-red-500 my-5">Boutiques</h3>
-          </Link>
-          <Link
-            to="/admin/article"
-            className="bg-gray-100 p-4 rounded-lg shadow-md hover:animate-pulse"
-          >
-            <img src={articles} alt="livreur" className=" w-1/2 mx-auto" />
-            <h3 className=" text-xl font-bold text-red-500 my-5">Articles</h3>
-          </Link>
-        </div>
-
-        <div>
+        <div className=" my-8">
           <h3 className=" text-start text-4xl font-bold">Récemment ajoutés</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
             <Link
               to="/admin/article"
               className="bg-gray-100 p-4 rounded-lg shadow-md"
