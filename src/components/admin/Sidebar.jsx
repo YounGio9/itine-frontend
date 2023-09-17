@@ -40,12 +40,12 @@ export default function Sidebar() {
 
       <aside
         id="separator-sidebar"
-        className={`fixed top-0 left-0 w-64 bg-white transition-transform h-full border-r z-10 ${
+        className={`fixed top-0 left-0 w-64 bg-[#1f2937] transition-transform h-full border-r z-10 ${
           showSidebar ? "translate-x-0 bg-white" : "-translate-x-full "
         } lg:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="">
+        <div>
           {/* Button to close sidebar */}
           <button
             type="button"
@@ -66,7 +66,7 @@ export default function Sidebar() {
           {/* logo */}
           <div className=" p-10">
             <Link to="/admin">
-              <img src={logo} alt="Logo" className=" h-20" />
+              <div className="text-3xl ">Itine</div>
             </Link>
           </div>
           {/* Nav */}

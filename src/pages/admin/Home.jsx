@@ -6,15 +6,14 @@ import capital from "../../assets/capital.png";
 import customer from "../../assets/customer.png";
 import shop from "../../assets/shop.png";
 import delivery2 from "../../assets/delivery2.png";
+import DashboardS from "../../components/admin/Dashboard2";
 
 import { Link } from "react-router-dom";
-import Dashboard from "../../components/admin/Dashboard";
 
 export default function Home() {
   return (
     <>
       <div className=" p-4 lg:ml-64 mx-auto z-0">
-        <Dashboard />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
           <div className="bg-white p-4 py-8 rounded-lg shadow-md">
             <h3 className=" text-2xl font-bold">Capital</h3>
@@ -81,6 +80,7 @@ export default function Home() {
             </Link>
           </div>
         </div> */}
+        <DashboardS />
       </div>
     </>
   );
