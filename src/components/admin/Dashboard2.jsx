@@ -29,17 +29,6 @@ const employeeData = [
     tasksCompleted: 3,
     imgId: 0,
   },
-
-  {
-    id: 2,
-    name: "Eleanor Pena",
-    position: "Sale's manager Europe",
-    transactions: 590,
-    rise: false,
-    tasksCompleted: 5,
-    imgId: 2,
-  },
-
   {
     id: 3,
     name: "Robert Fox",
@@ -48,6 +37,15 @@ const employeeData = [
     rise: true,
     tasksCompleted: 1,
     imgId: 3,
+  },
+  {
+    id: 2,
+    name: "Eleanor Pena",
+    position: "Sale's manager Europe",
+    transactions: 590,
+    rise: false,
+    tasksCompleted: 5,
+    imgId: 2,
   },
 ];
 

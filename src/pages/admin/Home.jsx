@@ -1,7 +1,4 @@
 import React from "react";
-import vetements_child1 from "../../assets/vetement-child1.png";
-import cosmetic1 from "../../assets/cosmetic1.png";
-import vetements_homme from "../../assets/vetement-homme.png";
 import capital from "../../assets/capital.png";
 import customer from "../../assets/customer.png";
 import shop from "../../assets/shop.png";
