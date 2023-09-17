@@ -14,6 +14,7 @@ export default function Sidebar() {
 	};
 	return (
 		<div>
+			<div className=' flex justify-start'>
 			<button
 				data-drawer-target="separator-sidebar"
 				data-drawer-toggle="separator-sidebar"
@@ -37,6 +38,7 @@ export default function Sidebar() {
 					/>
 				</svg>
 			</button>
+			</div>
 
 			<aside
 				id="separator-sidebar"
