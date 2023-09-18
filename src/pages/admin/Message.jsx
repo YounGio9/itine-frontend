@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import search from "../../assets/search.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getMessages } from "../../services/messages.service";
 
 export default function Message() {
-  return (<>
+  const [messages, setMessages] = React.useState([]);
+
+  const [currentMessage, setCurrentMessage] = React.useState("");
+
+  useEffect(() => {
+    const getMsgs = async () => {
+      const data = await getMessages();
+      setMessages(data);
+      console.log(data);
+    };
+    getMsgs();
+  }, []);
+  return (
+    <>
       <div>
         <div className="p-4 lg:ml-64 mx-auto z-0">
           <div className="min-w-full border rounded lg:grid lg:grid-cols-3">
-
             <div className="border-r border-gray-300 lg:col-span-1">
               {/*searchBar*/}
               <div className="relative text-gray-600 mx-3 my-3">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-2">
-                  <img src={search} alt='search' className="w-6"/>
+                  <img src={search} alt="search" className="w-6" />
                 </div>
                 <input
                   type="search"
@@ -25,52 +38,45 @@ export default function Message() {
               {/*listMessage*/}
               <ul className="overflow-auto h-auto">
                 <li className=" mt-10">
-                  {/*first-message*/}
-                  <Link
-                    to="#"
-                    className="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
-                  >
-                    <div className="text-start w-full pb-2">
-                      <h3 className="block ml-2 font-semibold text-red-600">message de George Eric Jhon Don </h3>
-                      <h4 className="block ml-2 text-sm text-gray-600">Mail: georgeeric@gmail.com </h4>
-                      <h5 className="block ml-2 text-sm text-gray-600">Numéro: 97000000</h5>
-                    </div>
-                  </Link>
-                  {/*second-message*/}
-                  <Link
-                    to="#"
-                    className="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out bg-gray-100 border-b border-gray-300 cursor-pointer focus:outline-none"
-                  >
-                    <div className="text-start w-full pb-2">
-                      <h3 className="block ml-2 font-semibold text-red-600">message de Anna Michelle</h3>
-                      <h4 className="block ml-2 text-sm text-gray-600">Mail: georgeeric@gmail.com </h4>
-                      <h5 className="block ml-2 text-sm text-gray-600">Numéro: 97000000</h5>
-                    </div>
-                  </Link>
-                  {/*third-message*/}
-                  <Link
-                    to="#"
-                    className="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
-                  >
-                    <div className="text-start w-full pb-2">
-                      <h3 className="block ml-2 font-semibold text-red-600">message de George Eric Jhon Don </h3>
-                      <h4 className="block ml-2 text-sm text-gray-600">Mail: georgeeric@gmail.com </h4>
-                      <h5 className="block ml-2 text-sm text-gray-600">Numéro: 97000000</h5>
-                    </div>
-                  </Link>
-
+                  {messages &&
+                    messages.map((msg) => (
+                      <button
+                        onClick={() => setCurrentMessage(msg)}
+                        className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
+                      >
+                        <div className="text-start w-full pb-2">
+                          <h3 className="block ml-2 font-semibold text-red-600">
+                            {msg.senderName}
+                          </h3>
+                          <h4 className="block ml-2 text-sm text-gray-600">
+                            Mail:{msg.senderMail}
+                          </h4>
+                          <h5 className="block ml-2 text-sm text-gray-600">
+                            sujet: {msg.subject}
+                          </h5>
+                        </div>
+                      </button>
+                    ))}
                 </li>
               </ul>
             </div>
-            <div className="hidden lg:col-span-2 lg:block">
+            <div>
+              <h2 className="text-2xl font-bold">Corps du message</h2>
+
+              <p className="text-xl my-6 text-left ml-4">
+                {currentMessage.body}
+              </p>
+            </div>
+            {/* <div className="hidden lg:col-span-2 lg:block">
               <div className="w-full">
                 <div className="relative flex items-center p-3 border-b border-gray-300">
-                  <span className="block ml-5 font-bold text-gray-600">Anna Michelle</span>
+                  <span className="block ml-5 font-bold text-gray-600">
+                    Anna Michelle
+                  </span>
                   <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span>
                 </div>
                 <div className="relative w-full p-6 overflow-y-auto h-[40rem]">
                   <ul className="space-y-2">
-
                     <li className="flex justify-start">
                       <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                         <span className="block">Hey</span>
@@ -91,9 +97,10 @@ export default function Message() {
 
                     <li className="flex justify-start">
                       <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                      <span className="block">
-                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                     </span>
+                        <span className="block">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit.
+                        </span>
                       </div>
                     </li>
                   </ul>
@@ -146,17 +153,15 @@ export default function Message() {
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
-                      <path
-                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                     </svg>
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
-
         </div>
-
       </div>
-    </>)
+    </>
+  );
 }
