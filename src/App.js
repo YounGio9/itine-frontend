@@ -20,8 +20,8 @@ function App() {
     <Router>
       <div className="App">
         <div>
-          <Sidebar />
           <AuthContextProvider>
+            <Sidebar />
             <Header photo={photo} />
             <Routes>
               <Route path="admin/article" element={<Articles />} />

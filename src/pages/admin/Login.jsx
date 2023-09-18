@@ -23,12 +23,12 @@ export default function Login() {
   };
   return (
     <div>
-      <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-4 sm:mx-auto max-w-screen-xl md:mt-20">
-        <div className="md:w-1/2 p-16 hidden md:block">
+      <div className="flex flex-col md:flex-row flex-wrap items-center justify-center p-4 sm:mx-auto max-w-screen-xl md:mt-20">
+        {/* <div className="md:w-1/2 p-16 hidden md:block">
           <img src={logo} alt="imgLogin" className="w-auto" />
-        </div>
+        </div> */}
 
-        <div className="md:w-1/2 w-full ">
+        <div className="md:w-1/3 w-full ">
           <h1 className=" text-4xl font-bold text-center mb-5 text-red-600">
             Connectez vous
           </h1>

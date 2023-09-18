@@ -3,15 +3,19 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogin, useProfileInfos } from "../hooks/useAuthApi";
 import { Get } from "../utils/axios";
+import React from "react";
 import { getInStorageJson, saveInStorageJson } from "../utils/functions";
+import { getProfile } from "../services/auth.service";
 
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [user, setUser] = useState(() => {
     let userProfile = getInStorageJson("userProfile");
     if (userProfile) {
-      return getInStorageJson(userProfile);
+      console.log("userProfile", userProfile);
+      return userProfile;
     }
     return null;
   });
@@ -26,19 +30,17 @@ export const AuthContextProvider = ({ children }) => {
     },
   });
 
-  const { data } = useProfileInfos({
-    onSuccess: (data) => {
-      saveInStorageJson("userProfile", data);
-      console.log(data);
-      setUser(data);
-    },
-  });
-
   const login = async (payload) => {
     try {
       signIn(payload);
 
-      console.log(data);
+      const response = await getProfile();
+
+      console.log(response);
+
+      saveInStorageJson("userProfile", response);
+      setUser(response);
+      navigate("/admin");
     } catch (error) {
       console.log(error);
     }
@@ -57,16 +59,23 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    if (user != null) saveInStorageJson("userProfile", user);
+
+    console.log(user);
+  }, [user]);
+
+  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token && window.location.pathname.startsWith("/admin/login"))
       navigate("/admin/");
   }, [navigate]);
 
   const logout = async () => {
-    await client.get("auth/logout");
+    // await client.get("auth/logout"); TODO: Add logout
     localStorage.removeItem("userProfile");
+    localStorage.removeItem("token");
     setUser(null);
-    navigate("/login");
+    navigate("admin/login");
   };
 
   return (

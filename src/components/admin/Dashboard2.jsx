@@ -1,5 +1,4 @@
-import clsx from "https://cdn.skypack.dev/clsx@1.1.1";
-
+import clsx from "clsx";
 import { useSpring, animated, config } from "react-spring";
 
 import {

@@ -4,6 +4,6 @@ export function login(payload) {
   return Post("auth/login", payload);
 }
 
-export const getProfile = () => {
+export const getProfile = async () => {
   return Get("auth/profile");
 };
