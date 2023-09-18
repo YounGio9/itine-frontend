@@ -85,35 +85,39 @@
       </div>
     </section>
     <!-- end inner page section -->
-    <!-- why section -->
+    <!-- form-contact -->
     <section class="why_section layout_padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="full">
-              <form action="index.html">
+              <form id="contactForm" action="index.html">
                 <fieldset>
                   <input
                     type="text"
                     placeholder="Enter your full name"
                     name="name"
                     required
+                    id="name"
                   />
                   <input
                     type="email"
                     placeholder="Enter your email address"
                     name="email"
                     required
+                    id="email"
                   />
                   <input
                     type="text"
                     placeholder="Enter subject"
                     name="subject"
                     required
+                    id="subject"
                   />
                   <textarea
                     placeholder="Enter your message"
                     required
+                    id="message"
                   ></textarea>
                   <input type="submit" value="Submit" />
                 </fieldset>
@@ -123,7 +127,7 @@
         </div>
       </div>
     </section>
-    <!-- end why section -->
+    <!-- end form-contact -->
     <!-- arrival section -->
     <section class="arrival_section">
       <div class="container">
@@ -226,6 +230,8 @@
       </div>
     </footer>
     <!-- footer section -->
+    <!--script integration api for contact-->
+    <script src="js/contact.js"></script>
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
