@@ -1,5 +1,4 @@
 import clsx from "https://cdn.skypack.dev/clsx@1.1.1";
-import { useState } from "react";
 
 import { useSpring, animated, config } from "react-spring";
 
@@ -23,7 +22,7 @@ const employeeData = [
   {
     id: 1,
     name: "Esther Howard",
-    position: "Sale's manager USA",
+    position: "Vendeuse de vetements a Lille",
     transactions: 3490,
     rise: true,
     tasksCompleted: 3,
@@ -32,7 +31,7 @@ const employeeData = [
   {
     id: 3,
     name: "Robert Fox",
-    position: "Sale's manager Asia",
+    position: "Vendeur en details",
     transactions: 2600,
     rise: true,
     tasksCompleted: 1,
@@ -41,7 +40,7 @@ const employeeData = [
   {
     id: 2,
     name: "Eleanor Pena",
-    position: "Sale's manager Europe",
+    position: "Manager a Marseile",
     transactions: 590,
     rise: false,
     tasksCompleted: 5,
@@ -50,10 +49,11 @@ const employeeData = [
 ];
 
 const Countrydata = [
-  { name: "USA", rise: true, value: 21942.83, id: 1 },
-  { name: "Ireland", rise: false, value: 19710.0, id: 2 },
-  { name: "Ukraine", rise: false, value: 12320.3, id: 3 },
-  { name: "Sweden", rise: true, value: 9725.0, id: 4 },
+  { name: "Paris", rise: true, value: 21942.83, id: 1 },
+  { name: "Marseille", rise: false, value: 19710.0, id: 2 },
+  { name: "Lille", rise: false, value: 12320.3, id: 3 },
+  { name: "Lyon", rise: true, value: 9725.0, id: 4 },
+  { name: "Bordeaux", rise: true, value: 9725.0, id: 4 },
 ];
 const segmentationData = [
   { c1: "Hommes", c2: "441", c3: "#334ed8", color: "#334ed8" },
@@ -61,30 +61,16 @@ const segmentationData = [
   { c1: "Autre", c2: "126", c3: "#dc3545", color: "#dc3545" },
 ];
 
-const sidebarItems = [
-  [
-    { id: "0", title: "Dashboard", notifications: false },
-    { id: "1", title: "Overview", notifications: false },
-    { id: "2", title: "Chat", notifications: 6 },
-    { id: "3", title: "Team", notifications: false },
-  ],
-  [
-    { id: "4", title: "Tasks", notifications: false },
-    { id: "5", title: "Reports", notifications: false },
-    { id: "6", title: "Settings", notifications: false },
-  ],
-];
-
 const graphData = [
   "Nov",
   "Dec",
   "Jan",
-  "Feb",
+  "Fev",
   "Mar",
-  "Apr",
-  "May",
-  "June",
-  "July",
+  "Avr",
+  "Mai",
+  "Juin",
+  "Juillet",
 ].map((i) => {
   const revenue = 500 + Math.random() * 2000;
   const expectedRevenue = Math.max(revenue + (Math.random() - 0.5) * 2000, 0);
@@ -97,7 +83,6 @@ const graphData = [
 });
 
 const DashboardS = () => {
-  const [showSidebar, onSetShowSidebar] = useState(false);
   return (
     <div className="flex">
       {/* <Sidebar
@@ -106,11 +91,7 @@ const DashboardS = () => {
         }}
         showSidebar={showSidebar}
       /> */}
-      <Content
-        onSidebarHide={() => {
-          onSetShowSidebar(true);
-        }}
-      />
+      <Content onSidebarHide={() => {}} />
     </div>
   );
 };
@@ -229,7 +210,7 @@ function NameCard({
               "text-lg"
             )}
           >
-            {transactions.interpolate((i) => `$${i.toFixed(2)}`)}
+            {transactions.interpolate((i) => `€${i.toFixed(2)}`)}
           </animated.div>
           {/* <div className="text-sm ">Last 6 month</div> */}
         </div>
@@ -245,8 +226,8 @@ function Graph() {
         <Icon path="res-react-dash-options" className="w-2 h-2" />
       </div>
       <div className="tooltip-body text-center p-3">
-        <div className="text-white font-bold">$1300.50</div>
-        <div className="">Revenue from 230 sales</div>
+        <div className="text-white font-bold">€1300.50</div>
+        <div className="">Revenu sur 230 ventes</div>
       </div>
     </div>
   );
@@ -258,12 +239,12 @@ function Graph() {
           <div className="flex-grow" />
 
           <Icon path="res-react-dash-graph-range" className="w-4 h-4" />
-          <div className="ml-2">Last 9 Months</div>
+          <div className="ml-2">Derniers 9 mois</div>
           <div className="ml-6 w-5 h-5 flex justify-center items-center rounded-full icon-background">
             ?
           </div>
         </div>
-        <div className="font-bold ml-5">Nov - July</div>
+        <div className="font-bold ml-5">Novembre - Juillet</div>
       </div>
 
       <div className="flex-grow">
@@ -315,17 +296,17 @@ function TopCountries() {
   return (
     <div className="flex p-4 flex-col h-full">
       <div className="flex justify-between items-center">
-        <div className="text-white font-bold">Total par pays</div>
+        <div className="text-white font-bold">Total par ville</div>
         <Icon path="res-react-dash-plus" className="w-5 h-5" />
       </div>
       {Countrydata.map(({ name, rise, value, id }) => (
         <div className="flex items-center mt-3" key={id}>
           <div className="">{id}</div>
 
-          <Image path={`res-react-dash-flag-${id}`} className="ml-2 w-6 h-6" />
-          <div className="ml-2">{name}</div>
+          {/* <Image path={`res-react-dash-flag-${id}`} className="ml-2 w-6 h-6" /> */}
+          <div className="ml-2 text-gray-300">{name}</div>
           <div className="flex-grow" />
-          <div className="">{`$${value.toLocaleString()}`}</div>
+          <div className=" text-gray-300">{`€${value.toLocaleString()}`}</div>
           <Icon
             path={
               rise ? "res-react-dash-country-up" : "res-react-dash-country-down"
@@ -400,7 +381,7 @@ function Satisfication() {
   return (
     <div className="p-4 h-full">
       <div className="flex justify-between items-center">
-        <div className="text-white font-bold">Satisfication</div>
+        <div className="text-white font-bold">Satisfaction</div>
         <Icon path="res-react-dash-options" className="w-2 h-2" />
       </div>
       {/* <div className="mt-3">From all projects</div> */}

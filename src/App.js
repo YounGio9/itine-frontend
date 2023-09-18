@@ -12,6 +12,8 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 import Home from "./pages/admin/Home";
 import Delivery from "./pages/admin/Delivery";
 import Sidebar from "./components/admin/Sidebar";
+import Header from "./components/Header";
+import photo from "./assets/vetement-child1.png";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <div>
           <Sidebar />
           <AuthContextProvider>
+            <Header photo={photo} />
             <Routes>
               <Route path="admin/article" element={<Articles />} />
               <Route path="admin/login" element={<Login />} />

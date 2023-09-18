@@ -53,7 +53,8 @@ export const AuthContextProvider = ({ children }) => {
     } catch (error) {
       return;
     }
-  }, [navigate]);
+    // eslint-disable-nextline
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");

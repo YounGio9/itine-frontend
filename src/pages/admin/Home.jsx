@@ -4,9 +4,6 @@ import customer from "../../assets/customer.png";
 import shop from "../../assets/shop.png";
 import delivery2 from "../../assets/delivery2.png";
 import DashboardS from "../../components/admin/Dashboard2";
-
-import { Link } from "react-router-dom";
-
 export default function Home() {
   return (
     <>
