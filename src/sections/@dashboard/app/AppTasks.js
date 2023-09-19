@@ -148,12 +148,12 @@ function TaskItem({ task, checked, onChange }) {
 
         <MenuItem onClick={handleEdit}>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
+          Modifier
         </MenuItem>
 
         <MenuItem onClick={handleShare}>
           <Iconify icon={'eva:share-fill'} sx={{ mr: 2 }} />
-          Share
+          Partager
         </MenuItem>
 
         <Divider sx={{ borderStyle: 'dashed' }} />
