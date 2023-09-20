@@ -6,11 +6,13 @@ export default function MessagePage() {
   const [messages, setMessages] = React.useState([
     {
       body: 'test',
+      senderName: 'Giovani de SOUZA',
       senderMail: 'souza@gmail.com',
       subject: 'test',
     },
     {
       body: 'test2',
+      senderName: 'Yvan NGOYI',
       senderMail: 'souza@gmail.com',
       subject: 'test',
     },
@@ -29,7 +31,7 @@ export default function MessagePage() {
   return (
     <>
       <div>
-        <div className="p-4 lg:ml-64 mx-auto z-0">
+        <div className="container mx-auto">
           <div className="min-w-full border rounded lg:grid lg:grid-cols-3">
             <div className="border-r border-gray-300 lg:col-span-1">
               <div className="relative text-gray-600 mx-3 my-3">
@@ -46,26 +48,17 @@ export default function MessagePage() {
               </div>
               <ul className="overflow-auto h-auto">
                 <li className=" mt-10">
-                  {messages &&
-                    messages.map((msg) => (
-                      <button
-                        onClick={() => setCurrentMessage(msg)}
-                        className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
-                      >
-                        <div className="text-start w-full pb-2">
-                          <h3 className="block ml-2 font-semibold text-red-600">{msg.senderName}</h3>
-                          <h4 className="block ml-2 text-sm text-gray-600">Mail:{msg.senderMail}</h4>
-                          <h5 className="block ml-2 text-sm text-gray-600">sujet: {msg.subject}</h5>
-                        </div>
-                      </button>
-                    ))}
+                  {messages.map((msg) => (
+                    <div className="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none">
+                      <div className="text-start w-full pb-2">
+                        <h3 className="block ml-2 font-semibold text-red-600">message de {msg.senderName} </h3>
+                        <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.senderMail} </h4>
+                        <h5 className="block ml-2 text-sm text-gray-600">sujet: {msg.subject}</h5>
+                      </div>
+                    </div>
+                  ))}
                 </li>
               </ul>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold">Corps du message</h2>
-
-              <p className="text-xl my-6 text-left ml-4">{currentMessage.body}</p>
             </div>
             <div className="hidden lg:col-span-2 lg:block">
               <div className="w-full">
