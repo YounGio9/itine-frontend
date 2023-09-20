@@ -21,24 +21,14 @@ const navConfig = [
     path: '/admin/products',
     icon: icon('ic_cart'),
   },
-  // {
-  //   title: 'blog',
-  //   path: '/admin/blog',
-  //   icon: icon('ic_blog'),
-  // },
-  {
-    title: 'login',
-    path: '/login',
-    icon: icon('ic_lock'),
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: icon('ic_disabled'),
-  },
   {
     title: 'Commandes',
     path: '/admin/orders',
+    icon: '',
+  },
+  {
+    title: 'Transactions',
+    path: '/admin/transactions',
     icon: '',
   },
 ];
