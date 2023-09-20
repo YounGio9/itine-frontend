@@ -4,7 +4,7 @@ import { sample } from 'lodash';
 // ----------------------------------------------------------------------
 
 const orders = [...Array(24)].map((_, index) => ({
-  id: faker.datatype.number(),
+  id: index,
   client: faker.name.fullName(),
   status: sample(['termine', 'en cours']),
   date: faker.date.birthdate(),

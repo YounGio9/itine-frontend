@@ -1,8 +1,9 @@
 {
-  "name": "Dashboard-admin-itine",
-  "author": "Marcos/Giovanni",
+  "name": "dashboard-admin-itine",
+  "author": "Marcos/Giovani",
   "licence": "MIT",
   "version": "1.7.0",
+  "homepage": "/admin",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
