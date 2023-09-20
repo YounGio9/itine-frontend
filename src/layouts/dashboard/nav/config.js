@@ -3,7 +3,7 @@ import SvgColor from '../../../components/svg-color';
 
 // ----------------------------------------------------------------------
 
-const icon = (name) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />;
+const icon = (name) => <SvgColor src={`./assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />;
 
 const navConfig = [
   {
@@ -24,13 +24,19 @@ const navConfig = [
   {
     title: 'Commandes',
     path: '/admin/orders',
-    icon: '',
+    icon: icon('ic_command'),
   },
   {
     title: 'Transactions',
     path: '/admin/transactions',
-    icon: '',
+    icon: icon('ic_transaction'),
   },
+ {
+    title: 'Catégories',
+    path: '/admin/categories',
+    icon: icon('ic_category'),
+  },
+  
 ];
 
 export default navConfig;
