@@ -147,7 +147,7 @@ export default function OrderPage() {
   return (
     <>
       <Helmet>
-        <title> Commandes | Minimal UI </title>
+        <title> Commandes | Itine </title>
       </Helmet>
 
       <Container>

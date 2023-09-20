@@ -147,13 +147,13 @@ export default function TransactionsPage() {
   return (
     <>
       <Helmet>
-        <title> Commandes | Minimal UI </title>
+        <title> Transactions | Itine </title>
       </Helmet>
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Commandes
+            Transactions
           </Typography>
           {/* <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
             New User
