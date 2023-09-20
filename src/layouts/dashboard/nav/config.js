@@ -31,12 +31,16 @@ const navConfig = [
     path: '/admin/transactions',
     icon: icon('ic_transaction'),
   },
- {
+  {
     title: 'Catégories',
     path: '/admin/categories',
     icon: icon('ic_category'),
   },
-  
+  {
+    title: 'Messages',
+    path: '/admin/chat',
+    icon: '',
+  },
 ];
 
 export default navConfig;

@@ -29,7 +29,7 @@ export default function Router() {
         { path: 'orders', element: <Orders /> },
         { path: 'transactions', element: <Transactions /> },
         { path: 'categories', element: <Categorie /> },
-        { path: 'messages', element: <MessagePage /> },
+        { path: 'chat', element: <MessagePage /> },
       ],
     },
     {

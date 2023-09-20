@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import search from '../../assets/search.png';
-import { Link } from 'react-router-dom';
+import search from '../assets/search.png';
 // import { getMessages } from '../../services/messages.service';
 
 export default function MessagePage() {
@@ -72,7 +71,7 @@ export default function MessagePage() {
               <div className="w-full">
                 <div className="relative flex items-center p-3 border-b border-gray-300">
                   <span className="block ml-5 font-bold text-gray-600">Anna Michelle</span>
-                  <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span>
+                  {/* <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span> */}
                 </div>
                 <div className="relative w-full p-6 overflow-y-auto h-[40rem]">
                   <ul className="space-y-2">
