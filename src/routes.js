@@ -12,6 +12,7 @@ import DashboardAppPage from './pages/DashboardAppPage';
 import Orders from './pages/OrderPage';
 import Transactions from './pages/TransactionsPage';
 import Categorie from './pages/CategoriePage';
+import MessagePage from './pages/MessagesPage';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -28,6 +29,7 @@ export default function Router() {
         { path: 'orders', element: <Orders /> },
         { path: 'transactions', element: <Transactions /> },
         { path: 'categories', element: <Categorie /> },
+        { path: 'messages', element: <MessagePage /> },
       ],
     },
     {
