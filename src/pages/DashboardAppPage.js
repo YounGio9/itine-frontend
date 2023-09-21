@@ -50,7 +50,12 @@ export default function DashboardAppPage() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Commandes" total={1723315} color="warning" icon={'ant-design:shopping-cart-outlined'} />
+            <AppWidgetSummary
+              title="Commandes"
+              total={1723315}
+              color="warning"
+              icon={'ant-design:shopping-cart-outlined'}
+            />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
@@ -76,19 +81,19 @@ export default function DashboardAppPage() {
               ]}
               chartData={[
                 {
-                  name: 'Team A',
+                  name: 'Equipe A',
                   type: 'column',
                   fill: 'solid',
                   data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
                 },
                 {
-                  name: 'Team B',
+                  name: 'Equipe B',
                   type: 'area',
                   fill: 'gradient',
                   data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
                 },
                 {
-                  name: 'Team C',
+                  name: 'Equipe C',
                   type: 'line',
                   fill: 'solid',
                   data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
@@ -154,10 +159,10 @@ export default function DashboardAppPage() {
               title="Nouveautés"
               list={[...Array(5)].map((_, index) => ({
                 id: faker.datatype.uuid(),
-                title: faker.name.jobTitle(),
-                description: faker.name.jobTitle(),
+                title: 'Ingénieur d’implémentation investisseurs,',
+                description: 'Superviseur de marque dynamique',
                 image: `/assets/images/covers/cover_${index + 1}.jpg`,
-                postedAt: faker.date.recent(),
+                postedAt: new Date(),
               }))}
             />
           </Grid>

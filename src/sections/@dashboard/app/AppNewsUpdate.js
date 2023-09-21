@@ -32,7 +32,7 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
 
       <Box sx={{ p: 2, textAlign: 'right' }}>
         <Button size="small" color="inherit" endIcon={<Iconify icon={'eva:arrow-ios-forward-fill'} />}>
-          View all
+          Voir tout
         </Button>
       </Box>
     </Card>
@@ -45,7 +45,7 @@ NewsItem.propTypes = {
   news: PropTypes.shape({
     description: PropTypes.string,
     image: PropTypes.string,
-    postedAt: PropTypes.instanceOf(Date),
+    postedAt: PropTypes.string,
     title: PropTypes.string,
   }),
 };
