@@ -9,9 +9,9 @@ import categorie4 from '../assets/groupevetement.jpg';
 export default function CategoriePage() {
   return (
     <div>
-      <div className=" flex justify-center">
+      <div className=" md:flex justify-center">
         {/* form of modal add categorie */}
-        <form className=" w-1/3  text-center">
+        <form className=" md:w-1/3  text-center">
           <div className="flex space-x-10">
             <div className=" w-full ">
               <h2 className="text-2xl font-semibold mb-4">Ajouter une categorie</h2>
@@ -82,7 +82,7 @@ export default function CategoriePage() {
             </div>
           </div>
         </form>
-        <div className=" w-2/3  px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className=" md:w-2/3  px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">
             <img src={categorie1} alt="categorie1" className="w-full h-auto rounded-t-lg" />
             <div className="p-4">

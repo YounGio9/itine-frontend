@@ -13,6 +13,8 @@ import Orders from './pages/OrderPage';
 import Transactions from './pages/TransactionsPage';
 import Categorie from './pages/CategoriePage';
 import MessagePage from './pages/MessagesPage';
+import AddProducts from './pages/AddProducts';
+import AddUser from './pages/AddUser';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -30,6 +32,8 @@ export default function Router() {
         { path: 'transactions', element: <Transactions /> },
         { path: 'categories', element: <Categorie /> },
         { path: 'chat', element: <MessagePage /> },
+        { path: 'addproducts', element: <AddProducts /> },
+        { path: 'adduser', element: <AddUser /> },
       ],
     },
     {
