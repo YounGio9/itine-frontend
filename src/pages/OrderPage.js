@@ -194,7 +194,7 @@ export default function OrderPage() {
                         </TableCell>
 
                         <TableCell align="left">
-                          {`${new Date(date).getDate()} / ${new Date(date).getMonth()} / ${new Date(
+                          {`${new Date(date).getDate()} / ${new Date(date).getMonth() + 1} / ${new Date(
                             date
                           ).getFullYear()}`}
                         </TableCell>
