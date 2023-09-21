@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography } from '@mui/material';
+
 // components
 import Iconify from '../components/iconify';
 // sections
@@ -36,7 +37,7 @@ export default function DashboardAppPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Ventes de la semaine" total={714000} icon={'ant-design:android-filled'} />
+            <AppWidgetSummary title="Ventes de la semaine" total={714000} icon={'ant-design:dollar-circle-filled'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
@@ -44,16 +45,16 @@ export default function DashboardAppPage() {
               title="Nouveaux Utilisateurs"
               total={1352831}
               color="info"
-              icon={'ant-design:apple-filled'}
+              icon={'ant-design:user-outlined'}
             />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Commandes" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
+            <AppWidgetSummary title="Commandes" total={1723315} color="warning" icon={'ant-design:shopping-cart-outlined'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Avis et commentaires" total={234} color="error" icon={'ant-design:bug-filled'} />
+            <AppWidgetSummary title="Avis et commentaires" total={234} color="error" icon={'ant-design:like-filled'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>

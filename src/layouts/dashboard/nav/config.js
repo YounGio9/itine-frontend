@@ -39,7 +39,7 @@ const navConfig = [
   {
     title: 'Messages',
     path: '/admin/chat',
-    icon: '',
+    icon: icon('ic_message'),
   },
 ];
 
