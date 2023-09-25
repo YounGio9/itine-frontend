@@ -32,13 +32,13 @@ const StyledSearch = styled(OutlinedInput)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-UserListToolbar.propTypes = {
+DeliveryListToolbar.propTypes = {
   numSelected: PropTypes.number,
   filterName: PropTypes.string,
   onFilterName: PropTypes.func,
 };
 
-export default function UserListToolbar({ numSelected, filterName, onFilterName }) {
+export default function DeliveryListToolbar({ numSelected, filterName, onFilterName }) {
   return (
     <StyledRoot
       sx={{
@@ -56,7 +56,7 @@ export default function UserListToolbar({ numSelected, filterName, onFilterName 
         <StyledSearch
           value={filterName}
           onChange={onFilterName}
-          placeholder="Rechercher un utilisateur..."
+          placeholder="Rechercher un livreur..."
           startAdornment={
             <InputAdornment position="start">
               <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled', width: 20, height: 20 }} />

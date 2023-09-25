@@ -15,6 +15,9 @@ import Categorie from './pages/CategoriePage';
 import MessagePage from './pages/MessagesPage';
 import AddProducts from './pages/AddProducts';
 import AddUser from './pages/AddUser';
+import Delivery from './pages/DeliveryPage';
+import AddDelivery from './pages/AddDelivery';
+import CityPage from './pages/CityPage';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -34,6 +37,9 @@ export default function Router() {
         { path: 'chat', element: <MessagePage /> },
         { path: 'addproducts', element: <AddProducts /> },
         { path: 'adduser', element: <AddUser /> },
+        { path: 'delivery', element: <Delivery /> },
+        { path: 'adddelivery', element: <AddDelivery /> },
+        { path: 'city', element: <CityPage /> },
       ],
     },
     {

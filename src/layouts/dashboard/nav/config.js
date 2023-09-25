@@ -37,6 +37,16 @@ const navConfig = [
     icon: icon('ic_category'),
   },
   {
+    title: 'Ville',
+    path: '/admin/city',
+    icon: icon('ic_city'),
+  },
+  {
+    title: 'Livreur',
+    path: '/admin/delivery',
+    icon: icon('ic_delivery'),
+  },
+  {
     title: 'Messages',
     path: '/admin/chat',
     icon: icon('ic_message'),
