@@ -67,7 +67,7 @@ export default function CityPage() {
                   <div className="flex-1">{data.Ville}</div>
                   <div className="flex-1">{data.Boutique}</div>
                   <div className="flex-1">{data.Statut}</div>
-                  <div className="flex-0 mr-4">
+                  <div className="flex mx-4">
                     <button className="bg-[#DFC679] hover:bg-yellow-500 text-white px-2 py-2 rounded text-sm" type="button">
                       Modifier
                     </button>
