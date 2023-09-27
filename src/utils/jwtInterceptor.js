@@ -12,9 +12,7 @@ const client = axios.create({
 });
 
 client.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   async (error) => {
     if ([401, 403].includes(error.response.status)) {
       const { data } = await axios.get(`${baseUrl}auth/refresh`, {
@@ -26,9 +24,8 @@ client.interceptors.response.use(
         ...error.config,
         headers: { authorization: localStorage.getItem('token') ?? '' },
       });
-    } else {
-      return Promise.reject(error);
     }
+    return Promise.reject(error);
   }
 );
 

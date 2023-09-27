@@ -18,6 +18,7 @@ import AddUser from './pages/AddUser';
 import Delivery from './pages/DeliveryPage';
 import AddDelivery from './pages/AddDelivery';
 import CityPage from './pages/CityPage';
+import { AuthContextProvider } from './contexts/AuthContext';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -43,8 +44,12 @@ export default function Router() {
       ],
     },
     {
-      path: 'login',
-      element: <LoginPage />,
+      path: '/admin/login',
+      element: (
+        <AuthContextProvider>
+          <LoginPage />
+        </AuthContextProvider>
+      ),
     },
     {
       element: <SimpleLayout />,

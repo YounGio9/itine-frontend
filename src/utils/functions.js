@@ -4,7 +4,7 @@ const saveInStorage = (key, value) => {
 
 const saveInStorageJson = (key, jsonValue) => {
   console.log(jsonValue);
-  if (typeof jsonValue != 'string' && typeof jsonValue != 'undefined')
+  if (typeof jsonValue !== 'string' && typeof jsonValue !== 'undefined')
     localStorage.setItem(key, JSON.stringify(jsonValue));
 };
 
@@ -12,7 +12,7 @@ const getInStorage = (key) => {
   try {
     return localStorage.getItem(key);
   } catch (error) {
-    return;
+    return null;
   }
 };
 

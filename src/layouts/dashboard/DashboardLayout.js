@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 //
 import Header from './header';
 import Nav from './nav';
+import { AuthContextProvider } from '../../contexts/AuthContext';
 
 // ----------------------------------------------------------------------
 
@@ -42,7 +43,9 @@ export default function DashboardLayout() {
       <Nav openNav={open} onCloseNav={() => setOpen(false)} />
 
       <Main>
-        <Outlet />
+        <AuthContextProvider>
+          <Outlet />
+        </AuthContextProvider>
       </Main>
     </StyledRoot>
   );
