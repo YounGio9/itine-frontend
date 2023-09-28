@@ -30,16 +30,6 @@ export default function AddProducts() {
                   <div className="lg:flex">
                     <div className=" w-1/3">
                       <span htmlFor="nom" className="block text-sm font-medium text-gray-700">
-                        UGS
-                      </span>
-                      <input
-                        type="text"
-                        placeholder="Unité de Gestion de Stock"
-                        className="p-2 mr-2 rounded-lg border border-gray-300"
-                      />
-                    </div>
-                    <div className=" w-1/3">
-                      <span htmlFor="nom" className="block text-sm font-medium text-gray-700">
                         Couleur
                       </span>
                       <input type="text" placeholder="Couleur" className="p-2 mr-2 rounded-lg border border-gray-300" />
@@ -115,7 +105,7 @@ export default function AddProducts() {
                   <span className=" bg-gray-200 cursor-pointer p-2 mr-4"> image 3</span>
                 </div>
               </div>
-              <div className='mt-10'>
+              <div className="mt-10">
                 <h4>Catégories</h4>
                 <div>
                   <div>

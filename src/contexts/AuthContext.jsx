@@ -1,13 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Get } from '../utils/axios';
-import { getInStorageJson, saveInStorageJson, saveInStorage, getInStorage } from '../utils/functions';
+import { getInStorageJson, saveInStorageJson, getInStorage } from '../utils/functions';
 import { login as Login, getProfile } from '../services/auth.service';
 
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [user, setUser] = useState(() => {
     const userProfile = getInStorageJson('userProfile');
     if (userProfile) {
