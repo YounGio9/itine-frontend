@@ -18,12 +18,6 @@ export default function CityPage() {
 
               <div className="my-4">
                 <span htmlFor="nom" className="block text-sm font-medium text-gray-700">
-                  Nom du pays
-                </span>
-                <input type="text" id="country" name="country" className="mt-1 p-2 w-full border rounded-lg" required />
-              </div>
-              <div className="my-4">
-                <span htmlFor="nom" className="block text-sm font-medium text-gray-700">
                   Nom de la ville
                 </span>
                 <input type="text" id="city" name="city" className="mt-1 p-2 w-full border rounded-lg" required />
@@ -50,9 +44,8 @@ export default function CityPage() {
         <div className="lg:w-2/3  px-10 ">
           <div>
             <ul className="flex mb-2 p-4 rounded">
-              <li className="flex-1 font-bold uppercase">Pays</li>
               <li className="flex-1 font-bold uppercase">Villes</li>
-              <li className="flex-1 font-bold uppercase">Boutique</li>
+              {/* <li className="flex-1 font-bold uppercase">Boutique</li> */}
               <li className="flex-1 font-bold uppercase">Statut</li>
               <li className="flex-1 font-bold uppercase"> {''} </li>
               <li className="flex-1 font-bold uppercase"> {''} </li>
@@ -63,12 +56,14 @@ export default function CityPage() {
                   key={index}
                   className="bg-[#FCFCFC] hover:bg-gray-100 p-4 rounded flex justify-between items-center"
                 >
-                  <div className="flex-1">{data.Pays}</div>
                   <div className="flex-1">{data.Ville}</div>
-                  <div className="flex-1">{data.Boutique}</div>
+                  {/* <div className="flex-1">{data.Boutique}</div> */}
                   <div className="flex-1">{data.Statut}</div>
                   <div className="flex mx-4">
-                    <button className="bg-[#DFC679] hover:bg-yellow-500 text-white px-2 py-2 rounded text-sm" type="button">
+                    <button
+                      className="bg-[#DFC679] hover:bg-yellow-500 text-white px-2 py-2 rounded text-sm"
+                      type="button"
+                    >
                       Modifier
                     </button>
                   </div>
