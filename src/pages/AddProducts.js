@@ -1,30 +1,27 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Loading from '../components/UI/Loading';
-import { createProduct, getProducts } from '../services/product.service';
+import { createProduct } from '../services/product.service';
+import { getCategories } from '../services/category.service';
 
 export default function AddProducts() {
   const [base64UrlImages, setBase64UrlImages] = useState([]);
   const [activeCover, setActiveCover] = useState(1);
-  const [colors, setColors] = useState({});
-
   const [images, setImages] = useState([]);
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-
-  // getproducts
+  // getCategories
   useEffect(() => {
-    const getPrds = async () => {
+    const getCtg = async () => {
       try {
-        const response = await getProducts();
-        console.log(response);
-        setProducts(response);
+        const response = await getCategories();
+        console.log(response.data);
+        setCategories(response.data.filter((cat) => cat.image != null));
       } catch (error) {
-        console.error('Erreur lors de la récupération des produits:', error);
+        console.error('Erreur lors de la récupération des catégories:', error);
       }
     };
-    getPrds();
+    getCtg();
   }, []);
-
   const handleSelectImages = (e) => {
     if (!images.map((img) => img.name).includes(e.target.files[0].name)) setImages([...images, ...e.target.files]);
   };
@@ -223,7 +220,6 @@ export default function AddProducts() {
             </div>
           </div>
         </div>
-
         <div className="lg:w-1/3 p-4 mx-4 bg-slate-100">
           <div className=" w-full ">
             <div>
@@ -241,15 +237,6 @@ export default function AddProducts() {
                   required
                 />
               </div>
-              {/* <div className="my-5">
-                <span htmlFor="description" className="block text-sm font-medium text-gray-700">
-                  Statut
-                </span>
-                <select className=" w-full bg-white p-3 rounded-md focus:border-blue-400 border border-blue-500">
-                  <option value="manger">Publié</option>
-                  <option value="dormir">Enregistrer</option>
-                </select>
-              </div> */}
               <div>
                 <h4>Lesquelles des images voulez-vous prendre comme couverture de l'article?</h4>
                 <div className={` block my-3 `}>
@@ -288,50 +275,25 @@ export default function AddProducts() {
               </div>
               <div className="mt-10">
                 <h4>Catégories</h4>
-                <div>
-                  <div>
-                    <input type="checkbox" name="categories" onChange={handleSelectCategory} value={'jeans'} />{' '}
-                    <span>Jeans</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" name="categories" onChange={handleSelectCategory} value={'chemises'} />{' '}
-                    <span>Chemises</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" name="categories" onChange={handleSelectCategory} value={'Chemises'} />{' '}
-                    <span>Femmes</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" name="categories" onChange={handleSelectCategory} value={'electroniques'} />{' '}
-                    <span>Électronique</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" name="categories" onChange={handleSelectCategory} value={'mobile'} />{' '}
-                    <span>Mobiles</span>
-                  </div>
+                <div className=" my-2">
+                  {categories.map((category, index) => (
+                    <div key={index}>
+                      <input
+                        type="checkbox"
+                        name="categories"
+                        className="mr-3"
+                        onChange={handleSelectCategory}
+                        value={category.name}
+                      />
+                      <span>{category.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
-      <div className="container mx-auto my-8">
-      <h1 className="text-2xl font-semibold mb-4">Liste des Produits</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {products.length && (
-          products.map(product => (
-            <div key={product.id} className="bg-white rounded-lg shadow-lg p-4">
-              <img src={product.cover} alt={product.name} className="w-full h-40 object-cover mb-4" />
-              <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-              <p className="text-gray-600 mb-2">{product.description}</p>
-              <p className="text-blue-500 font-semibold">{product.price} €</p>
-            </div>
-          )))} 
-      </div>
-    </div>
-
     </form>
   );
 }

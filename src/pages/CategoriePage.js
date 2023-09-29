@@ -15,8 +15,8 @@ export default function CategoriePage() {
     const getCtg = async () => {
       try {
         const response = await getCategories();
-        console.log(response);
-        setCategories(response);
+        console.log(response.data.filter((cat) => cat.image != null));
+        setCategories(response.data.filter((cat) => cat.image != null));
       } catch (error) {
         console.error('Erreur lors de la récupération des catégories:', error);
       }
@@ -80,7 +80,7 @@ export default function CategoriePage() {
     <div>
       <div className=" md:flex justify-center">
         {/* form of modal add categorie */}
-        <form onSubmit={handleSubmit} className=" md:w-1/3  text-center">
+        <form onSubmit={handleSubmit} className=" md:w-1/3  text-center mb-20">
           <div className="flex space-x-10">
             <div className=" w-full ">
               <h2 className="text-2xl font-semibold mb-4">Ajouter une categorie</h2>
@@ -143,19 +143,17 @@ export default function CategoriePage() {
             </div>
           </div>
         </form>
-        <div className=" md:w-2/3  px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          {categories.length ? (
-            categories.map((category) => (
-              <div key={category.id} className="mx-auto my-4 bg-white rounded-lg shadow-lg">
-                <img src={category.image} alt={category.name} className="w-full h-auto rounded-t-lg" />
+        <div className="md:w-2/3 px-10 flex flex-wrap -m-4">
+          {categories.map((category) => (
+            <div key={category.id} className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4">
+              <div className="mx-auto bg-white rounded-lg shadow-lg max-w-sm">
+                <img src={category.image} alt={category.name} className="w-full h-48 object-cover rounded-t-lg" />
                 <div className="p-4">
                   <h2 className="text-xl font-semibold">{category.name}</h2>
                 </div>
               </div>
-            ))
-          ) : (
-            <p className=' text-center'>Aucune catégorie disponible pour l'instant.</p>
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
