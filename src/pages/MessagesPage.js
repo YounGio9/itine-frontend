@@ -1,33 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { getMessages } from '../services/message.service';
+import Loading from '../components/UI/Loading';
 import search from '../assets/search.png';
+
 // import { getMessages } from '../../services/messages.service';
 
 export default function MessagePage() {
-  const [messages, setMessages] = React.useState([
-    {
-      body: 'test',
-      senderName: 'Giovani de SOUZA',
-      senderMail: 'souza@gmail.com',
-      subject: 'test',
-    },
-    {
-      body: 'test2',
-      senderName: 'Yvan NGOYI',
-      senderMail: 'souza@gmail.com',
-      subject: 'test',
-    },
-  ]);
+  const [loading, setLoading] = React.useState(true);
+  const [messages, setMessages] = React.useState([]);
 
-  const [currentMessage, setCurrentMessage] = React.useState('');
+  const [currentMessage, setCurrentMessage] = React.useState();
 
-  //   useEffect(() => {
-  //     const getMsgs = async () => {
-  //       const data = await getMessages();
-  //       setMessages(data);
-  //       console.log(data);
-  //     };
-  //     getMsgs();
-  //   }, []);
+  React.useEffect(() => {
+    const getMsgs = async () => {
+      const data = await getMessages();
+      setLoading(false);
+      console.log(data);
+      setMessages(data.data);
+    };
+    getMsgs();
+  }, []);
+
+  useEffect(() => {
+    if (messages.length) setCurrentMessage(messages[0]);
+  }, [messages]);
+
+  React.useMemo(() => {
+    console.log(messages);
+  }, [messages]);
   return (
     <>
       <div>
@@ -47,16 +47,21 @@ export default function MessagePage() {
                 />
               </div>
               <ul className="overflow-auto h-auto">
+                {loading && <Loading />}
                 <li className=" mt-10">
-                  {messages.map((msg) => (
-                    <div className="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none">
-                      <div className="text-start w-full pb-2">
-                        <h3 className="block ml-2 font-semibold text-red-600">message de {msg.senderName} </h3>
-                        <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.senderMail} </h4>
-                        <h5 className="block ml-2 text-sm text-gray-600">sujet: {msg.subject}</h5>
-                      </div>
-                    </div>
-                  ))}
+                  {messages &&
+                    messages.map((msg) => (
+                      <button
+                        onClick={() => setCurrentMessage(msg)}
+                        className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
+                      >
+                        <div className="text-start w-full pb-2">
+                          <h3 className="block ml-2 font-semibold text-red-600">message de {msg.senderName} </h3>
+                          <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.senderMail} </h4>
+                          <h5 className="block ml-2 text-sm text-gray-600">sujet: {msg.subject}</h5>
+                        </div>
+                      </button>
+                    ))}
                 </li>
               </ul>
             </div>
@@ -70,11 +75,11 @@ export default function MessagePage() {
                   <ul className="space-y-2">
                     <li className="flex justify-start">
                       <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                        <span className="block">Hey</span>
+                        {currentMessage && <span className="block">{currentMessage.body}</span>}
                       </div>
                     </li>
 
-                    <li className="flex justify-end">
+                    {/* <li className="flex justify-end">
                       <div className="relative bg-red-100 max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                         <span className="block">Hiiii</span>
                       </div>
@@ -90,7 +95,7 @@ export default function MessagePage() {
                       <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                         <span className="block">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
                 <div className="flex items-center justify-between w-full p-3 border-t border-gray-300">
