@@ -85,7 +85,7 @@ export default function LoginForm() {
         variant="contained"
         onClick={handleLogin}
       >
-        Login
+        Connexion
       </LoadingButton>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Loading from '../components/UI/Loading';
-import { createProduct } from '../services/product.service';
+import { createProduct, getProducts } from '../services/product.service';
 
 export default function AddProducts() {
   const [base64UrlImages, setBase64UrlImages] = useState([]);
@@ -8,6 +8,22 @@ export default function AddProducts() {
   const [colors, setColors] = useState({});
 
   const [images, setImages] = useState([]);
+  const [products, setProducts] = useState([]);
+
+
+  // getproducts
+  useEffect(() => {
+    const getPrds = async () => {
+      try {
+        const response = await getProducts();
+        console.log(response);
+        setProducts(response);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des produits:', error);
+      }
+    };
+    getPrds();
+  }, []);
 
   const handleSelectImages = (e) => {
     if (!images.map((img) => img.name).includes(e.target.files[0].name)) setImages([...images, ...e.target.files]);
@@ -295,10 +311,27 @@ export default function AddProducts() {
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
+      <div className="container mx-auto my-8">
+      <h1 className="text-2xl font-semibold mb-4">Liste des Produits</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {products.length && (
+          products.map(product => (
+            <div key={product.id} className="bg-white rounded-lg shadow-lg p-4">
+              <img src={product.cover} alt={product.name} className="w-full h-40 object-cover mb-4" />
+              <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+              <p className="text-gray-600 mb-2">{product.description}</p>
+              <p className="text-blue-500 font-semibold">{product.price} €</p>
+            </div>
+          )))} 
+      </div>
+    </div>
+
     </form>
   );
 }

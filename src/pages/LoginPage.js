@@ -46,7 +46,7 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title> Login | Itine </title>
+        <title> Connexion | Itine </title>
       </Helmet>
 
       <StyledRoot>
@@ -61,9 +61,9 @@ export default function LoginPage() {
         {mdUp && (
           <StyledSection>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Hi, Welcome Back
+            Bonjour, Bienvenue
             </Typography>
-            <img src="/assets/illustrations/illustration_login.png" alt="login" />
+            <img src="./assets/illustrations/illustration_login.png" alt="login" />
           </StyledSection>
         )}
 

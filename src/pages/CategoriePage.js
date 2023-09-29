@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../tailwind.css';
 
-import categorie1 from '../assets/chaussure.jpg';
-import categorie2 from '../assets/vetement_femme.jpg';
-import categorie3 from '../assets/vetement_homme.jpg';
-import categorie4 from '../assets/groupevetement.jpg';
-import { createCategory } from '../services/category.service';
+import { createCategory, getCategories } from '../services/category.service';
 
 export default function CategoriePage() {
   const [image, setImage] = React.useState();
   const [base64UrlImage, setBase64UrlImage] = React.useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [categories, setCategories] = useState([]);
+
+  // getCategories
+  useEffect(() => {
+    const getCtg = async () => {
+      try {
+        const response = await getCategories();
+        console.log(response);
+        setCategories(response);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des catégories:', error);
+      }
+    };
+    getCtg();
+  }, []);
 
   const handleSelectImage = (e) => {
     setImage(e.target.files[0]);
@@ -125,20 +136,6 @@ export default function CategoriePage() {
                     required
                   />
                 </div>
-                {/* <div className="mt-5">
-                  <span htmlFor="description" className="block text-sm font-medium text-gray-700">
-                    Description
-                  </span>
-                  <textarea
-                    id="description"
-                    name="description"
-                    // value={product.description}
-                    // onChange={handleChange}
-                    className="mt-1 p-2 w-full border rounded-lg"
-                    rows="4"
-                    required
-                  />
-                </div> */}
               </div>
               <button type="submit" className="bg-blue-500 text-white  py-2 w-1/2  rounded hover:bg-blue-600">
                 Valider
@@ -147,31 +144,18 @@ export default function CategoriePage() {
           </div>
         </form>
         <div className=" md:w-2/3  px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">
-            <img src={categorie1} alt="categorie1" className="w-full h-auto rounded-t-lg" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">categorie1</h2>
-              <p className=" font-medium"> description</p>
-            </div>
-          </div>
-          <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">
-            <img src={categorie2} alt="categorie1" className="w-full h-auto rounded-t-lg" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">categorie2</h2>
-            </div>
-          </div>
-          <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">
-            <img src={categorie3} alt="categorie1" className="w-full h-auto rounded-t-lg" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">categorie3</h2>
-            </div>
-          </div>
-          <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">
-            <img src={categorie4} alt="categorie1" className="w-full h-auto rounded-t-lg" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">categorie4</h2>
-            </div>
-          </div>
+          {categories.length ? (
+            categories.map((category) => (
+              <div key={category.id} className="mx-auto my-4 bg-white rounded-lg shadow-lg">
+                <img src={category.image} alt={category.name} className="w-full h-auto rounded-t-lg" />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold">{category.name}</h2>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className=' text-center'>Aucune catégorie disponible pour l'instant.</p>
+          )}
         </div>
       </div>
     </div>

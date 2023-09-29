@@ -52,6 +52,7 @@ export default function MessagePage() {
                   {messages &&
                     messages.map((msg) => (
                       <button
+                        type="button"
                         key={msg.body}
                         onClick={() => setCurrentMessage(msg)}
                         className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
@@ -100,7 +101,7 @@ export default function MessagePage() {
                   </ul>
                 </div>
                 <div className="flex items-center justify-between w-full p-3 border-t border-gray-300">
-                  <button>
+                  <button type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6 text-gray-500"
@@ -116,7 +117,7 @@ export default function MessagePage() {
                       />
                     </svg>
                   </button>
-                  <button>
+                  <button type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-5 h-5 text-gray-500"
