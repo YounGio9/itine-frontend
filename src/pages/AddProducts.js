@@ -33,10 +33,6 @@ export default function AddProducts() {
       cover: idx,
     });
   };
-  const handleSelectColors = () => {
-    setColors();
-    setProduct();
-  };
 
   React.useEffect(() => {
     console.log(images);

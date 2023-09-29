@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { getMessages } from '../services/message.service';
 import Loading from '../components/UI/Loading';
 import search from '../assets/search.png';
@@ -52,6 +52,7 @@ export default function MessagePage() {
                   {messages &&
                     messages.map((msg) => (
                       <button
+                        key={msg.body}
                         onClick={() => setCurrentMessage(msg)}
                         className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
                       >

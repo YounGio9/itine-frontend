@@ -4,6 +4,7 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 // mocks_
 import account from '../../../_mock/account';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 // ----------------------------------------------------------------------
 
@@ -27,10 +28,14 @@ const MENU_OPTIONS = [
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
 
+  const { logout } = useAuthContext();
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
   };
-
+  const handleLogout = () => {
+    handleClose();
+    logout();
+  };
   const handleClose = () => {
     setOpen(null);
   };
@@ -97,8 +102,8 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
-        Déconnexion
+        <MenuItem onClick={handleLogout} sx={{ m: 1 }}>
+          Déconnexion
         </MenuItem>
       </Popover>
     </>

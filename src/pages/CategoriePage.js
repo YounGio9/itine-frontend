@@ -1,22 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../tailwind.css';
 
 import categorie1 from '../assets/chaussure.jpg';
 import categorie2 from '../assets/vetement_femme.jpg';
 import categorie3 from '../assets/vetement_homme.jpg';
 import categorie4 from '../assets/groupevetement.jpg';
+import { createCategory } from '../services/category.service';
 
 export default function CategoriePage() {
+  const [image, setImage] = React.useState();
+  const [base64UrlImage, setBase64UrlImage] = React.useState([]);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSelectImage = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  React.useEffect(() => {
+    console.log(image);
+    if (image) previewFile(image);
+  }, [image]);
+
+  const [category, setCategory] = React.useState({
+    name: '',
+    image: '',
+  });
+
+  const handleChangeName = (e) => {
+    setCategory({
+      ...category,
+      name: e.target.value,
+    });
+  };
+
+  const previewFile = (file) => {
+    console.log('image', image);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setBase64UrlImage(reader.result);
+    };
+  };
+
+  React.useMemo(() => {
+    console.log(category);
+  }, [category]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log('base64UrlImage', base64UrlImage);
+    console.log('product', category);
+    const payload = category;
+    payload.image = base64UrlImage;
+
+    if (Object.keys(payload).some((key) => !payload[key])) {
+      return;
+    }
+    console.log('Données de la categorie à ajouter :', payload);
+    setLoading(true);
+    const data = await createCategory(payload);
+    setMessage(data.message);
+    setLoading(false);
+  };
+
   return (
     <div>
       <div className=" md:flex justify-center">
         {/* form of modal add categorie */}
-        <form className=" md:w-1/3  text-center">
+        <form onSubmit={handleSubmit} className=" md:w-1/3  text-center">
           <div className="flex space-x-10">
             <div className=" w-full ">
               <h2 className="text-2xl font-semibold mb-4">Ajouter une categorie</h2>
               <div className="flex items-center justify-center w-full">
-                <span
+                <label
                   htmlFor="dropzone-file"
                   className="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-blue-100  hover:bg-blue-200"
                 >
@@ -43,8 +101,15 @@ export default function CategoriePage() {
                       SVG, PNG, JPG ou GIF (MAX. 800x400px)
                     </p>
                   </div>
-                  <input id="dropzone-file" type="file" className="hidden" multiple accept="image/png, image/jpeg" />
-                </span>
+                  <input
+                    onChange={handleSelectImage}
+                    id="dropzone-file"
+                    type="file"
+                    name="dropzone-file"
+                    className="hidden"
+                    accept="image/png, image/jpeg"
+                  />
+                </label>
               </div>
               <div>
                 <div className="my-4">
@@ -55,13 +120,12 @@ export default function CategoriePage() {
                     type="text"
                     id="nom"
                     name="nom"
-                    // value={product.nom}
-                    // onChange={handleChange}
+                    onChange={handleChangeName}
                     className="mt-1 p-2 w-full border rounded-lg"
                     required
                   />
                 </div>
-                <div className="mt-5">
+                {/* <div className="mt-5">
                   <span htmlFor="description" className="block text-sm font-medium text-gray-700">
                     Description
                   </span>
@@ -74,7 +138,7 @@ export default function CategoriePage() {
                     rows="4"
                     required
                   />
-                </div>
+                </div> */}
               </div>
               <button type="submit" className="bg-blue-500 text-white  py-2 w-1/2  rounded hover:bg-blue-600">
                 Valider
@@ -87,7 +151,7 @@ export default function CategoriePage() {
             <img src={categorie1} alt="categorie1" className="w-full h-auto rounded-t-lg" />
             <div className="p-4">
               <h2 className="text-xl font-semibold">categorie1</h2>
-              <p className=' font-medium'> description</p>
+              <p className=" font-medium"> description</p>
             </div>
           </div>
           <div className="mx-auto my-4 bg-white rounded-lg shadow-lg">

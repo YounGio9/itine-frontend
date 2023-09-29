@@ -1,9 +1,8 @@
-import { Get } from '../utils/axios';
+import { Post } from '../utils/axios';
 
-export const getMessages = async () => {
+export const createCategory = async (payload) => {
   try {
-    const data = await Get('messages');
-    console.log(data);
+    const data = await Post('categories', payload);
     return data;
   } catch (error) {
     if (error.response.status === 401) {
