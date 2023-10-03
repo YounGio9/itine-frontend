@@ -234,9 +234,7 @@ export default function DeliveryPage() {
                           <TableCell align="left">{town}</TableCell>
 
                           <TableCell align="left">
-                            <Label color={(active === 'innactif' && 'error') || 'success'}>
-                              {active ? 'inactif' : 'actif'}
-                            </Label>
+                            <Label color={(!active && 'error') || 'success'}>{active ? 'inactif' : 'actif'}</Label>
                           </TableCell>
 
                           <TableCell align="right">
