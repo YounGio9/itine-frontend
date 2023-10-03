@@ -311,6 +311,10 @@ export default function DeliveryPage() {
         }}
       >
         <MenuItem>
+          <Iconify icon={'gridicons:info'} sx={{ mr: 2 }} />
+          Info
+        </MenuItem>
+        <MenuItem>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
           Modifier
         </MenuItem>
