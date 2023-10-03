@@ -224,7 +224,7 @@ export default function DeliveryPage() {
                             <Stack direction="row" alignItems="center" spacing={2}>
                               {/* <Avatar alt={firstName} src={} /> */}
                               <Typography variant="subtitle2" noWrap>
-                                {firstName + lastName}
+                                {`${firstName} ${lastName}`}
                               </Typography>
                             </Stack>
                           </TableCell>
