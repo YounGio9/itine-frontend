@@ -568,10 +568,11 @@
               method: "GET",
             })
               .then(response => {
+                console.log(response.data)
                 if (response.ok) {
                   return response.json();
                 }
-                throw new Error("La réponse du réseau n'était pas correcte.");
+                throw new Error("La réponse du réseau n'est pas correcte.");
               })
               .then(data => {
                 console.log(data);

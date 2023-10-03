@@ -14,7 +14,7 @@ document.getElementById("deliveryForm").addEventListener("submit", function (eve
     const formData = {
         lastName: lastName,
         firstName: firstName,
-        dateOfBirth: dateOfBirth,
+        dateOfBirth: new Date(dateOfBirth),
         country: country,
         town: town,
         email: email,
@@ -22,6 +22,7 @@ document.getElementById("deliveryForm").addEventListener("submit", function (eve
         postalCode: postalCode,
         maritalStatus: maritalStatus
     };
+    console.log(formData);
 
     fetch("https://backend-dev-itine.onrender.com/deliveryMen", {
         method: "POST",
@@ -35,6 +36,7 @@ document.getElementById("deliveryForm").addEventListener("submit", function (eve
             console.log("Demande envoyée avec succès !", response);
             document.getElementById("deliveryForm").reset();
         } else {
+            console.log(response)
             console.error("La demande a échoué.");
         }
     })
