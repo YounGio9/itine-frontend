@@ -6,11 +6,11 @@ export const getDeliveryMen = async () => {
     console.log(data);
     return { success: true, data: data.data };
   } catch (error) {
-    if (error.response.status === 401) {
+    if (error.response && error.response.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('userProfile');
       window.location.reload();
     }
-    return { success: false, message: error.response.data.message };
+    return { success: false, message: error.response.message };
   }
 };
