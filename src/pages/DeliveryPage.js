@@ -165,6 +165,12 @@ export default function DeliveryPage() {
 
   const isNotFound = !filteredUsers.length && !!filterName;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <Helmet>
@@ -310,10 +316,29 @@ export default function DeliveryPage() {
           },
         }}
       >
-        <MenuItem>
+         <MenuItem  onClick={toggleModal}>
           <Iconify icon={'gridicons:info'} sx={{ mr: 2 }} />
           Info
         </MenuItem>
+        {/* Modal */}
+        {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            {/* Contenu du modal */}
+            <div className="modal-content py-4 text-left px-6">
+              <div className="flex justify-between items-center pb-3">
+                <p className="text-2xl font-bold">Mon Modal</p>
+                <button type='button' onClick={toggleModal} className="modal-close">
+                  Fermer
+                </button>
+              </div>
+              <p>Contenu du modal.</p>
+            </div>
+          </div>
+          <div className="modal-overlay fixed inset-0 bg-black opacity-25" />
+        </div>
+      )}
+       
         <MenuItem>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
           Modifier
