@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-import { filter } from 'lodash';
+import { divide, filter } from 'lodash';
 import { sentenceCase } from 'change-case';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 // @mui
 import {
   Card,
@@ -30,6 +31,8 @@ import Scrollbar from '../components/scrollbar';
 import { DeliveryListeHead, DeliveryListToolbar } from '../sections/@dashboard/delivery';
 // mock
 import USERLIST from '../_mock/delivery1';
+import { getDeliveryMen } from '../services/deliveryMan.service';
+import Loading from '../components/UI/Loading';
 
 // ----------------------------------------------------------------------
 
@@ -139,9 +142,26 @@ export default function DeliveryPage() {
     setFilterName(event.target.value);
   };
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+  const [loading, setLoading] = React.useState(true);
+  const [deliveryMen, setDeliveryMen] = React.useState([]);
 
-  const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
+  React.useEffect(() => {
+    const getDelMen = async () => {
+      const data = await getDeliveryMen();
+      setLoading(false);
+      console.log('data from service', data);
+      setDeliveryMen(data.data);
+    };
+    getDelMen();
+  }, []);
+
+  React.useMemo(() => {
+    console.log('deliveryMen', deliveryMen);
+  }, [deliveryMen]);
+
+  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - deliveryMen.length) : 0;
+
+  const filteredUsers = applySortFilter(deliveryMen, getComparator(order, orderBy), filterName);
 
   const isNotFound = !filteredUsers.length && !!filterName;
 
@@ -180,53 +200,60 @@ export default function DeliveryPage() {
                   order={order}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
+                  rowCount={deliveryMen?.length}
                   numSelected={selected.length}
                   onRequestSort={handleRequestSort}
                   onSelectAllClick={handleSelectAllClick}
                 />
-                <TableBody>
-                  {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl } = row;
-                    const selectedUser = selected.indexOf(name) !== -1;
+                {loading ? (
+                  <Loading />
+                ) : (
+                  <TableBody>
+                    {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                      console.log(row, 'ROOOOW');
+                      const { id, lastName, firstName, town, active } = row;
+                      const selectedUser = selected.indexOf(firstName) !== -1;
 
-                    return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, name)} />
-                        </TableCell>
+                      return (
+                        <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
+                          <TableCell padding="checkbox">
+                            <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, firstName)} />
+                          </TableCell>
 
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={name} src={avatarUrl} />
-                            <Typography variant="subtitle2" noWrap>
-                              {name}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
+                          <TableCell component="th" scope="row" padding="none">
+                            <Stack direction="row" alignItems="center" spacing={2}>
+                              {/* <Avatar alt={firstName} src={} /> */}
+                              <Typography variant="subtitle2" noWrap>
+                                {firstName + lastName}
+                              </Typography>
+                            </Stack>
+                          </TableCell>
 
-                        <TableCell align="left">{company}</TableCell>
+                          <TableCell align="left">{town}</TableCell>
 
-                        <TableCell align="left">{role}</TableCell>
+                          <TableCell align="left">{town}</TableCell>
 
-                        <TableCell align="left">
-                          <Label color={(status === 'innactif' && 'error') || 'success'}>{sentenceCase(status)}</Label>
-                        </TableCell>
+                          <TableCell align="left">
+                            <Label color={(active === 'innactif' && 'error') || 'success'}>
+                              {active ? 'inactif' : 'actif'}
+                            </Label>
+                          </TableCell>
 
-                        <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
-                            <Iconify icon={'eva:more-vertical-fill'} />
-                          </IconButton>
-                        </TableCell>
+                          <TableCell align="right">
+                            <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
+                              <Iconify icon={'eva:more-vertical-fill'} />
+                            </IconButton>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                    {emptyRows > 0 && (
+                      <TableRow style={{ height: 53 * emptyRows }}>
+                        <TableCell colSpan={6} />
                       </TableRow>
-                    );
-                  })}
-                  {emptyRows > 0 && (
-                    <TableRow style={{ height: 53 * emptyRows }}>
-                      <TableCell colSpan={6} />
-                    </TableRow>
-                  )}
-                </TableBody>
+                    )}
+                  </TableBody>
+                )}
 
                 {isNotFound && (
                   <TableBody>
