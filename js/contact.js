@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         subject: subject,
         body: body,
       });
+      // https://backend-dev-itine.onrender.com/cities
 
       fetch("https://backend-dev-itine.onrender.com/messages", {
         method: "POST",
