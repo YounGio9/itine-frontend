@@ -432,12 +432,13 @@
           <div class="heading_container remove_line_bt">
             <h2>Cliqué, c'est livré</h2>
           </div>
-          <p style="margin-top: 20; margin-bottom: 30">
+          <p style="margin: 0;">
             Nous sommes déjà présent dans plusieurs villes de France tel que:
-            <b>Paris,</b> <b>Marseille,</b> <b>Lille,</b> <b>Lyon,</b>
-            <b>Bordeaux,</b>. Vérifiez si votre adresse est éligible et passez
-            votre première commande
+          <div id="cities-container"></div>
+          Vérifiez si votre adresse est éligible et passez
+          votre première commande
           </p>
+
 
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
@@ -563,7 +564,7 @@
 
             // Get methode for receive ville info
             const apiUrl = "https://backend-dev-itine.onrender.com/cities";
-           
+
             fetch(apiUrl, {
               method: "GET",
             })
@@ -575,25 +576,33 @@
               })
               .then(data => {
                 console.log(data.data);
+                const citiesContainer = document.getElementById('cities-container');
+                const tablenamecities = data.data.map(city => city.name.toLowerCase());
+                let cityNames = '';
+                data.data.forEach((city, index) => {
+                  const cityName = city.name;
+                  cityNames += `<b>${cityName}</b>`;
+                  if (index < data.data.length - 1) {
+                    cityNames += ', ';
+                  }
+                });
+                citiesContainer.innerHTML = cityNames;
+                console.log(tablenamecities)
+                // Function for verifying name cities
+                form.addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  let country = document.getElementById("nameCountry").value.toLowerCase();
+
+                  if (tablenamecities.includes(country)) {
+                    $("#exampleModalCenter2").modal("show");
+                  } else {
+                    $("#modalAddr").modal("show");
+                  }
+                });
               })
               .catch(error => {
                 console.error("Il y a eu un problème avec la récupération :", error);
               });
-
-            form.addEventListener("submit", function (e) {
-              e.preventDefault();
-              let country = document.getElementById("nameCountry").value;
-              if (
-                ["paris", "marseille", "lille", "lyon", "bordeaux"].includes(
-                  country.toLowerCase()
-                )
-              ) {
-                $("#exampleModalCenter2").modal("show");
-              } else {
-                $("#modalAddr").modal("show");
-              }
-            });
-
             document
               .getElementById("openSecondModalButton")
               .addEventListener("click", function () {
