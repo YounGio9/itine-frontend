@@ -198,7 +198,6 @@ export default function DeliveryPage() {
           <Button
             className="bg-blue-700"
             variant="contained"
-            startIcon={<Iconify icon="eva:plus-fill" />}
             onClick={() => {
               if (activeView === 'requests') setActiveView('actives');
               else setActiveView('requests');
