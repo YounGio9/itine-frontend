@@ -65,9 +65,9 @@ function getComparator(order, orderBy) {
 }
 
 function applySortFilter(array, comparator, query) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
+  const stabilizedThis = array?.map((el, index) => [el, index]);
 
-  stabilizedThis.sort((a, b) => {
+  stabilizedThis?.sort((a, b) => {
     const order = comparator(a[0], b[0]);
     if (order !== 0) return order;
     return a[1] - b[1];
@@ -78,7 +78,7 @@ function applySortFilter(array, comparator, query) {
       (_user) => (_user.firstName + _user.lastName).toLowerCase().indexOf(query.toLowerCase()) !== -1
     );
   }
-  return stabilizedThis.map((el) => el[0]);
+  return stabilizedThis?.map((el) => el[0]);
 }
 
 export default function DeliveryPage() {
@@ -153,15 +153,22 @@ export default function DeliveryPage() {
   const [loading, setLoading] = React.useState(true);
   const [deliveryMen, setDeliveryMen] = React.useState([]);
 
+  const [activeView, setActiveView] = React.useState('requests');
+  const [isOpen, setIsOpen] = useState(false);
+
   React.useEffect(() => {
     const getDelMen = async () => {
       const data = await getDeliveryMen();
       setLoading(false);
       console.log('data from service', data);
-      setDeliveryMen(data.data);
+      setDeliveryMen(
+        activeView === 'requests'
+          ? data.data.filter((elem) => elem.status === 'unset')
+          : data.data.filter((elem) => elem.status !== 'unset')
+      );
     };
     getDelMen();
-  }, []);
+  }, [activeView, isOpen]);
 
   React.useMemo(() => {
     console.log('deliveryMen', activeUser);
@@ -172,8 +179,6 @@ export default function DeliveryPage() {
   const filteredUsers = applySortFilter(deliveryMen, getComparator(order, orderBy), filterName);
 
   const isNotFound = !filteredUsers.length && !!filterName;
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -188,16 +193,19 @@ export default function DeliveryPage() {
       <Container className="relative ">
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Livreurs
+            Livreurs {activeView === 'requests' && '(Requêtes)'}
           </Typography>
-          {/* <Button
-            href="/admin/adddelivery"
+          <Button
             className="bg-blue-700"
             variant="contained"
             startIcon={<Iconify icon="eva:plus-fill" />}
+            onClick={() => {
+              if (activeView === 'requests') setActiveView('actives');
+              else setActiveView('requests');
+            }}
           >
-            Nouveau livreur
-          </Button> */}
+            {activeView === 'actives' ? 'Voir les requêtes' : 'Voir les livreurs'}
+          </Button>
         </Stack>
 
         <Card>
@@ -224,15 +232,17 @@ export default function DeliveryPage() {
                 ) : (
                   <TableBody>
                     {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                      const { id, lastName, firstName, town, active } = row;
+                      const { id, lastName, firstName, town, status } = row;
                       const selectedUser = selected.indexOf(firstName) !== -1;
 
                       return (
                         <TableRow
                           onClick={() => {
-                            console.log(`clicked on ${id}`);
-                            setActiveUser(deliveryMen.find((deliveryMan) => deliveryMan.id === id));
-                            setIsOpen(true);
+                            if (activeView === 'requests') {
+                              console.log(`clicked on ${id}`);
+                              setActiveUser(deliveryMen.find((deliveryMan) => deliveryMan.id === id));
+                              setIsOpen(true);
+                            }
                           }}
                           hover
                           key={id}
@@ -258,7 +268,9 @@ export default function DeliveryPage() {
                           <TableCell align="left">{town}</TableCell>
 
                           <TableCell align="left">
-                            <Label color={(!active && 'error') || 'success'}>{active ? 'actif' : 'inactif'}</Label>
+                            <Label color={(status === 'accepted' && 'success') || 'error'}>
+                              {status === 'accepted' ? 'actif' : status === 'rejected' ? 'rejeté' : 'En attente'}
+                            </Label>
                           </TableCell>
 
                           <TableCell align="right">

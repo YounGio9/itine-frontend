@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { Modal, Box, Typography } from '@mui/material';
+import { Modal, Box, Typography, TextField } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { changeDeliveryManStatus } from '../../services/deliveryMan.service';
 import Label from '../label';
 import Loading from '../UI/Loading';
@@ -8,7 +9,10 @@ import Loading from '../UI/Loading';
 function DeliveryManInfosModal({ isOpen, deliveryMan, toggleModal }) {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const [error, setError] = React.useState(false);
+  const [message, setMessage] = React.useState('');
+
+  const [password, setPassword] = React.useState('');
   const style = {
     position: 'absolute',
     top: '50%',
@@ -21,6 +25,9 @@ function DeliveryManInfosModal({ isOpen, deliveryMan, toggleModal }) {
     p: 4,
   };
 
+  useEffect(() => {
+    setTimeout(() => setMessage(''), 2000);
+  }, [message]);
   const handleChangeStatus = async (status) => {
     setLoading(true);
     const result = await changeDeliveryManStatus({
@@ -29,8 +36,13 @@ function DeliveryManInfosModal({ isOpen, deliveryMan, toggleModal }) {
     });
     setLoading(false);
     if (result.success) {
-      setSuccess(true);
-      setTimeout(() => toggleModal(), 2000);
+      if (status) {
+        setMessage('Vous avez accepté avec succès');
+        setSuccess(true);
+      } else {
+        setMessage('Vous avez rejeté avec succès');
+        setError(true);
+      }
     }
   };
 
@@ -38,13 +50,45 @@ function DeliveryManInfosModal({ isOpen, deliveryMan, toggleModal }) {
     <div style={{ margin: '25%' }}>
       <Modal
         open={isOpen}
-        onClose={toggleModal}
+        onClose={() => {
+          setSuccess(false);
+          setError(false);
+          toggleModal();
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {success ? (
-            <div>Vous avez accepté avec succès</div>
+          {success || error ? (
+            <>
+              <div>{message}</div>
+              {success && (
+                <>
+                  <div>Définissez un mot de passe pour le livreur</div>
+                  <TextField
+                    name="password"
+                    required
+                    label="Mot de passe"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                  />
+                  <LoadingButton
+                    className="bg-blue-500 my-6"
+                    fullWidth
+                    size="large"
+                    type="submit"
+                    variant="contained"
+                    onClick={() => {
+                      setSuccess(false);
+                      setError(false);
+                      toggleModal();
+                    }}
+                  >
+                    Appliquer
+                  </LoadingButton>
+                </>
+              )}
+            </>
           ) : (
             <>
               <Typography id="modal-modal-title" variant="h6" component="h2">
