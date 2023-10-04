@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import { divide, filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import React, { useState } from 'react';
-
 // @mui
 import {
   Card,
@@ -22,6 +21,8 @@ import {
   IconButton,
   TableContainer,
   TablePagination,
+  Modal,
+  Box,
 } from '@mui/material';
 // components
 import Label from '../components/label';
@@ -33,6 +34,7 @@ import { DeliveryListeHead, DeliveryListToolbar } from '../sections/@dashboard/d
 import USERLIST from '../_mock/delivery1';
 import { getDeliveryMen } from '../services/deliveryMan.service';
 import Loading from '../components/UI/Loading';
+import DeliveryManInfosModal from '../components/deliveryManInfosModal';
 
 // ----------------------------------------------------------------------
 
@@ -64,13 +66,17 @@ function getComparator(order, orderBy) {
 
 function applySortFilter(array, comparator, query) {
   const stabilizedThis = array.map((el, index) => [el, index]);
+
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);
     if (order !== 0) return order;
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(
+      array,
+      (_user) => (_user.firstName + _user.lastName).toLowerCase().indexOf(query.toLowerCase()) !== -1
+    );
   }
   return stabilizedThis.map((el) => el[0]);
 }
@@ -89,6 +95,8 @@ export default function DeliveryPage() {
   const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  const [activeUser, setActiveUser] = useState({});
 
   const handleOpenMenu = (event) => {
     setOpen(event.currentTarget);
@@ -156,8 +164,8 @@ export default function DeliveryPage() {
   }, []);
 
   React.useMemo(() => {
-    console.log('deliveryMen', deliveryMen);
-  }, [deliveryMen]);
+    console.log('deliveryMen', activeUser);
+  }, [activeUser]);
 
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - deliveryMen.length) : 0;
 
@@ -169,7 +177,6 @@ export default function DeliveryPage() {
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
-    
   };
 
   return (
@@ -178,19 +185,19 @@ export default function DeliveryPage() {
         <title>Livreur | Itine </title>
       </Helmet>
 
-      <Container>
+      <Container className="relative ">
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             Livreurs
           </Typography>
-          <Button
+          {/* <Button
             href="/admin/adddelivery"
             className="bg-blue-700"
             variant="contained"
             startIcon={<Iconify icon="eva:plus-fill" />}
           >
             Nouveau livreur
-          </Button>
+          </Button> */}
         </Stack>
 
         <Card>
@@ -217,12 +224,22 @@ export default function DeliveryPage() {
                 ) : (
                   <TableBody>
                     {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                      console.log(row, 'ROOOOW');
                       const { id, lastName, firstName, town, active } = row;
                       const selectedUser = selected.indexOf(firstName) !== -1;
 
                       return (
-                        <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
+                        <TableRow
+                          onClick={() => {
+                            console.log(`clicked on ${id}`);
+                            setActiveUser(deliveryMen.find((deliveryMan) => deliveryMan.id === id));
+                            setIsOpen(true);
+                          }}
+                          hover
+                          key={id}
+                          tabIndex={-1}
+                          role="checkbox"
+                          selected={selectedUser}
+                        >
                           <TableCell padding="checkbox">
                             <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, firstName)} />
                           </TableCell>
@@ -241,7 +258,7 @@ export default function DeliveryPage() {
                           <TableCell align="left">{town}</TableCell>
 
                           <TableCell align="left">
-                            <Label color={(!active && 'error') || 'success'}>{active ? 'inactif' : 'actif'}</Label>
+                            <Label color={(!active && 'error') || 'success'}>{active ? 'actif' : 'inactif'}</Label>
                           </TableCell>
 
                           <TableCell align="right">
@@ -298,6 +315,7 @@ export default function DeliveryPage() {
           />
         </Card>
       </Container>
+      <DeliveryManInfosModal isOpen={isOpen} deliveryMan={activeUser} toggleModal={toggleModal} />
 
       <Popover
         open={Boolean(open)}
@@ -321,24 +339,6 @@ export default function DeliveryPage() {
           <Iconify icon={'gridicons:info'} sx={{ mr: 2 }} />
           Info
         </MenuItem>
-        {/* Modal */}
-        {isOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-50">
-            <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-              {/* Contenu du modal */}
-              <div className="modal-content py-4 text-left px-6">
-                <div className="flex justify-between items-center pb-3">
-                  <p className="text-2xl font-bold">Mon Modal</p>
-                  <button type="button" onClick={toggleModal} className="modal-close">
-                    Fermer
-                  </button>
-                </div>
-                <p>Contenu du modal.</p>
-              </div>
-            </div>
-            <div className="modal-overlay fixed inset-0 bg-black opacity-25" />
-          </div>
-        )}
         <MenuItem>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
           Modifier
