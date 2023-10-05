@@ -77,7 +77,7 @@ export default function MessagePage() {
                       >
                         <div className="text-start w-full pb-2">
                           <h3 className="block ml-2 font-semibold text-red-600">
-                            message de {currentChat.messages[0].senderName}{' '}
+                            message de {msg.messages[0].senderMail}{' '}
                           </h3>
                           <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.user} </h4>
                         </div>
@@ -89,7 +89,7 @@ export default function MessagePage() {
             <div className="hidden lg:col-span-2 lg:block">
               <div className="w-full">
                 <div className="relative flex items-center p-3 border-b border-gray-300">
-                  <span className="block ml-5 font-bold text-gray-600">Anna Michelle</span>
+                  <span className="block ml-5 font-bold text-gray-600">{currentChat.messages[0].senderName}</span>
                   {/* <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span> */}
                 </div>
                 <div className="relative w-full p-6 overflow-y-auto h-96">
