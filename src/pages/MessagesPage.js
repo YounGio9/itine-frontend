@@ -13,23 +13,23 @@ export default function MessagePage() {
 
   const [currentChat, setCurrentChat] = React.useState();
 
+  const getChts = async () => {
+    const data = await getChats();
+    setLoading(false);
+    console.log(data);
+    setMessages(data.data.reverse());
+  };
   const handleReply = async () => {
     const response = await reply({
-      email: currentChat.senderMail,
-      subject: currentChat.subject,
+      email: currentChat.user,
+      subject: currentChat.messages[0].subject,
       body: replyBody,
     });
-
-    await getMessages();
+    console.log(response);
+    getChts();
   };
 
   React.useEffect(() => {
-    const getChts = async () => {
-      const data = await getChats();
-      setLoading(false);
-      console.log(data);
-      setMessages(data.data.reverse());
-    };
     getChts();
   }, []);
 
@@ -88,17 +88,22 @@ export default function MessagePage() {
                 </div>
                 <div className="relative w-full p-6 overflow-y-auto h-96">
                   <ul className="space-y-2">
-                    <li className="flex justify-start">
-                      <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                        {currentChat && <span className="block">{currentChat.body}</span>}
-                      </div>
-                    </li>
-
-                    <li className="flex justify-end">
-                      <div className="relative bg-red-100 max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                        <span className="block">Hiiii</span>
-                      </div>
-                    </li>
+                    {currentChat &&
+                      currentChat.messages.map((msg) =>
+                        msg.senderName !== 'Admin' ? (
+                          <li className="flex justify-start">
+                            <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+                              <span className="block">{msg.body}</span>
+                            </div>
+                          </li>
+                        ) : (
+                          <li className="flex justify-end">
+                            <div className="relative bg-red-100 max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+                              <span className="block">Hiiii</span>
+                            </div>
+                          </li>
+                        )
+                      )}
 
                     {/* <li className="flex justify-end">
                       <div className="relative max-w-xl bg-red-100 px-4 py-2 text-gray-700 rounded shadow">
