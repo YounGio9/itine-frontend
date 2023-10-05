@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getMessages } from '../services/message.service';
+import { getChats, getMessages, reply } from '../services/message.service';
 import Loading from '../components/UI/Loading';
 import search from '../assets/search.png';
 
@@ -9,20 +9,32 @@ export default function MessagePage() {
   const [loading, setLoading] = React.useState(true);
   const [messages, setMessages] = React.useState([]);
 
-  const [currentMessage, setCurrentMessage] = React.useState();
+  const [replyBody, setReplyBody] = React.useState('');
+
+  const [currentChat, setCurrentChat] = React.useState();
+
+  const handleReply = async () => {
+    const response = await reply({
+      email: currentChat.senderMail,
+      subject: currentChat.subject,
+      body: replyBody,
+    });
+
+    await getMessages();
+  };
 
   React.useEffect(() => {
-    const getMsgs = async () => {
-      const data = await getMessages();
+    const getChts = async () => {
+      const data = await getChats();
       setLoading(false);
       console.log(data);
-      setMessages(data.data);
+      setMessages(data.data.reverse());
     };
-    getMsgs();
+    getChts();
   }, []);
 
   useEffect(() => {
-    if (messages.length) setCurrentMessage(messages[0]);
+    if (messages.length) setCurrentChat(messages[0]);
   }, [messages]);
 
   React.useMemo(() => {
@@ -53,14 +65,15 @@ export default function MessagePage() {
                     messages.map((msg) => (
                       <button
                         type="button"
-                        key={msg.body}
-                        onClick={() => setCurrentMessage(msg)}
+                        key={msg.user}
+                        onClick={() => setCurrentChat(msg)}
                         className="flex w-full items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-t border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none"
                       >
                         <div className="text-start w-full pb-2">
-                          <h3 className="block ml-2 font-semibold text-red-600">message de {msg.senderName} </h3>
-                          <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.senderMail} </h4>
-                          <h5 className="block ml-2 text-sm text-gray-600">sujet: {msg.subject}</h5>
+                          <h3 className="block ml-2 font-semibold text-red-600">
+                            message de {msg.messages[0].senderMail}{' '}
+                          </h3>
+                          <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.user} </h4>
                         </div>
                       </button>
                     ))}
@@ -73,21 +86,21 @@ export default function MessagePage() {
                   <span className="block ml-5 font-bold text-gray-600">Anna Michelle</span>
                   {/* <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span> */}
                 </div>
-                <div className="relative w-full p-6 overflow-y-auto h-[40rem]">
+                <div className="relative w-full p-6 overflow-y-auto h-96">
                   <ul className="space-y-2">
                     <li className="flex justify-start">
                       <div className="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                        {currentMessage && <span className="block">{currentMessage.body}</span>}
+                        {currentChat && <span className="block">{currentChat.body}</span>}
                       </div>
                     </li>
 
-                    {/* <li className="flex justify-end">
+                    <li className="flex justify-end">
                       <div className="relative bg-red-100 max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                         <span className="block">Hiiii</span>
                       </div>
                     </li>
 
-                    <li className="flex justify-end">
+                    {/* <li className="flex justify-end">
                       <div className="relative max-w-xl bg-red-100 px-4 py-2 text-gray-700 rounded shadow">
                         <span className="block">how are you?</span>
                       </div>
@@ -101,47 +114,17 @@ export default function MessagePage() {
                   </ul>
                 </div>
                 <div className="flex items-center justify-between w-full p-3 border-t border-gray-300">
-                  <button type="button">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-gray-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </button>
-                  <button type="button">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 text-gray-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
-                      />
-                    </svg>
-                  </button>
                   <input
                     type="text"
                     placeholder="Message"
                     className="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
                     name="message"
+                    onChange={(e) => setReplyBody(e.target.value)}
+                    value={replyBody}
                     required=""
                   />
 
-                  <button type="submit">
+                  <button type="submit" onClick={handleReply}>
                     <svg
                       className="w-8 h-8 text-gray-500 origin-center transform rotate-90"
                       xmlns="http://www.w3.org/2000/svg"
