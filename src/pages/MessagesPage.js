@@ -77,7 +77,7 @@ export default function MessagePage() {
                       >
                         <div className="text-start w-full pb-2">
                           <h3 className="block ml-2 font-semibold text-red-600">
-                            message de {msg.messages[0].senderMail}{' '}
+                            message de {currentChat.messages[0].senderName}{' '}
                           </h3>
                           <h4 className="block ml-2 text-sm text-gray-600">Mail: {msg.user} </h4>
                         </div>
