@@ -553,61 +553,64 @@
           <script>
             // JavaScript to open the second modal and close the first modal
             // Move the event listener registration outside the click event listener
-            const nameCountry = document.getElementById("nameCountry");
-            const form = document.getElementById("region-fill-form");
+            document.addEventListener("DOMContentLoaded", function () {
+              const nameCountry = document.getElementById("nameCountry");
+              const form = document.getElementById("region-fill-form");
+               
 
-            nameCountry.addEventListener("change", function (e) {
-              console.log(e.target.value);
-              country = e.target.value;
-              console.log(country);
-            });
-
-            // Get methode for receive ville info
-            const apiUrl = "https://backend-dev-itine.onrender.com/cities";
-
-            fetch(apiUrl, {
-              method: "GET",
-            })
-              .then(response => {
-                if (response.ok) {
-                  return response.json();
-                }
-                throw new Error("La réponse du réseau n'est pas correcte.");
-              })
-              .then(data => {
-                console.log(data.data);
-                const citiesContainer = document.getElementById('cities-container');
-                const tablenamecities = data.data.map(city => city.name.toLowerCase());
-                let cityNames = '';
-                data.data.forEach((city, index) => {
-                  const cityName = city.name;
-                  cityNames += `<b>${cityName}</b>`;
-                  if (index < data.data.length - 1) {
-                    cityNames += ', ';
-                  }
-                });
-                citiesContainer.innerHTML = cityNames;
-                console.log(tablenamecities)
-                // Function for verifying name cities
-                form.addEventListener("submit", function (e) {
-                  e.preventDefault();
-                  let country = document.getElementById("nameCountry").value.toLowerCase();
-
-                  if (tablenamecities.includes(country)) {
-                    $("#exampleModalCenter2").modal("show");
-                  } else {
-                    $("#modalAddr").modal("show");
-                  }
-                });
-              })
-              .catch(error => {
-                console.error("Il y a eu un problème avec la récupération :", error);
+              nameCountry.addEventListener("change", function (e) {
+                console.log(e.target.value);
+                country = e.target.value;
+                console.log(country);
               });
-            document
-              .getElementById("openSecondModalButton")
-              .addEventListener("click", function () {
-                $("#exampleModalCenter").modal("hide");
-              });
+
+              // Get methode for receive ville info
+              const apiUrl = "https://backend-dev-itine.onrender.com/cities";
+
+              fetch(apiUrl, {
+                method: "GET",
+              })
+                .then(response => {
+                  if (response.ok) {
+                    return response.json();
+                  }
+                  throw new Error("La réponse du réseau n'est pas correcte.");
+                })
+                .then(data => {
+                  console.log(data.data);
+                  const citiesContainer = document.getElementById('cities-container');
+                  const tablenamecities = data.data.map(city => city.name.toLowerCase());
+                  let cityNames = '';
+                  data.data.forEach((city, index) => {
+                    const cityName = city.name;
+                    cityNames += `<b>${cityName}</b>`;
+                    if (index < data.data.length - 1) {
+                      cityNames += ', ';
+                    }
+                  });
+                  citiesContainer.innerHTML = cityNames;
+                  console.log(tablenamecities)
+                  // Function for verifying name cities
+                  form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    let country = document.getElementById("nameCountry").value.toLowerCase();
+
+                    if (tablenamecities.includes(country)) {
+                      $("#exampleModalCenter2").modal("show");
+                    } else {
+                      $("#modalAddr").modal("show");
+                    }
+                  });
+                })
+                .catch(error => {
+                  console.error("Il y a eu un problème avec la récupération :", error);
+                });
+              document
+                .getElementById("openSecondModalButton")
+                .addEventListener("click", function () {
+                  $("#exampleModalCenter").modal("hide");
+                });
+                });
           </script>
         </div>
       </div>
