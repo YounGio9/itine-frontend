@@ -89,7 +89,7 @@ export default function MessagePage() {
             <div className="hidden lg:col-span-2 lg:block">
               <div className="w-full">
                 <div className="relative flex items-center p-3 border-b border-gray-300">
-                  <span className="block ml-5 font-bold text-gray-600">{currentChat.messages[0].senderName}</span>
+                  <span className="block ml-5 font-bold text-gray-600">{currentChat?.messages[0].senderName}</span>
                   {/* <span className="absolute w-3 h-3 bg-green-600 rounded-full top-4"></span> */}
                 </div>
                 <div className="relative w-full p-6 overflow-y-auto h-96">
