@@ -20,6 +20,12 @@ export default function MessagePage() {
     setMessages(data.data.reverse());
   };
   const handleReply = async () => {
+
+    console.log({
+      email: currentChat.user,
+      subject: currentChat.messages[0].subject,
+      body: replyBody,
+    })
     const response = await reply({
       email: currentChat.user,
       subject: currentChat.messages[0].subject,
@@ -99,7 +105,7 @@ export default function MessagePage() {
                         ) : (
                           <li className="flex justify-end">
                             <div className="relative bg-red-100 max-w-xl px-4 py-2 text-gray-700 rounded shadow">
-                              <span className="block">Hiiii</span>
+                              <span className="block">{msg.body}</span>
                             </div>
                           </li>
                         )

@@ -31,15 +31,15 @@ export const getChats = async () => {
 
 export const reply = async (payload) => {
   try {
-    const data = await Post('messages/reply', payload);
-    console.log(data);
-    return data;
+    const response = await Post('messages/reply', payload);
+    console.log(response);
+    return response.data;
   } catch (error) {
-    if (error.response.status === 401) {
+    if (error.response && error.response.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('userProfile');
       window.location.reload();
     }
-    return { success: false, message: error.response.data.message };
+    return { success: false, message: error.response ? error.response.data.message : "Erreur lors de l'ajout de la ville." }; 
   }
-};
+}
