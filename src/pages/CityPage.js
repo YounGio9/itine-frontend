@@ -4,6 +4,17 @@ import { addCity, getCities, deleteCity } from '../services/city.service';
 export default function CityPage() {
   const [cityName, setCityName] = useState('');
   const [cities, setCities] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalId, setModalId] = useState(null);
+
+  const openModal = (id) => {
+    setShowModal(true);
+    setModalId(id);
+  };
+  const closeModal = () => {
+    console.log('click on close ');
+    setShowModal(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +38,7 @@ export default function CityPage() {
       try {
         const response = await getCities();
         console.log(response);
-          setCities(response);
+        setCities(response);
       } catch (error) {
         console.error('Erreur lors du chargement des villes:', error);
       }
@@ -37,10 +48,10 @@ export default function CityPage() {
   }, []);
 
   const handleDelete = async (id) => {
-    setCities(prev =>prev.filter(city => city.id !== id)) 
+    setCities((prev) => prev.filter((city) => city.id !== id));
     await deleteCity(id);
-
-  }
+    setShowModal(false);
+  };
 
   return (
     <div>
@@ -81,30 +92,48 @@ export default function CityPage() {
               <li className="flex-1 font-bold uppercase"> {''} </li>
             </ul>
             <ul className="space-y-2">
-              {cities.length > 0  &&
+              {cities.length > 0 &&
                 cities.map((city) => (
                   <li
                     key={city.id}
                     className="bg-[#FCFCFC] hover:bg-gray-100 p-4 rounded flex justify-between items-center"
                   >
                     <div className="flex-1">{city.name}</div>
-                    {/* <div className="flex-1">{data.Statut}</div> */}
-                    <div className="flex mx-4">
-                      <button
-                        className="bg-[#DFC679] hover:bg-yellow-500 text-white px-2 py-2 rounded text-sm"
-                        type="button"
-                      >
-                        Modifier
-                      </button>
-                    </div>
-                    <div className="flex-1">
+                    <div className="flex-1 mx-4">
                       <button
                         className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded text-sm"
                         type="button"
-                        onClick={( )=>handleDelete(city.id)}
+                        onClick={() => openModal(city.id)}
                       >
-                        Supprimer
+                        Modal
                       </button>
+                      {/* Modal content */}
+                      {showModal && city.id === modalId ? (
+                        <div className="fixed inset-0 flex items-center justify-center z-50">
+                          <div className="bg-white p-8 rounded-lg shadow-md w-1/4 text-center">
+                            <p>
+                              Voulez vous supprimer cette boutique? Cette action entraînera la suppression de tous les
+                              articles qui lui sont associés
+                            </p>
+                            <div className=" flex justify-between mt-4">
+                              <button
+                                type="button"
+                                onClick={closeModal}
+                                className="bg-gray-500 text-white py-2 w-full mr-10 rounded hover:bg-gray-600"
+                              >
+                                Annuler
+                              </button>
+                              <button
+                                className="bg-red-500 text-white py-2 w-full mr-10 rounded hover:bg-red-600"
+                                type="button"
+                                onClick={() => handleDelete(city.id)}
+                              >
+                                Supprimer
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ) : null}
                     </div>
                   </li>
                 ))}
