@@ -273,21 +273,38 @@ export default function AddProducts() {
                   </div>
                 </div>
               </div>
-              <div className="mt-10">
-                <h4>Catégories</h4>
-                <div className=" my-2">
-                  {categories.map((category, index) => (
-                    <div key={index}>
-                      <input
-                        type="checkbox"
-                        name="categories"
-                        className="mr-3"
-                        onChange={handleSelectCategory}
-                        value={category.name}
-                      />
-                      <span>{category.name}</span>
-                    </div>
-                  ))}
+              <div className=" lg:flex justify-between">
+                <div className="mt-10">
+                  <h4>Catégories</h4>
+                  <div className=" my-2">
+                    {categories.map((category, index) => (
+                      <div key={index}>
+                        <input
+                          type="checkbox"
+                          name="categories"
+                          className="mr-3"
+                          onChange={handleSelectCategory}
+                          value={category.name}
+                        />
+                        <span>{category.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-10">
+                  <h4>Genre</h4>
+                  <div className=" my-2">
+                    <input type="checkbox" name="Homme" className="mr-3" />
+                    <span>Homme</span>
+                  </div>
+                  <div className=" my-2">
+                    <input type="checkbox" name="Femme" className="mr-3" />
+                    <span>Femme</span>
+                  </div>
+                  <div className=" my-2">
+                    <input type="checkbox" name="Enfant" className="mr-3" />
+                    <span>Enfant</span>
+                  </div>
                 </div>
               </div>
             </div>
