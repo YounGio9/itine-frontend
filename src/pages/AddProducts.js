@@ -2,12 +2,29 @@ import React, { useState, useMemo, useEffect } from 'react';
 import Loading from '../components/UI/Loading';
 import { createProduct } from '../services/product.service';
 import { getCategories } from '../services/category.service';
+import { getCities } from '../services/city.service';
 
 export default function AddProducts() {
   const [base64UrlImages, setBase64UrlImages] = useState([]);
   const [activeCover, setActiveCover] = useState(1);
   const [images, setImages] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cities, setCities] = useState([]);
+
+  // getCities
+  useEffect(() => {
+    const getCty = async () => {
+      try {
+        const response = await getCities();
+        console.log(response);
+        setCities(response);
+      } catch (error) {
+        console.error('Erreur lors du chargement des villes:', error);
+      }
+    };
+
+    getCty();
+  }, []);
 
   // getCategories
   useEffect(() => {
@@ -22,6 +39,7 @@ export default function AddProducts() {
     };
     getCtg();
   }, []);
+
   const handleSelectImages = (e) => {
     if (!images.map((img) => img.name).includes(e.target.files[0].name)) setImages([...images, ...e.target.files]);
   };
@@ -35,6 +53,32 @@ export default function AddProducts() {
       setProduct({
         ...product,
         categories: product.categories.filter((cat) => cat !== e.target.value),
+      });
+    }
+  };
+
+  const handleCities = (e) => {
+    console.log(e.target.checked);
+
+    if (e.target.checked) {
+      handleChange(e);
+    } else {
+      setProduct({
+        ...product,
+        cities: product.cities.filter((cit) => cit !== e.target.value),
+      });
+    }
+  };
+
+  const handleGenders = (e) => {
+    console.log(e.target.checked);
+
+    if (e.target.checked) {
+      handleChange(e);
+    } else {
+      setProduct({
+        ...product,
+        genders: product.genders.filter((gend) => gend !== e.target.value),
       });
     }
   };
@@ -75,6 +119,8 @@ export default function AddProducts() {
     price: '',
     cover: 1,
     categories: [],
+    cities: [],
+    genders: [],
     description: '',
     sizes: [],
     colors: [],
@@ -93,6 +139,19 @@ export default function AddProducts() {
         [name]: [...new Set([...product.categories, value])],
       });
     }
+    if (['cities'].includes(name)) {
+      setProduct({
+        ...product,
+        [name]: [...new Set([...product.cities, value])],
+      });
+    }
+    if (['genders'].includes(name)) {
+      setProduct({
+        ...product,
+        [name]: [...new Set([...product.genders, value])],
+      });
+    }
+
     if (['colors', 'sizes'].includes(name)) {
       console.log('colors', name);
       setProduct({
@@ -292,17 +351,34 @@ export default function AddProducts() {
                   </div>
                 </div>
                 <div className="mt-10">
+                  <h4>Ville</h4>
+                  <div className=" my-2">
+                    {cities.map((cities, index) => (
+                      <div key={index}>
+                        <input
+                          type="checkbox"
+                          name="cities"
+                          className="mr-3"
+                          onChange={handleCities}
+                          value={cities.name}
+                        />
+                        <span>{cities.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-10">
                   <h4>Genre</h4>
                   <div className=" my-2">
-                    <input type="checkbox" name="Homme" className="mr-3" />
+                    <input type="checkbox" name="Homme" value="man" className="mr-3" onChange={handleGenders} />
                     <span>Homme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Femme" className="mr-3" />
+                    <input type="checkbox" name="Femme" value="woman" className="mr-3" onChange={handleGenders} />
                     <span>Femme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Enfant" className="mr-3" />
+                    <input type="checkbox" name="Enfant" value="child" className="mr-3" onChange={handleGenders} />
                     <span>Enfant</span>
                   </div>
                 </div>
