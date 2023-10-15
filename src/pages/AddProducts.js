@@ -332,24 +332,24 @@ export default function AddProducts() {
                   </div>
                 </div>
               </div>
-              <div className=" lg:flex justify-between">
-                <div className="mt-10">
-                  <h4>Catégories</h4>
-                  <div className=" my-2">
-                    {categories.map((category, index) => (
-                      <div key={index}>
-                        <input
-                          type="checkbox"
-                          name="categories"
-                          className="mr-3"
-                          onChange={handleSelectCategory}
-                          value={category.name}
-                        />
-                        <span>{category.name}</span>
-                      </div>
-                    ))}
-                  </div>
+              <div className="mt-10">
+                <h4>Catégories</h4>
+                <div className=" my-2 flex flex-wrap gap-4">
+                  {categories.map((category, index) => (
+                    <div key={index}>
+                      <input
+                        type="checkbox"
+                        name="categories"
+                        className="mr-1"
+                        onChange={handleSelectCategory}
+                        value={category.name}
+                      />
+                      <span>{category.name}</span>
+                    </div>
+                  ))}
                 </div>
+              </div>
+              <div className=" lg:flex justify-between">
                 <div className="mt-10">
                   <h4>Ville</h4>
                   <div className=" my-2">
@@ -358,7 +358,7 @@ export default function AddProducts() {
                         <input
                           type="checkbox"
                           name="cities"
-                          className="mr-3"
+                          className="mr-1 my-2"
                           onChange={handleCities}
                           value={cities.name}
                         />
@@ -370,15 +370,15 @@ export default function AddProducts() {
                 <div className="mt-10">
                   <h4>Genre</h4>
                   <div className=" my-2">
-                    <input type="checkbox" name="Homme" value="man" className="mr-3" onChange={handleGenders} />
+                    <input type="checkbox" name="Homme" value="man" className="mr-1" onChange={handleGenders} />
                     <span>Homme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Femme" value="woman" className="mr-3" onChange={handleGenders} />
+                    <input type="checkbox" name="Femme" value="woman" className="mr-1" onChange={handleGenders} />
                     <span>Femme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Enfant" value="child" className="mr-3" onChange={handleGenders} />
+                    <input type="checkbox" name="Enfant" value="child" className="mr-1" onChange={handleGenders} />
                     <span>Enfant</span>
                   </div>
                 </div>

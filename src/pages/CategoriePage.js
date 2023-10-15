@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { createCategory, deleteCategories, getCategories } from '../services/category.service';
 import { useToggleDots } from '../utils/dotToggle';
+import Loading from '../components/UI/Loading';
 
 export default function CategoriePage() {
   const [image, setImage] = React.useState();
@@ -17,9 +18,10 @@ export default function CategoriePage() {
   useEffect(() => {
     const getCtg = async () => {
       try {
+        setLoading(true);
         const response = await getCategories();
-        console.log(response.data.filter((cat) => cat.image != null));
         setCategories(response.data.filter((cat) => cat.image != null));
+        setLoading(false);
       } catch (error) {
         console.error('Erreur lors de la récupération des catégories:', error);
       }
@@ -151,69 +153,73 @@ export default function CategoriePage() {
             </div>
           </div>
         </form>
-        <div className="md:w-2/3 px-10 flex flex-wrap -m-4">
-          {categories.map((category) => (
-            <div key={category.id} className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4">
-              <div className="mx-auto bg-white rounded-lg shadow-lg max-w-sm relative">
-                {/* dot button */}
-                <button
-                  type="button"
-                  className={`${
-                    dotOpen[category.id] ? 'md:hover:bg-transparent md:border-0' : ''
-                  } pl-3 pr-4 py-2 md:hover:text-red-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto`}
-                  onClick={() => toggleDots(category.id)}
-                >
-                  <svg
-                    className=" w-10 absolute top-0 right-0"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="md:w-2/3 px-10 flex flex-wrap -m-4">
+            {categories.map((category) => (
+              <div key={category.id} className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4">
+                <div className="mx-auto bg-white rounded-lg shadow-lg max-w-sm relative">
+                  {/* dot button */}
+                  <button
+                    type="button"
+                    className={`${
+                      dotOpen[category.id] ? 'md:hover:bg-transparent md:border-0' : ''
+                    } pl-3 pr-4 py-2 md:hover:text-red-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto`}
+                    onClick={() => toggleDots(category.id)}
                   >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M12 12H12.01M12 6H12.01M12 18H12.01M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12ZM13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM13 6C13 6.55228 12.5523 7 12 7C11.4477 7 11 6.55228 11 6C11 5.44772 11.4477 5 12 5C12.5523 5 13 5.44772 13 6Z"
-                        stroke="#000000"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </button>
-                {/* dots menu */}
-                <div
-                  id={`dots-${category.id}`}
-                  className={`${
-                    dotOpen[category.id] ? 'block' : 'hidden'
-                  } bg-white text-base list-none absolute  divide-gray-100 rounded shadow my-4 md:w-44 right-0 top-6`}
-                >
-                  <ul className="py-1" aria-labelledby={`dots-${category.id}`}>
-                    {/* <li>
+                    <svg
+                      className=" w-10 absolute top-0 right-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M12 12H12.01M12 6H12.01M12 18H12.01M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12ZM13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM13 6C13 6.55228 12.5523 7 12 7C11.4477 7 11 6.55228 11 6C11 5.44772 11.4477 5 12 5C12.5523 5 13 5.44772 13 6Z"
+                          stroke="#000000"
+                          strokeWidth="1"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                  {/* dots menu */}
+                  <div
+                    id={`dots-${category.id}`}
+                    className={`${
+                      dotOpen[category.id] ? 'block' : 'hidden'
+                    } bg-white text-base list-none absolute  divide-gray-100 rounded shadow my-4 md:w-44 right-0 top-6`}
+                  >
+                    <ul className="py-1" aria-labelledby={`dots-${category.id}`}>
+                      {/* <li>
                       <Link to="#" className="text-sm block text-start hover:bg-gray-100 text-gray-700 px-4 py-2">
                         Modifier
                       </Link>
                     </li> */}
-                    <li>
-                      <Link
-                        to="#"
-                        className="text-sm text-start hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                        onClick={() => handleDelete(category.id)}
-                      >
-                        Supprimer
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <img src={category.image} alt={category.name} className="w-full h-48 object-cover rounded-t-lg" />
-                <div className="p-4">
-                  <h2 className="text-xl font-semibold">{category.name}</h2>
+                      <li>
+                        <Link
+                          to="#"
+                          className="text-sm text-start hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                          onClick={() => handleDelete(category.id)}
+                        >
+                          Supprimer
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src={category.image} alt={category.name} className="w-full h-48 object-cover rounded-t-lg" />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold">{category.name}</h2>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
