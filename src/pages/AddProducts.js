@@ -133,24 +133,6 @@ export default function AddProducts() {
         ...product,
         [name]: value,
       });
-    if (['categories'].includes(name)) {
-      setProduct({
-        ...product,
-        [name]: [...new Set([...product.categories, value])],
-      });
-    }
-    if (['cities'].includes(name)) {
-      setProduct({
-        ...product,
-        [name]: [...new Set([...product.cities, value])],
-      });
-    }
-    if (['genders'].includes(name)) {
-      setProduct({
-        ...product,
-        [name]: [...new Set([...product.genders, value])],
-      });
-    }
 
     if (['colors', 'sizes'].includes(name)) {
       console.log('colors', name);
@@ -332,7 +314,7 @@ export default function AddProducts() {
                   </div>
                 </div>
               </div>
-              <div className="mt-10">
+              <div className="mt-5">
                 <h4>Catégories</h4>
                 <div className=" my-2 flex flex-wrap gap-4">
                   {categories.map((category, index) => (
@@ -350,7 +332,7 @@ export default function AddProducts() {
                 </div>
               </div>
               <div className=" lg:flex justify-between">
-                <div className="mt-10">
+                <div className="mt-5">
                   <h4>Ville</h4>
                   <div className=" my-2">
                     {cities.map((cities, index) => (
@@ -367,18 +349,18 @@ export default function AddProducts() {
                     ))}
                   </div>
                 </div>
-                <div className="mt-10">
+                <div className="mt-5">
                   <h4>Genre</h4>
                   <div className=" my-2">
-                    <input type="checkbox" name="Homme" value="man" className="mr-1" onChange={handleGenders} />
+                    <input type="checkbox" name="genders" value="man" className="mr-1" onChange={handleGenders} />
                     <span>Homme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Femme" value="woman" className="mr-1" onChange={handleGenders} />
+                    <input type="checkbox" name="genders" value="woman" className="mr-1" onChange={handleGenders} />
                     <span>Femme</span>
                   </div>
                   <div className=" my-2">
-                    <input type="checkbox" name="Enfant" value="child" className="mr-1" onChange={handleGenders} />
+                    <input type="checkbox" name="genders" value="child" className="mr-1" onChange={handleGenders} />
                     <span>Enfant</span>
                   </div>
                 </div>
