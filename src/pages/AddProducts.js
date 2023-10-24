@@ -45,7 +45,7 @@ export default function AddProducts() {
   };
 
   const handleSelectCategory = (e) => {
-    console.log(e.target.checked);
+    console.log(e.target.checked, e.target.value, e.target.name);
 
     if (e.target.checked) {
       handleChange(e);
@@ -128,7 +128,8 @@ export default function AddProducts() {
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (!['images', 'sizes', 'categories', 'colors'].includes(name))
+    console.log(name);
+    if (!['images', 'sizes', 'colors'].includes(name))
       setProduct({
         ...product,
         [name]: value,
@@ -139,6 +140,14 @@ export default function AddProducts() {
       setProduct({
         ...product,
         [name]: value.replace(/\s+/g, ' ').split(' '),
+      });
+    }
+
+    if (['categories', 'genders', 'cities'].includes(name)) {
+      console.log('categryvalue', value);
+      setProduct({
+        ...product,
+        [name]: [...product[name], value],
       });
     }
   };
