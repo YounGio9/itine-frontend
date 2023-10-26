@@ -2,7 +2,7 @@ import { Get, Post } from '../utils/axios';
 
 export const getDeliveryMen = async () => {
   try {
-    const data = await Get('deliveryMen');
+    const data = await Get('deliverers');
     console.log(data);
     return { success: true, data: data.data };
   } catch (error) {
@@ -17,7 +17,7 @@ export const getDeliveryMen = async () => {
 
 export const changeDeliveryManStatus = async (payload) => {
   try {
-    const data = await Post('deliveryMen/changeStatus', payload);
+    const data = await Post('deliverers/changeStatus', payload);
     console.log(data);
     return { success: true, data: data.data };
   } catch (error) {

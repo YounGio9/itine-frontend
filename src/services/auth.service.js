@@ -13,4 +13,4 @@ export async function login(payload) {
   }
 }
 
-export const getProfile = async () => Get('auth/profile');
+export const getProfile = async () => Get('auth/profile/CUSTOMER');
