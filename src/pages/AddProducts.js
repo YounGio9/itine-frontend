@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { getSubCategories } from '../services/subCategory.service';
 import Loading from '../components/UI/Loading';
 import { createProduct } from '../services/product.service';
 import { getCategories } from '../services/category.service';
@@ -10,6 +11,54 @@ export default function AddProducts() {
   const [images, setImages] = useState([]);
   const [categories, setCategories] = useState([]);
   const [cities, setCities] = useState([]);
+  const emptyProduct = {
+    name: '',
+    price: '',
+    cover: 1,
+    categories: [],
+    cities: [],
+    genders: [],
+    description: '',
+    subCategories: [],
+    sizes: [],
+    colors: [],
+    availableQuantity: 0,
+  };
+  const [product, setProduct] = useState(emptyProduct);
+
+  const [isLoadingSubCategories, setIsLoadingSubCategories] = useState(false);
+  const [subCategories, setSubCategories] = useState([]);
+
+  const getSubCats = async (cats) => {
+    setSubCategories([]);
+    console.log(cats, 'Categories in getSubCategories');
+    await Promise.all(
+      cats.map(async (category) => {
+        setIsLoadingSubCategories(true);
+        const response = await getSubCategories(category);
+        console.log(response);
+        setSubCategories((prev) => [...prev, ...response]);
+        setIsLoadingSubCategories(false);
+        return category;
+      })
+    );
+  };
+
+  useEffect(() => {
+    getSubCats(product.categories);
+  }, [product.categories]);
+
+  React.useMemo(() => {
+    console.log('subCategories', subCategories);
+    // if (subCategories.length > 0)
+    setProduct({
+      ...product,
+      subCategories: product.subCategories.filter((subCat) => subCategories.map((sub) => sub.id).includes(subCat)),
+    });
+  }, [subCategories]);
+  React.useMemo(() => {
+    console.log(product);
+  }, [product]);
 
   // getCities
   useEffect(() => {
@@ -53,6 +102,19 @@ export default function AddProducts() {
       setProduct({
         ...product,
         categories: product.categories.filter((cat) => cat !== e.target.value),
+      });
+    }
+  };
+
+  const handleSelectSubCategory = (e) => {
+    console.log(e.target.checked, e.target.value, e.target.name);
+
+    if (e.target.checked) {
+      handleChange(e);
+    } else {
+      setProduct({
+        ...product,
+        subCategories: product.subCategories.filter((subCat) => subCat !== e.target.value),
       });
     }
   };
@@ -114,18 +176,6 @@ export default function AddProducts() {
     console.log('images.length', images.length);
   }, [base64UrlImages]);
 
-  const [product, setProduct] = useState({
-    name: '',
-    price: '',
-    cover: 1,
-    categories: [],
-    cities: [],
-    genders: [],
-    description: '',
-    sizes: [],
-    colors: [],
-    availableQuantity: 0,
-  });
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name);
@@ -143,8 +193,8 @@ export default function AddProducts() {
       });
     }
 
-    if (['categories', 'genders', 'cities'].includes(name)) {
-      console.log('categryvalue', value);
+    if (['categories', 'genders', 'cities', 'subCategories'].includes(name)) {
+      console.log('value', value);
       setProduct({
         ...product,
         [name]: [...product[name], value],
@@ -179,8 +229,10 @@ export default function AddProducts() {
     console.log('Données du produit à ajouter :', payload);
     setLoading(true);
     const data = await createProduct(payload);
+
     setMessage(data.message);
     setLoading(false);
+    setProduct(emptyProduct);
   };
 
   if (loading) return <Loading />;
@@ -189,11 +241,6 @@ export default function AddProducts() {
       <p>{message}</p>
       <div className=" flex justify-between mb-10">
         <h3 className=" text-xl font-bold">Ajouter un nouveau produit</h3>
-        <div>
-          <button type="submit" className=" bg-slate-500 mr-3 p-3 px-4 rounded-md text-white font-bold">
-            Publier maintenant
-          </button>
-        </div>
       </div>
       <div className=" lg:flex justify-center my-3">
         {/* form of add article */}
@@ -340,6 +387,28 @@ export default function AddProducts() {
                   ))}
                 </div>
               </div>
+
+              <div className="mt-5">
+                <h4>Sous Catégories</h4>
+                {isLoadingSubCategories ? (
+                  <Loading />
+                ) : (
+                  <div className=" my-2 flex flex-wrap gap-4">
+                    {subCategories.map((subCategory, index) => (
+                      <div key={index}>
+                        <input
+                          type="checkbox"
+                          name="subCategories"
+                          className="mr-1"
+                          onChange={handleSelectSubCategory}
+                          value={subCategory.id}
+                        />
+                        <span>{subCategory.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className=" lg:flex justify-between">
                 <div className="mt-5">
                   <h4>Ville</h4>
@@ -377,6 +446,11 @@ export default function AddProducts() {
             </div>
           </div>
         </div>
+      </div>
+      <div className=" flex items-center justify-center">
+        <button type="submit" className=" bg-slate-500 mr-3 p-3 px-4  rounded-md text-white font-bold">
+          Publier maintenant
+        </button>
       </div>
     </form>
   );
