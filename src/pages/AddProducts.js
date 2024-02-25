@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { notification } from 'antd';
 import { getSubCategories } from '../services/subCategory.service';
 import Loading from '../components/UI/Loading';
 import { createProduct } from '../services/product.service';
@@ -210,6 +211,7 @@ export default function AddProducts() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let canSubmit = true;
 
     console.log('base64UrlImages', base64UrlImages);
     console.log('product', product);
@@ -217,22 +219,46 @@ export default function AddProducts() {
     payload.availableQuantity = parseInt(payload.availableQuantity, 10);
     payload.images = base64UrlImages;
     payload.price = +payload.price;
+    payload.subCategories = payload.subCategories.map((subCat) => parseInt(subCat, 10));
 
     if (
       Object.keys(payload)
         .filter((key) => key !== 'soldOut')
         .some((key) => !payload[key])
     ) {
+      notification.error({
+        message: 'Veuillez remplir tous les champs',
+      });
       return;
     }
+
+    [
+      { key: 'subCategories', label: 'sous catégorie' },
+      { key: 'categories', label: 'catégorie' },
+      { key: 'genders', label: 'genre' },
+      { key: 'images', label: 'image' },
+    ].forEach(({ key, label }) => {
+      if (payload[key].length === 0) {
+        notification.error({
+          message: `Veuillez sélectionner au moins un(e) ${label}`,
+        });
+        canSubmit = false;
+      }
+    });
     payload.soldOut = false;
     console.log('Données du produit à ajouter :', payload);
+    if (!canSubmit) return;
     setLoading(true);
     const data = await createProduct(payload);
+    if (data.success) {
+      notification.success({
+        message: 'Produit ajouté avec succès',
+      });
+      setProduct(emptyProduct);
+      setImages([]);
+    }
 
-    setMessage(data.message);
     setLoading(false);
-    setProduct(emptyProduct);
   };
 
   if (loading) return <Loading />;
@@ -313,6 +339,29 @@ export default function AddProducts() {
                     required
                   />
                 </div>
+                <div className="mt-5">
+                  <h4>Sous Catégories</h4>
+                  {isLoadingSubCategories ? (
+                    <Loading />
+                  ) : (
+                    <div className=" my-2 flex flex-wrap gap-4">
+                      {subCategories.map((subCategory, index) => (
+                        <div key={index} className="flex items-center">
+                          <input
+                            type="checkbox"
+                            name="subCategories"
+                            className="mr-1"
+                            onChange={handleSelectSubCategory}
+                            value={subCategory.id}
+                          />
+                          <span className=" text-sm ">
+                            {subCategory.name} ({subCategory.categoryName})
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -336,19 +385,20 @@ export default function AddProducts() {
               </div>
               <div>
                 <h4>Lesquelles des images voulez-vous prendre comme couverture de l'article?</h4>
-                <div className={` block my-3 `}>
-                  {images.map((_, idx) => (
+                <div className={` flex flex-wrap my-3 `}>
+                  {images.map((image, idx) => (
                     <button
                       type="button"
-                      // onKeyPress={() => handleSelectCover(idx)}
-                      key={idx}
                       onClick={() => handleSelectCover(idx + 1)}
-                      className={`${
-                        activeCover === idx + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'
-                      }  cursor-pointer p-2 mr-4 `}
+                      className=" flex flex-col px-1 w-1/3"
                     >
-                      {' '}
-                      image {idx + 1}
+                      <img
+                        src={base64UrlImages[idx]}
+                        alt="preview"
+                        className={`${
+                          activeCover === idx + 1 && 'border-blue-500 border-4'
+                        } w-full h-20 object-cover rounded-lg`}
+                      />{' '}
                     </button>
                   ))}
                 </div>
@@ -388,27 +438,6 @@ export default function AddProducts() {
                 </div>
               </div>
 
-              <div className="mt-5">
-                <h4>Sous Catégories</h4>
-                {isLoadingSubCategories ? (
-                  <Loading />
-                ) : (
-                  <div className=" my-2 flex flex-wrap gap-4">
-                    {subCategories.map((subCategory, index) => (
-                      <div key={index}>
-                        <input
-                          type="checkbox"
-                          name="subCategories"
-                          className="mr-1"
-                          onChange={handleSelectSubCategory}
-                          value={subCategory.id}
-                        />
-                        <span>{subCategory.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
               <div className=" lg:flex justify-between">
                 <div className="mt-5">
                   <h4>Ville</h4>

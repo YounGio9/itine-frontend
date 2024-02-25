@@ -93,8 +93,8 @@ export default function CategoriePage() {
         <form onSubmit={handleSubmit} className=" md:w-1/3  text-center mb-20">
           <div className="flex space-x-10">
             <div className=" w-full ">
-              <h2 className="text-2xl font-semibold mb-4">Ajouter une categorie</h2>
-              <div className="flex items-center justify-center w-full">
+              <h2 className="text-2xl font-semibold mb-4">Ajouter une catégorie</h2>
+              <div className="flex flex-col items-center justify-center w-full">
                 <label
                   htmlFor="dropzone-file"
                   className="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-blue-100  hover:bg-blue-200"
@@ -122,6 +122,7 @@ export default function CategoriePage() {
                       SVG, PNG, JPG ou GIF (MAX. 800x400px)
                     </p>
                   </div>
+
                   <input
                     onChange={handleSelectImage}
                     id="dropzone-file"
@@ -131,6 +132,11 @@ export default function CategoriePage() {
                     accept="image/png, image/jpeg"
                   />
                 </label>
+                <div>
+                  {image && (
+                    <img src={base64UrlImage} alt="preview" className="w-full h-40 object-cover rounded-lg mt-2" />
+                  )}
+                </div>
               </div>
               <div>
                 <div className="my-4">
